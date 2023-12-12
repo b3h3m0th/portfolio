@@ -25,7 +25,9 @@ export async function getWorkPosts() {
       title: matterResult.data.title,
       image: matterResult.data.image,
       startDate: new Date(matterResult.data.startDate),
-      endDate: new Date(matterResult.data.endDate),
+      endDate:
+        (matterResult.data.endDate && new Date(matterResult.data.endDate)) ||
+        null,
       html: processedContent.toString(),
     } as WorkPost;
   });
