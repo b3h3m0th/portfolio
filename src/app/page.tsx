@@ -11,10 +11,10 @@ export default function Home() {
           height={64}
           width={64}
         ></Image>
-        <span>{`hi, I'm Simon`}</span>
+        <span>{`Hi, I'm Simon`}</span>
       </h1>
       <p className="mb-8">I write (lots of) code.</p>
-      <a href="https://stackoverflow.com/users/12834972/behemoth">
+      {/* <a href="https://stackoverflow.com/users/12834972/behemoth">
         <Image
           src="https://stackoverflow.com/users/flair/12834972.png"
           width="208"
@@ -24,7 +24,7 @@ export default function Home() {
           priority={false}
           placeholder="empty"
         />
-      </a>
+      </a> */}
     </section>
   );
 }
