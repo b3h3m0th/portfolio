@@ -8,13 +8,13 @@ import { cx } from "@/lib/utils";
 
 const navItems = {
   "/": {
-    name: "home",
+    name: "Home",
   },
   "/work": {
-    name: "work",
+    name: "Work",
   },
   "/blog": {
-    name: "test",
+    name: "Test",
   },
 } as const;
 
