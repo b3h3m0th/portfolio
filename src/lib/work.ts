@@ -24,12 +24,13 @@ export async function getWorkPosts() {
       id,
       title: matterResult.data.title,
       image: matterResult.data.image,
-      date: new Date(matterResult.data.date),
+      startDate: new Date(matterResult.data.startDate),
+      endDate: new Date(matterResult.data.endDate),
       html: processedContent.toString(),
     } as WorkPost;
   });
 
   return (await Promise.all(allPostsData)).sort(
-    (a, b) => a.date.getTime() - b.date.getTime()
+    (a, b) => a.startDate.getTime() - b.startDate.getTime()
   );
 }
