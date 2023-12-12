@@ -1,6 +1,7 @@
 export type WorkPostMetadata = {
   title: string;
-  date: Date;
+  startDate: Date;
+  endDate?: Date;
   image?: string;
 };
 
