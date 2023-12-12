@@ -1,4 +1,5 @@
 import { getWorkPosts } from "@/lib";
+import Link from "next/link";
 
 export default async function Home() {
   const workPosts = await getWorkPosts();
@@ -12,7 +13,7 @@ export default async function Home() {
         {workPosts.length}
       </div>
       <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
-        test
+        <Link href={"work"}>Work</Link>
       </div>
     </section>
   );
