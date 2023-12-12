@@ -12,6 +12,7 @@ export default function Home() {
     if (month < 0 || (month === 0 && today.getDate() < birthdate.getDate())) {
       age--;
     }
+
     return age;
   };
 
