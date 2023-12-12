@@ -1,19 +1,25 @@
 import Image from "next/image";
 
 export default function Home() {
+  const getAge = () => {
+    const birthdate = new Date(2003, 10, 22);
+    const today = new Date();
+    let age = today.getFullYear() - birthdate.getFullYear();
+    const month = today.getMonth() - birthdate.getMonth();
+    if (month < 0 || (month === 0 && today.getDate() < birthdate.getDate())) {
+      age--;
+    }
+    return age;
+  };
+
   return (
     <section>
       <h1 className="font-bold text-4xl mb-8 flex items-center">
-        <Image
-          className="inline mr-4"
-          src="/sign-of-the-horns_1f918.webp"
-          alt="sign of the horns emoji"
-          height={64}
-          width={64}
-        ></Image>
-        <span>{`Hi, I'm Simon`}</span>
+        <span>{`🤘 Hi, I'm Simon`}</span>
       </h1>
-      <p className="mb-8">I write (lots of) code.</p>
+      <p className="mb-8">
+        {`I'm a ${getAge()}-year-old full-stack developer from Austria. I've been writing code since I was 15 and I'm still hooked on learning new things every day. Over the years, I have become an active and highly reputated member of the awesome StackOverflow community, where I both learn and share my knowledge.`}
+      </p>
       {/* <a href="https://stackoverflow.com/users/12834972/behemoth">
         <Image
           src="https://stackoverflow.com/users/flair/12834972.png"

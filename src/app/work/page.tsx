@@ -10,7 +10,6 @@ export default async function Work() {
       {workPosts.map((w) => (
         <WorkItem key={w.id} {...w}></WorkItem>
       ))}
-      <div></div>
     </section>
   );
 }
