@@ -34,6 +34,9 @@ export function Navbar() {
                 ))}
               </Suspense>
             </div>
+            <div className="ml-auto py-1 px-2">
+              <span>Github</span>
+            </div>
           </nav>
         </LayoutGroup>
       </div>
