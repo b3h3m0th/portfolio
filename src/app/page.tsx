@@ -15,11 +15,19 @@ export default function Home() {
   return (
     <section>
       <h1 className="font-bold text-4xl mb-8 flex items-center">
-        <span>{`🤘 Hi, I'm Simon`}</span>
+        <span>{`Hi, I'm Simon`}</span>
       </h1>
       <p className="mb-8">
-        {`I'm a ${getAge()}-year-old full-stack developer from Austria. I've been writing code since I was 15 and I'm still hooked on learning new things every day. Over the years, I have become an active and highly reputated member of the awesome StackOverflow community, where I both learn and share my knowledge.`}
+        {`I'm a ${getAge()}-year-old full-stack developer from Austria. I've been writing code since I was 15 and I'm still hooked on learning new things every day. Over the years, I have become an active and highly reputated member of the awesome StackOverflow community, where I both learn and share my knowledge. Oh, and also I play guitar a lot!`}
       </p>
+
+      <Image
+        className="rounded-3xl"
+        width={300}
+        height={0}
+        src="/me_hero.jpg"
+        alt="Simon Ostini playing guitar"
+      />
       {/* <a href="https://stackoverflow.com/users/12834972/behemoth">
         <Image
           src="https://stackoverflow.com/users/flair/12834972.png"
