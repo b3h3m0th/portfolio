@@ -7,7 +7,6 @@ export default async function Work() {
   return (
     <section>
       <h1 className="font-bold text-4xl mb-8">My Work</h1>
-      <p>I wrote (lots of) code.</p>
       {workPosts.map((w) => (
         <WorkItem key={w.id} {...w}></WorkItem>
       ))}

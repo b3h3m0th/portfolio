@@ -24,6 +24,7 @@ export async function getWorkPosts() {
       id,
       title: matterResult.data.title,
       image: matterResult.data.image,
+      url: (matterResult.data.url && new URL(matterResult.data.url)) || null,
       startDate: new Date(matterResult.data.startDate),
       endDate:
         (matterResult.data.endDate && new Date(matterResult.data.endDate)) ||
@@ -33,6 +34,6 @@ export async function getWorkPosts() {
   });
 
   return (await Promise.all(allPostsData)).sort(
-    (a, b) => a.startDate.getTime() - b.startDate.getTime()
+    (a, b) => b.startDate.getTime() - a.startDate.getTime()
   );
 }
