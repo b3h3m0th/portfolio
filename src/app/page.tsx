@@ -1,3 +1,6 @@
+"use client";
+
+import { motion } from "framer-motion";
 import Image from "next/image";
 
 export default function Home() {
@@ -21,13 +24,20 @@ export default function Home() {
         {`I'm a ${getAge()}-year-old full-stack developer from Austria. I've been writing code since I was 15 and I'm still hooked on learning new things every day. Over the years, I have become an active and highly reputated member of the awesome StackOverflow community, where I both learn and share my knowledge. Oh, and also I play guitar a lot!`}
       </p>
 
-      <Image
-        className="rounded-3xl"
-        width={300}
-        height={0}
-        src="/me_hero.jpg"
-        alt="Simon Ostini playing guitar"
-      />
+      <div className="w-[300px] rounded-3xl overflow-hidden">
+        <motion.div
+          className="relative"
+          whileHover={{ scale: 1.02 }}
+          transition={{ ease: "easeInOut" }}
+        >
+          <Image
+            width={300}
+            height={0}
+            src="/me_hero.jpg"
+            alt="Simon Ostini playing guitar"
+          />
+        </motion.div>
+      </div>
       {/* <a href="https://stackoverflow.com/users/12834972/behemoth">
         <Image
           src="https://stackoverflow.com/users/flair/12834972.png"
