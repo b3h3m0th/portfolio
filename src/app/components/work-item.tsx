@@ -1,13 +1,11 @@
 import { WorkPost } from "@/types";
-import { Fragment } from "react";
-import "./work-item.css";
 
 export default function WorkItem(work: WorkPost) {
   return (
     <div className="work-item" key={work.id}>
       <hr className="my-6 border-neutral-200" />
       <div key={work.id}>
-        <h2 className="font-medium text-xl mb-1">{work.title}</h2>
+        <h2 className="font-bold text-xl mb-1">{work.title}</h2>
         <div className="mb-8 text-sm text-neutral-600">
           {work.url && (
             <a className="mr-4 underline" href={work.url.href} target="_blank">
@@ -27,7 +25,7 @@ export default function WorkItem(work: WorkPost) {
           </span>
         </div>
         <div
-          className="prose prose-neutral"
+          className="prose prose-neutral prose:sm"
           dangerouslySetInnerHTML={{ __html: work.html }}
         ></div>
       </div>
