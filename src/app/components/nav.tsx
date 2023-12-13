@@ -14,8 +14,11 @@ const navItems = {
   "/work": {
     name: "Work",
   },
-  "/blog": {
-    name: "Test",
+  "/projects": {
+    name: "Projects",
+  },
+  "/not-found": {
+    name: "Not Found",
   },
 } as const;
 
