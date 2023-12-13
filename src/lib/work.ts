@@ -23,6 +23,7 @@ export async function getWorkPosts() {
       startDate: new Date(data.startDate),
       endDate: (data.endDate && new Date(data.endDate)) || null,
       html: contentHtml.toString(),
+      markdown: data.content,
     } as WorkPost;
   });
 

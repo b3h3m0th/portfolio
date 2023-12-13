@@ -6,7 +6,7 @@ export default function WorkItem(work: WorkPost) {
   return (
     <div className="work-item" key={work.id}>
       <hr className="my-6 border-neutral-200" />
-      <div key={work.id} className="prose">
+      <div key={work.id}>
         <h2 className="font-medium text-xl mb-1">{work.title}</h2>
         <div className="mb-8 text-sm text-neutral-600">
           {work.url && (
@@ -26,7 +26,10 @@ export default function WorkItem(work: WorkPost) {
             }`}
           </span>
         </div>
-        <div dangerouslySetInnerHTML={{ __html: work.html }} />
+        <div
+          className="prose prose-neutral"
+          dangerouslySetInnerHTML={{ __html: work.html }}
+        ></div>
       </div>
     </div>
   );

@@ -8,4 +8,4 @@ export type WorkPostMetadata = {
   image?: string;
 } & Metadata;
 
-export type WorkPost = WorkPostMetadata & { html: string };
+export type WorkPost = WorkPostMetadata & { html: string; markdown: string };
