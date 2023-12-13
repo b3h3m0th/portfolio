@@ -5,6 +5,7 @@ import { usePathname } from "next/navigation";
 import { Suspense } from "react";
 import Link from "next/link";
 import { cx } from "@/lib/utils";
+import { Github, Stackoverflow } from "iconoir-react";
 
 const navItems = {
   "/": {
@@ -35,12 +36,10 @@ export function Navbar() {
               </Suspense>
             </div>
             <div className="ml-auto py-1 px-2">
-              <a href="https://github.com/b3h3m0th">Github</a>
+              <Github href="https://github.com/b3h3m0th" />
             </div>
             <div className="py-1 px-2">
-              <a href="https://stackoverflow.com/users/12834972/behemoth">
-                StackOverflow
-              </a>
+              <Stackoverflow href="https://stackoverflow.com/users/12834972/behemoth" />
             </div>
           </nav>
         </LayoutGroup>
