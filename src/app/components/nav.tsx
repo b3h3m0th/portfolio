@@ -35,7 +35,12 @@ export function Navbar() {
               </Suspense>
             </div>
             <div className="ml-auto py-1 px-2">
-              <span>Github</span>
+              <a href="https://github.com/b3h3m0th">Github</a>
+            </div>
+            <div className="py-1 px-2">
+              <a href="https://stackoverflow.com/users/12834972/behemoth">
+                StackOverflow
+              </a>
             </div>
           </nav>
         </LayoutGroup>
