@@ -7,9 +7,4 @@ html::-webkit-scrollbar {
 }
 
 @layer base {
-  ul,
-  ol {
-    list-style-type: disc;
-    list-style-position: inside;
-  }
 }

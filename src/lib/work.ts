@@ -1,35 +1,28 @@
-import fs from "fs";
 import path from "path";
-import matter from "gray-matter";
-import { WorkPost } from "@/types";
+import { WorkPost, WorkPostMetadata } from "@/types";
 import { remark } from "remark";
 import html from "remark-html";
+import { getMDXData, getMDXFiles } from "./utils/mdx";
 
 const postsDirectory = path.join(process.cwd(), "content", "work");
 
 export async function getWorkPosts() {
-  const fileNames = await fs.readdirSync(postsDirectory);
-
+  const fileNames = await getMDXFiles(postsDirectory);
   const allPostsData = fileNames.map(async (fileName) => {
-    const id = fileName.replace(/\.md$/, "");
-    const fullPath = path.join(postsDirectory, fileName);
-    const fileContents = fs.readFileSync(fullPath, "utf8");
-    const matterResult = matter(fileContents);
+    const data = await getMDXData<WorkPostMetadata>(
+      path.join(postsDirectory, fileName)
+    );
 
-    const processedContent = await remark()
-      .use(html)
-      .process(matterResult.content);
+    const contentHtml = await remark().use(html).process(data.content);
 
     return {
-      id,
-      title: matterResult.data.title,
-      image: matterResult.data.image,
-      url: (matterResult.data.url && new URL(matterResult.data.url)) || null,
-      startDate: new Date(matterResult.data.startDate),
-      endDate:
-        (matterResult.data.endDate && new Date(matterResult.data.endDate)) ||
-        null,
-      html: processedContent.toString(),
+      id: data.id,
+      title: data.title,
+      image: data.image,
+      url: (data.url && new URL(data.url)) || null,
+      startDate: new Date(data.startDate),
+      endDate: (data.endDate && new Date(data.endDate)) || null,
+      html: contentHtml.toString(),
     } as WorkPost;
   });
 

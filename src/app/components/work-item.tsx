@@ -1,9 +1,10 @@
 import { WorkPost } from "@/types";
 import { Fragment } from "react";
+import "./work-item.css";
 
 export default function WorkItem(work: WorkPost) {
   return (
-    <Fragment key={work.id}>
+    <div className="work-item" key={work.id}>
       <hr className="my-6 border-neutral-200" />
       <div key={work.id} className="prose">
         <h2 className="font-medium text-xl mb-1">{work.title}</h2>
@@ -27,6 +28,6 @@ export default function WorkItem(work: WorkPost) {
         </div>
         <div dangerouslySetInnerHTML={{ __html: work.html }} />
       </div>
-    </Fragment>
+    </div>
   );
 }
