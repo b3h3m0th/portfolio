@@ -36,10 +36,17 @@ export function Navbar() {
               </Suspense>
             </div>
             <div className="ml-auto py-1 px-2">
-              <Github href="https://github.com/b3h3m0th" />
+              <a href="https://github.com/b3h3m0th" target="_blank">
+                <Github />
+              </a>
             </div>
             <div className="py-1 px-2">
-              <Stackoverflow href="https://stackoverflow.com/users/12834972/behemoth" />
+              <a
+                href="https://stackoverflow.com/users/12834972/behemoth"
+                target="_blank"
+              >
+                <Stackoverflow />
+              </a>
             </div>
           </nav>
         </LayoutGroup>
