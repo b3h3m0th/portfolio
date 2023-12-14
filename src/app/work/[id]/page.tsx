@@ -30,6 +30,10 @@ export default async function WorkDetail({
           </a>
         )}
       </div>
+      <div
+        className="prose prose-neutral prose:sm pt-8"
+        dangerouslySetInnerHTML={{ __html: work.html }}
+      ></div>
     </section>
   );
 }

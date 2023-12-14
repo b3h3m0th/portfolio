@@ -20,10 +20,6 @@ export default function WorkItem(work: WorkPost) {
           </span>
           {work.company && <span>{work.company}</span>}
         </div>
-        {/**<div
-          className="prose prose-neutral prose:sm"
-          dangerouslySetInnerHTML={{ __html: work.html }}
-        ></div>*/}
       </div>
     </Link>
   );
