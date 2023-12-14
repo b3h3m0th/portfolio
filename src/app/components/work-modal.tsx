@@ -58,8 +58,8 @@ export default function WorkModal({ works }: WorkModalProps) {
         className="h-[150px] w-[300px] absolute bg-white overflow-hidden pointer-events-none flex items-center justify-center"
       >
         <div
-          style={{ top: index * -100 + "%" }}
-          className="h-full w-full absolute transition-[top 0.5s ease]"
+          style={{ top: index * -100 + "%", transition: "top .5s ease" }}
+          className="h-full w-full absolute"
         >
           {works.map((work, index) => {
             return (
