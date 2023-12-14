@@ -98,7 +98,7 @@ export default function BezierLine() {
   };
 
   return (
-    <div className="relative w-full h-px mb-5">
+    <div className="relative w-full h-px">
       <div
         onMouseEnter={() => {
           manageMouseEnter();
