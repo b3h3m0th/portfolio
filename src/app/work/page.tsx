@@ -1,6 +1,7 @@
 import { getWorkPosts } from "@/lib";
 import WorkItem from "../components/work-item";
 import BezierLine from "../components/bezier-line";
+import WorkModal from "../components/work-modal";
 
 export default async function Work() {
   const workPosts = (await getWorkPosts()) || [];
@@ -11,10 +12,11 @@ export default async function Work() {
       {workPosts.map((w, i) => (
         <div key={w.id}>
           <BezierLine />
-          <WorkItem {...w}></WorkItem>
+          <WorkItem work={w} index={i}></WorkItem>
           {i === workPosts.length - 1 && <BezierLine />}
         </div>
       ))}
+      <WorkModal works={workPosts} />
     </section>
   );
 }
