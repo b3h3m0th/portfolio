@@ -24,7 +24,7 @@ export default function Home() {
       <p className="mb-8">
         {`I'm a ${getAge()}-year-old full-stack developer from Austria. I've been writing code since I was 15 and I'm still hooked on learning new things every day. Over the years, I have become an active and highly reputated member of the awesome StackOverflow community, where I both learn and share my knowledge. Oh, and also I play guitar a lot!`}
       </p>
-      <div className="w-[300px] rounded-3xl overflow-hidden">
+      <div className="w-[300px]  overflow-hidden">
         <motion.div
           className="relative"
           whileHover={{ scale: 1.02 }}
