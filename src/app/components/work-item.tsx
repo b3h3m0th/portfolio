@@ -25,10 +25,10 @@ export default function WorkItem(work: WorkPost) {
             }`}
           </span>
         </div>
-        <div
+        {/**<div
           className="prose prose-neutral prose:sm"
           dangerouslySetInnerHTML={{ __html: work.html }}
-        ></div>
+        ></div>*/}
       </div>
     </div>
   );
