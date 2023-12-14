@@ -6,7 +6,7 @@ interface MouseEvent {
   clientX: number;
 }
 
-export default function Line() {
+export default function BezierLine() {
   // Define a reference to an SVGPathElement
   const path = useRef<SVGPathElement>(null);
 
@@ -98,27 +98,25 @@ export default function Line() {
   };
 
   return (
-    <div className="flex flex-col items-end w-full">
-      <div className="relative w-full h-px mb-5">
-        <div
-          onMouseEnter={() => {
-            manageMouseEnter();
-          }}
-          onMouseMove={(e) => {
-            manageMouseMove(e);
-          }}
-          onMouseLeave={() => {
-            manageMouseLeave();
-          }}
-          className="relative z-10 h-10 w-full top-[-40px]"
-        ></div>
-        <svg className="absolute w-full h-[500px] top-[-250px]">
-          <path
-            ref={path}
-            className="stroke-current w-full text-neutral-300 stroke-[1px] fill-none"
-          ></path>
-        </svg>
-      </div>
+    <div className="relative w-full h-px mb-5">
+      <div
+        onMouseEnter={() => {
+          manageMouseEnter();
+        }}
+        onMouseMove={(e) => {
+          manageMouseMove(e);
+        }}
+        onMouseLeave={() => {
+          manageMouseLeave();
+        }}
+        className="relative z-10 h-10 w-full top-[-40px]"
+      ></div>
+      <svg className="absolute w-full h-[500px] top-[-250px]">
+        <path
+          ref={path}
+          className="stroke-current w-full text-neutral-300 stroke-[1px] fill-none"
+        ></path>
+      </svg>
     </div>
   );
 }

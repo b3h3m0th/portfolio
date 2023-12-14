@@ -1,5 +1,5 @@
 import { WorkPost } from "@/types";
-import Line from "./line";
+import BezierLine from "./bezier-line";
 
 export default function WorkItem(work: WorkPost) {
   return (

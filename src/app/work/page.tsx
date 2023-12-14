@@ -1,6 +1,6 @@
 import { getWorkPosts } from "@/lib";
 import WorkItem from "../components/work-item";
-import Line from "../components/line";
+import BezierLine from "../components/bezier-line";
 
 export default async function Work() {
   const workPosts = (await getWorkPosts()) || [];
@@ -9,8 +9,8 @@ export default async function Work() {
     <section>
       <h1 className="font-bold text-4xl mb-8">My Work</h1>
       {workPosts.map((w) => (
-        <div className="my-8" key={w.id}>
-          <Line />
+        <div className="my-8 pb-1" key={w.id}>
+          <BezierLine />
           <WorkItem {...w}></WorkItem>
         </div>
       ))}
