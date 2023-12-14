@@ -3,7 +3,7 @@ import { WorkPost } from "@/types";
 export default function WorkItem(work: WorkPost) {
   return (
     <div className="work-item" key={work.id}>
-      <hr className="my-6 border-neutral-200" />
+      <hr className="my-6 border-neutral-300" />
       <div key={work.id}>
         <h2 className="font-bold text-xl mb-1">{work.title}</h2>
         <div className="mb-8 text-sm text-neutral-600">
