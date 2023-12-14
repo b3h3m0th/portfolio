@@ -31,7 +31,7 @@ export function Navbar() {
             className="flex flex-row items-start scroll-pr-6 md:relative"
             id="nav"
           >
-            <div className="flex flex-row">
+            <div className="flex">
               <Suspense fallback={null}>
                 {Object.entries(navItems).map(([path, { name }]) => (
                   <NavItem key={path} route={path} name={name} />

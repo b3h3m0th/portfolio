@@ -32,7 +32,6 @@ export default function WorkModal({ works }: WorkModalProps) {
   const { active, index } = useWorks((state) => state.modal);
 
   useEffect(() => {
-    //Move Container
     let xMoveContainer = gsap.quickTo(modalContainer.current, "left", {
       duration: 0.8,
       ease: "power3",
