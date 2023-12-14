@@ -56,7 +56,7 @@ export default function WorkModal({ works }: WorkModalProps) {
         variants={scaleAnimation}
         initial="initial"
         animate={active ? "enter" : "closed"}
-        className="h-[350px] w-[400px] absolute bg-white overflow-hidden pointer-events-none flex items-center justify-center"
+        className="h-[150px] w-[300px] absolute bg-white overflow-hidden pointer-events-none flex items-center justify-center"
       >
         <div
           style={{ top: index * -100 + "%" }}
@@ -65,11 +65,11 @@ export default function WorkModal({ works }: WorkModalProps) {
           {works.map((work, index) => {
             return (
               <div
-                className="h-full w-full flex items-center justify-center bg-neutral-600"
+                className="h-full w-full overflow-hidden flex items-center justify-center bg-white"
                 key={`modal_${index}`}
               >
                 <Image
-                  src={work.image ?? `/me_hero.jpg`}
+                  src={work.image ?? "/images/me_hero.jpg"}
                   width={300}
                   height={0}
                   alt="image"

@@ -12,11 +12,21 @@ export default async function Work() {
       {workPosts.map((w, i) => (
         <div key={w.id}>
           <BezierLine />
-          <WorkItem work={w} index={i}></WorkItem>
+          <WorkItem
+            work={{
+              id: w.id,
+              title: w.title,
+              description: w.description,
+              startDate: w.startDate,
+              endDate: w.endDate,
+              company: w.company,
+            }}
+            index={i}
+          ></WorkItem>
           {i === workPosts.length - 1 && <BezierLine />}
         </div>
       ))}
-      <WorkModal works={workPosts} />
+      <WorkModal works={workPosts.map((w) => ({ image: w.image }))} />
     </section>
   );
 }
