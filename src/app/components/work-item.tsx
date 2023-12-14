@@ -1,17 +1,13 @@
 import { WorkPost } from "@/types";
+import Link from "next/link";
 
 export default function WorkItem(work: WorkPost) {
   return (
-    <div className="work-item" key={work.id}>
-      <div className="py-4" key={work.id}>
+    <Link href={`/work/${work.id}`} className="work-item py-6" key={work.id}>
+      <div className="py-6">
         <h2 className="font-bold text-xl mb-1">{work.title}</h2>
         <div className="text-sm text-neutral-600">
-          {work.url && (
-            <a className="mr-4 underline" href={work.url.href} target="_blank">
-              {work.url.hostname}
-            </a>
-          )}
-          <span>
+          <span className="mr-4">
             {`${
               work.startDate.getMonth() + 1
             }.${work.startDate.getFullYear()} — ${
@@ -22,12 +18,13 @@ export default function WorkItem(work: WorkPost) {
               "present"
             }`}
           </span>
+          {work.company && <span>{work.company}</span>}
         </div>
         {/**<div
           className="prose prose-neutral prose:sm"
           dangerouslySetInnerHTML={{ __html: work.html }}
         ></div>*/}
       </div>
-    </div>
+    </Link>
   );
 }

@@ -7,6 +7,10 @@ export async function getMDXFiles(directory: string) {
   return files.filter((f) => path.extname(f) === ".mdx");
 }
 
+export async function getMDXFile(path: string) {
+  return readFile(path, "utf8");
+}
+
 export async function getMDXData<T extends Metadata>(filePath: string) {
   const fileContent = await readFile(filePath, "utf8");
   const frontmatterSeparator = "---";
@@ -25,7 +29,7 @@ export async function getMDXData<T extends Metadata>(filePath: string) {
   });
 
   if (!metadata.id) {
-    metadata.id = path.basename(filePath);
+    metadata.id = path.parse(filePath).name;
   }
 
   return { ...(metadata as T), content };
