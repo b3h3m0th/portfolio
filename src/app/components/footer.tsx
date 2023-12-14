@@ -1,6 +1,6 @@
 const year = new Date().getFullYear();
 
-export default function Footer() {
+export function Footer() {
   return (
     <div className="mt-20 mb-8 flex justify-center">
       <span className="text-neutral-600">

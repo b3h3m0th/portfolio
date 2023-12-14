@@ -21,7 +21,7 @@ export default function Home() {
       <h1 className="font-bold text-4xl mb-8 flex items-center">
         <span>{`Hi, I'm Simon`}</span>
       </h1>
-      <p className="mb-8">
+      <p className="mb-8 prose">
         {`I'm a ${getAge()}-year-old full-stack developer from Austria. I've been writing code since I was 15 and I'm still hooked on learning new things every day. Over the years, I have become an active and highly reputated member of the awesome StackOverflow community, where I both learn and share my knowledge. Oh, and also I play guitar a lot!`}
       </p>
       <div className="w-[300px]  overflow-hidden">

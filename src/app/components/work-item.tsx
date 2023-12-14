@@ -1,10 +1,11 @@
 import { WorkPost } from "@/types";
+import Line from "./line";
 
 export default function WorkItem(work: WorkPost) {
   return (
     <div className="work-item" key={work.id}>
-      <hr className="my-6 border-neutral-300" />
-      <div key={work.id}>
+      {/** <hr className="my-6 border-neutral-300" /> */}
+      <div className="py-6" key={work.id}>
         <h2 className="font-bold text-xl mb-1">{work.title}</h2>
         <div className="mb-8 text-sm text-neutral-600">
           {work.url && (
