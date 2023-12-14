@@ -111,7 +111,7 @@ export default function BezierLine() {
         }}
         className="relative z-10 h-10 w-full top-[-40px]"
       ></div>
-      <svg className="absolute w-full h-[500px] top-[-250px]">
+      <svg className="absolute pointer-events-none w-full h-[500px] top-[-250px]">
         <path
           ref={path}
           className="stroke-current w-full text-neutral-300 stroke-[1px] fill-none"
