@@ -7,7 +7,7 @@ export default async function NotFound() {
       <div className="flex mb-8 items-center">
         <Image
           className="inline mr-4"
-          src="/face-with-monocle_1f9d0.webp"
+          src="/images/face-with-monocle_1f9d0.webp"
           alt="face with monocle emoji"
           height={64}
           width={64}
