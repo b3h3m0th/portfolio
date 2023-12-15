@@ -1,6 +1,7 @@
 import BezierLine from "@/app/components/bezier-line";
 import { getWorkPost } from "@/lib";
 import Link from "next/link";
+import { redirect } from "next/navigation";
 
 export default async function WorkDetail({
   params,
@@ -8,6 +9,7 @@ export default async function WorkDetail({
   params: { id: string };
 }) {
   const work = await getWorkPost(params.id);
+  if (!work) redirect("/work");
 
   return (
     <section className="work-detail">

@@ -2,14 +2,16 @@ import path from "path";
 import { WorkPost, WorkPostMetadata } from "@/types";
 import { remark } from "remark";
 import html from "remark-html";
-import { getMDXData, getMDXFile, getMDXFiles } from "./utils/mdx";
+import { parseMDXMetadata, getMDXFiles } from "./utils/mdx";
 
 const postsDirectory = path.join(process.cwd(), "content", "work");
 
-export async function parseWorkMDX(filename: string) {
-  const data = await getMDXData<WorkPostMetadata>(
+async function parseWorkMDX(filename: string) {
+  const data = await parseMDXMetadata<WorkPostMetadata>(
     path.join(postsDirectory, filename)
   );
+
+  if (!data) return null;
 
   const contentHtml = await remark().use(html).process(data.content);
 
@@ -29,13 +31,13 @@ export async function parseWorkMDX(filename: string) {
 
 export async function getWorkPosts() {
   const fileNames = await getMDXFiles(postsDirectory);
-  const allPostsData = fileNames.map(
-    async (fileName) => await parseWorkMDX(fileName)
+  const allPostsData = await Promise.all(
+    fileNames.map(async (fileName) => await parseWorkMDX(fileName))
   );
 
-  return (await Promise.all(allPostsData)).sort(
-    (a, b) => b.startDate.getTime() - a.startDate.getTime()
-  );
+  return allPostsData
+    .filter((p): p is WorkPost => p !== null)
+    .sort((a, b) => b.startDate.getTime() - a.startDate.getTime());
 }
 
 export async function getWorkPost(id: WorkPost["id"]) {

@@ -2,17 +2,28 @@ import { Metadata } from "@/types";
 import { readFile, readdir } from "fs/promises";
 import path from "path";
 
+/**
+ * Read all .mdx files from a directoy
+ */
 export async function getMDXFiles(directory: string) {
   const files = await readdir(directory);
   return files.filter((f) => path.extname(f) === ".mdx");
 }
 
-export async function getMDXFile(path: string) {
-  return readFile(path, "utf8");
-}
+/**
+ * Parses a .mdx file's metadata to the generic argument type
+ */
+export async function parseMDXMetadata<T extends Metadata>(
+  filePath: string
+): Promise<(T & { content: string }) | null> {
+  let fileContent: string;
 
-export async function getMDXData<T extends Metadata>(filePath: string) {
-  const fileContent = await readFile(filePath, "utf8");
+  try {
+    fileContent = await readFile(filePath, "utf8");
+  } catch (error) {
+    return null;
+  }
+
   const frontmatterSeparator = "---";
   const metadataString = fileContent?.split(frontmatterSeparator)?.[1];
   const content = fileContent.slice(
