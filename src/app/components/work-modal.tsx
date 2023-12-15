@@ -64,13 +64,13 @@ export default function WorkModal({ works }: WorkModalProps) {
           {works.map((work, index) => {
             return (
               <div
-                className="h-full w-full overflow-hidden flex items-center justify-center bg-white"
+                className="h-full w-full overflow-hidden flex items-center justify-center bg-neutral-200"
                 key={`modal_${index}`}
               >
                 <Image
                   src={work.image ?? "/images/me_hero.jpg"}
-                  width={300}
-                  height={0}
+                  width={200}
+                  height={100}
                   alt="image"
                 />
               </div>

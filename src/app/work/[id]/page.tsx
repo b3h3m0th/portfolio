@@ -1,3 +1,4 @@
+import BezierLine from "@/app/components/bezier-line";
 import { getWorkPost } from "@/lib";
 import Link from "next/link";
 
@@ -14,7 +15,7 @@ export default async function WorkDetail({
         ← Back to overview
       </Link>
       <h1 className="font-bold text-4xl mb-2">{work.title}</h1>
-      <div className="text-sm text-neutral-600">
+      <div className="text-sm text-neutral-600 mb-4">
         <span className="mr-4">
           {`${
             work.startDate.getMonth() + 1
@@ -30,6 +31,7 @@ export default async function WorkDetail({
           </a>
         )}
       </div>
+      <BezierLine />
       <div
         className="prose prose-neutral prose:sm pt-8"
         dangerouslySetInnerHTML={{ __html: work.html }}
