@@ -15,7 +15,7 @@ export default async function WorkDetail({
         ← Back to overview
       </Link>
       <h1 className="font-bold text-4xl mb-2">{work.title}</h1>
-      <div className="text-sm text-neutral-600 mb-4">
+      <div className="text-sm text-neutral-600 mb-12">
         <span className="mr-4">
           {`${
             work.startDate.getMonth() + 1
