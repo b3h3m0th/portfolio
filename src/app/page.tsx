@@ -18,14 +18,52 @@ export default function Home() {
 
   return (
     <section>
-      <h1 className="font-black text-8xl md:text-9xl mb-8">{`Simon Ostini`}</h1>
-      <p className="mb-8 prose">
-        {`Hi, I'm Simon. I'm a ${getAge()}-year-old full-stack developer from Austria. I've been writing code since I was 15 and I'm still hooked on learning new things every day. Oh, and also I play guitar a lot!`}
-      </p>
-      <p className="mb-8 prose">
-        {`Over the years, I have become an active and highly reputated member of the awesome StackOverflow community, where I both learn and share my knowledge.`}
-      </p>
-
+      <h1 className="mb-8">
+        <div className="relative overflow-hidden h-max-content">
+          <motion.p
+            className="text-8xl font-black"
+            initial={{ y: "100%", skewX: 30 }}
+            whileInView={{ y: 0, skewX: 0 }}
+            transition={{ duration: 0.8, ease: [0.2, 1, 0.7, 1] }}
+            viewport={{ once: true }}
+          >
+            Simon
+          </motion.p>
+        </div>
+        <div className="relative overflow-hidden h-max-content">
+          <motion.p
+            className="text-8xl font-black"
+            initial={{ y: "100%", skewX: 30 }}
+            whileInView={{ y: 0, skewX: 0 }}
+            transition={{
+              duration: 0.8,
+              ease: [0.2, 1, 0.7, 1],
+              delay: 0.1,
+            }}
+            viewport={{ once: true }}
+          >
+            Ostini
+          </motion.p>
+        </div>
+      </h1>
+      <div className="relative overflow-hidden h-max-content mb-8">
+        <motion.p
+          className="prose"
+          initial={{ y: "100%", skewX: 30 }}
+          whileInView={{ y: 0, skewX: 0 }}
+          transition={{
+            duration: 0.8,
+            ease: [0.2, 1, 0.7, 1],
+            delay: 0.2,
+          }}
+          viewport={{ once: true }}
+        >
+          {`Hi, I'm a ${getAge()}-year-old creative developer from Austria. I've been writing code since I was 15 and I'm still hooked on learning new things every day. Oh, and also I play guitar a lot!`}
+        </motion.p>
+      </div>
+      {/* <motion.p className="mb-8 prose">
+        {`Hi, I'm a ${getAge()}-year-old creative developer from Austria. I've been writing code since I was 15 and I'm still hooked on learning new things every day. Oh, and also I play guitar a lot!`}
+      </motion.p> */}
       {/* <div className="w-[300px] overflow-hidden">
         <motion.div
           className="relative"
@@ -51,10 +89,41 @@ export default function Home() {
           placeholder="empty"
         />
       </a> */}
-      <a
-        className="prose font-bold underline"
-        href="mailto:simonostini@gmail.com"
-      >{`Let's get in touch`}</a>
+      <div className="relative overflow-hidden h-max-content">
+        <motion.a
+          href="mailto:simonostini@gmail.com"
+          className="prose font-bold inline-block"
+          initial={{ y: "100%", skewX: 30 }}
+          whileInView={{ y: 0, skewX: 0 }}
+          transition={{
+            duration: 0.8,
+            ease: [0.2, 1, 0.7, 1],
+            delay: 0.3,
+          }}
+          viewport={{ once: true }}
+        >
+          {`simonostini@gmail.com`}
+        </motion.a>
+      </div>
+      <div className="relative overflow-hidden h-max-content">
+        <motion.a
+          href="tel:+436508441272"
+          className="prose font-bold inline-block"
+          initial={{ y: "100%", skewX: 30 }}
+          whileInView={{ y: 0, skewX: 0 }}
+          transition={{
+            duration: 0.8,
+            ease: [0.2, 1, 0.7, 1],
+            delay: 0.4,
+          }}
+          viewport={{ once: true }}
+        >
+          {`+43 650 844 1272`}
+        </motion.a>
+      </div>
+      {/* <p className="mb-8 prose">
+        {`Over the years, I have become an active and highly reputated member of the awesome StackOverflow community, where I both learn and share my knowledge.`}
+      </p> */}
     </section>
   );
 }
