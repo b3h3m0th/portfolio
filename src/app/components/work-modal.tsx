@@ -55,7 +55,7 @@ export default function WorkModal({ works }: WorkModalProps) {
         variants={scaleAnimation}
         initial="initial"
         animate={active ? "enter" : "closed"}
-        className="h-[150px] w-[300px] absolute bg-white overflow-hidden pointer-events-none flex items-center justify-center"
+        className="h-[150px] w-[300px] absolute bg-white overflow-hidden pointer-events-none flex items-center justify-center hidden md:block"
       >
         <div
           style={{ top: index * -100 + "%", transition: "top .5s ease" }}
@@ -70,7 +70,8 @@ export default function WorkModal({ works }: WorkModalProps) {
                 <Image
                   src={work.image ?? "/images/me_hero.jpg"}
                   width={200}
-                  height={100}
+                  height={0}
+                  className="w-auto h-[130px]"
                   alt="image"
                 />
               </div>

@@ -17,9 +17,6 @@ const navItems = {
   "/projects": {
     name: "Projects",
   },
-  "/not-found": {
-    name: "Not Found",
-  },
 } as const;
 
 export function Navbar() {

@@ -37,7 +37,7 @@ export default function WorkItem({
     >
       {lineTop && <BezierLine />}
       <div className="py-6">
-        <h2 className="font-bold text-xl mb-1">{work.title}</h2>
+        <h2 className="font-bold mb-1">{work.title}</h2>
         <div className="text-sm text-neutral-600">
           <span className="mr-4">
             {`${

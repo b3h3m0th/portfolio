@@ -18,14 +18,15 @@ export default function Home() {
 
   return (
     <section>
-      <h1 className="font-bold text-4xl mb-8 flex items-center">
-        <span>{`Hi, I'm Simon`}</span>
-      </h1>
-      <p className="mb-8 prose">{`I press keys for a living.`}</p>
+      <h1 className="font-black text-8xl md:text-9xl mb-8">{`Simon Ostini`}</h1>
       <p className="mb-8 prose">
-        {`I'm a ${getAge()}-year-old full-stack developer from Austria. I've been writing code since I was 15 and I'm still hooked on learning new things every day. Over the years, I have become an active and highly reputated member of the awesome StackOverflow community, where I both learn and share my knowledge. Oh, and also I play guitar a lot!`}
+        {`Hi, I'm Simon. I'm a ${getAge()}-year-old full-stack developer from Austria. I've been writing code since I was 15 and I'm still hooked on learning new things every day. Oh, and also I play guitar a lot!`}
       </p>
-      <div className="w-[300px]  overflow-hidden">
+      <p className="mb-8 prose">
+        {`Over the years, I have become an active and highly reputated member of the awesome StackOverflow community, where I both learn and share my knowledge.`}
+      </p>
+
+      {/* <div className="w-[300px] overflow-hidden">
         <motion.div
           className="relative"
           whileHover={{ scale: 1.02 }}
@@ -38,7 +39,7 @@ export default function Home() {
             alt="Simon Ostini playing guitar"
           />
         </motion.div>
-      </div>
+      </div> */}
       {/* <a href="https://stackoverflow.com/users/12834972/behemoth">
         <Image
           src="https://stackoverflow.com/users/flair/12834972.png"
@@ -50,6 +51,10 @@ export default function Home() {
           placeholder="empty"
         />
       </a> */}
+      <a
+        className="prose font-bold underline"
+        href="mailto:simonostini@gmail.com"
+      >{`Let's get in touch`}</a>
     </section>
   );
 }
