@@ -2,6 +2,7 @@ import { ProjectPost } from "@/types/project";
 import Image from "next/image";
 import Link from "next/link";
 import BezierLine from "./bezier-line";
+import { motion } from "framer-motion";
 
 type ProjectItemProps = {
   project: Exclude<ProjectPost, "url">;
@@ -17,7 +18,7 @@ export default function ProjectItem({
   return (
     <Link href={`/projects/${project.id}`} className="work-item py-6">
       {lineTop && <BezierLine />}
-      <div className="py-12">
+      <div className="py-6">
         <h2 className="font-bold mb-1">{project.title}</h2>
         <div className="text-sm text-neutral-600">
           <span className="mr-4">
