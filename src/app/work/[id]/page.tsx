@@ -13,7 +13,7 @@ export default async function WorkDetail({ params }: WorkDetailPost) {
 
   return (
     <section className="work-detail">
-      <Link className="inline-block mb-6" href="/work">
+      <Link className="prose inline-block text-sm mb-6" href="/work">
         ← Back to overview
       </Link>
       <h1 className="font-bold text-4xl mb-2">{work.title}</h1>

@@ -13,7 +13,7 @@ export default async function ProjectDetail({ params }: ProjectDetailProps) {
 
   return (
     <section className="work-detail">
-      <Link className="inline-block mb-6" href="/projects">
+      <Link className="prose text-sm inline-block mb-6" href="/projects">
         ← Back to overview
       </Link>
       <h1 className="font-bold text-4xl mb-2">{project.title}</h1>
