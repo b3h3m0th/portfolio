@@ -84,7 +84,7 @@ export default function BezierLine() {
         onMouseLeave={() => {
           manageMouseLeave();
         }}
-        className="relative z-10 h-10 w-full top-[-40px]"
+        className="relative z-10 h-10 w-full top-[-40px] translate-y-1/2"
       ></div>
       <svg className="absolute pointer-events-none w-full h-[500px] top-[-250px]">
         <path
