@@ -7,7 +7,11 @@ import { Navbar } from "./components/nav";
 
 export const metadata: Metadata = {
   title: "Simon Ostini - Portfolio",
-  description: "Portfolio Website of Simon Ostini",
+  description: "Portfolio website of Simon Ostini",
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
 
 export default function RootLayout({
