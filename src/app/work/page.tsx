@@ -1,6 +1,11 @@
 import { getWorkPosts } from "@/lib";
 import WorkItem from "../components/work-item";
 import WorkModal from "../components/work-modal";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Work | Simon Ostini",
+};
 
 export default async function Work() {
   const workPosts = (await getWorkPosts()) || [];

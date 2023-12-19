@@ -13,13 +13,13 @@ const scaleAnimation = {
     scale: 1,
     x: "-50%",
     y: "-50%",
-    transition: { duration: 0.4, ease: [0.76, 0, 0.24, 1] },
+    transition: { duration: 0.4, ease: [0.7, 0, 0.2, 1] },
   },
   closed: {
     scale: 0,
     x: "-50%",
     y: "-50%",
-    transition: { duration: 0.4, ease: [0.32, 0, 0.67, 0] },
+    transition: { duration: 0.4, ease: [0.3, 0, 0.7, 0] },
   },
 };
 
@@ -33,11 +33,11 @@ export default function WorkModal({ works }: WorkModalProps) {
 
   useEffect(() => {
     let xMoveContainer = gsap.quickTo(modalContainer.current, "left", {
-      duration: 0.8,
+      duration: 0.7,
       ease: "power3",
     });
     let yMoveContainer = gsap.quickTo(modalContainer.current, "top", {
-      duration: 0.8,
+      duration: 0.7,
       ease: "power3",
     });
 

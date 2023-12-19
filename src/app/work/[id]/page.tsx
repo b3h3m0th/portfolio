@@ -3,11 +3,11 @@ import { getWorkPost } from "@/lib";
 import Link from "next/link";
 import { redirect } from "next/navigation";
 
-export default async function WorkDetail({
-  params,
-}: {
+type WorkDetailPost = {
   params: { id: string };
-}) {
+};
+
+export default async function WorkDetail({ params }: WorkDetailPost) {
   const work = await getWorkPost(params.id);
   if (!work) redirect("/work");
 

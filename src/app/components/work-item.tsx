@@ -33,7 +33,6 @@ export default function WorkItem({
       }}
       href={`/work/${work.id}`}
       className="work-item py-6"
-      key={work.id}
     >
       {lineTop && <BezierLine />}
       <div className="py-6">
