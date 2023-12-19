@@ -4,6 +4,7 @@ import { GeistSans } from "geist/font/sans";
 import { Footer } from "./components/footer";
 import Cursor from "./components/cursor";
 import { Navbar } from "./components/nav";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 export const metadata: Metadata = {
   title: "Simon Ostini - Portfolio",
@@ -21,6 +22,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <SpeedInsights />
       <body
         className={`${GeistSans.className} antialiased max-w-2xl mb-20 flex flex-col md:flex-row mx-4 mt-8 lg:mx-auto`}
       >
