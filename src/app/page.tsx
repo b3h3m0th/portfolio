@@ -58,7 +58,7 @@ export default function Home() {
           }}
           viewport={{ once: true }}
         >
-          {`Hi, I'm a ${getAge()}-year-old creative developer from Austria. I've been writing code since I was 15 and I'm still hooked on learning new things every day. Oh, and also I play guitar a lot!`}
+          {`Hi, I'm a ${getAge()}-year-old creative developer from Austria, also known as "Behemoth" over the internet. I've been writing code since I was 15 and I'm still hooked on learning new things every day. Oh, and also I play guitar a lot!`}
         </motion.p>
       </div>
       {/* <a href="https://stackoverflow.com/users/12834972/behemoth">
