@@ -15,7 +15,9 @@ export default async function Projects() {
           lineBottom={i === projectPosts.length - 1}
         />
       ))}
-      <p>More to come, currently filling this page up with content.</p>
+      <p className="prose mt-6">
+        More to come, currently filling this page up with content.
+      </p>
     </section>
   );
 }
