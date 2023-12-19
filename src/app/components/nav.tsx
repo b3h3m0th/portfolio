@@ -36,7 +36,11 @@ export function Navbar() {
               </Suspense>
             </div>
             <div className="ml-auto py-1 px-2">
-              <a href="https://github.com/b3h3m0th" target="_blank">
+              <a
+                href="https://github.com/b3h3m0th"
+                target="_blank"
+                aria-label="GitHub"
+              >
                 <Github />
               </a>
             </div>
@@ -44,6 +48,7 @@ export function Navbar() {
               <a
                 href="https://stackoverflow.com/users/12834972/behemoth"
                 target="_blank"
+                aria-label="StackOverflow"
               >
                 <Stackoverflow />
               </a>
