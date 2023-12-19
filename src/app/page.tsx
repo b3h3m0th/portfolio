@@ -1,16 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Metadata } from "next";
 import Image from "next/image";
-
-export const metadata: Metadata = {
-  title: "Simon Ostini",
-  robots: {
-    index: true,
-    follow: true,
-  },
-};
 
 export default function Home() {
   const getAge = () => {
