@@ -29,9 +29,13 @@ export default async function ProjectDetail({ params }: ProjectDetailProps) {
             "present"
           }`}
         </span>
-        {project.url && (
-          <a href={project.url.href} className="ml-4 underline" target="_blank">
-            {project.url.hostname}
+        {project.sourceCode && (
+          <a
+            href={project.sourceCode.href}
+            className="ml-4 underline"
+            target="_blank"
+          >
+            Source Code
           </a>
         )}
       </div>
