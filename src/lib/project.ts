@@ -1,14 +1,13 @@
 import path from "path";
-import { WorkPost, WorkPostMetadata } from "@/types";
 import { remark } from "remark";
 import html from "remark-html";
 import { parseMDXMetadata, getMDXFiles } from "./utils/mdx";
-import { ProjectPost } from "@/types/project";
+import { ProjectPost, ProjectPostMetadata } from "@/types/project";
 
 const postsDirectory = path.join(process.cwd(), "content", "projects");
 
 async function parseProjectMDX(filename: string) {
-  const data = await parseMDXMetadata<WorkPostMetadata>(
+  const data = await parseMDXMetadata<ProjectPostMetadata>(
     path.join(postsDirectory, filename)
   );
 
@@ -20,8 +19,7 @@ async function parseProjectMDX(filename: string) {
     id: data.id,
     title: data.title,
     description: data.description,
-    image: data.image,
-    url: (data.url && new URL(data.url)) || null,
+    sourceCode: (data.sourceCode && new URL(data.sourceCode)) || null,
     startDate: new Date(data.startDate),
     endDate: (data.endDate && new Date(data.endDate)) || null,
     html: contentHtml.toString(),
@@ -36,10 +34,10 @@ export async function getProjectPosts() {
   );
 
   return allPostsData
-    .filter((p): p is WorkPost => p !== null)
+    .filter((p): p is ProjectPost => p !== null)
     .sort((a, b) => b.startDate.getTime() - a.startDate.getTime());
 }
 
-export async function getProjectPost(id: WorkPost["id"]) {
+export async function getProjectPost(id: ProjectPost["id"]) {
   return parseProjectMDX(`${id}.mdx`);
 }

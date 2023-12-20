@@ -3,7 +3,7 @@ import { Metadata } from "./metadata";
 export type ProjectPostMetadata = {
   title: string;
   description?: string;
-  url?: URL;
+  sourceCode?: URL;
   startDate: Date;
   endDate?: Date;
   image?: string;
