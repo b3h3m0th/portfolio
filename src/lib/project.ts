@@ -35,7 +35,7 @@ export async function getProjectPosts() {
 
   return allPostsData
     .filter((p): p is ProjectPost => p !== null)
-    .sort((a, b) => b.startDate.getTime() - a.startDate.getTime());
+    .sort((a, b) => b.startDate.getTime() - a.startDate?.getTime());
 }
 
 export async function getProjectPost(id: ProjectPost["id"]) {
