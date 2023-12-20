@@ -7,7 +7,7 @@ export default async function Projects() {
   return (
     <section>
       <h1 className="font-bold text-4xl mb-8">Projects</h1>
-      {projectPosts.map(({ url, ...post }, i) => (
+      {projectPosts.map(({ sourceCode, ...post }, i) => (
         <ProjectItem
           project={post}
           key={`project-${i}`}
