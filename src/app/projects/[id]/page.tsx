@@ -38,6 +38,15 @@ export default async function ProjectDetail({ params }: ProjectDetailProps) {
             Source Code
           </a>
         )}
+        {project.tags && (
+          <div className="inline-block ml-8">
+            {project.tags.map((p) => (
+              <span className="mr-2" key={`tag-${p}`}>
+                {`#${p}`}
+              </span>
+            ))}
+          </div>
+        )}
       </div>
       <BezierLine />
       <div

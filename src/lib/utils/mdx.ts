@@ -29,14 +29,21 @@ export async function parseMDXMetadata<T extends Metadata>(
   const content = fileContent.slice(
     metadataString?.length + frontmatterSeparator.length * 2
   );
-  const frontMatterLines = metadataString?.split("\n");
+  const frontMatterLines = metadataString
+    ?.split("\n")
+    .filter((l) => /\S/.test(l));
+  console.log(frontMatterLines);
   const metadata: Partial<T> = {};
 
   frontMatterLines?.forEach((line) => {
     const [key, ...valueArr] = line.split(": ");
     let value = valueArr.join().trim();
-    console.log(value);
     value = value.replace(/^['"](.*)['"]$/, "$1");
+
+    if (value.startsWith("[") && value.endsWith("]")) {
+      value = JSON.parse(value);
+    }
+
     metadata[key.trim() as keyof T] = value as T[keyof T];
   });
 
