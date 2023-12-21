@@ -34,13 +34,8 @@ Even though Britta is no longer active and parts of the code are probably long d
 Britta's first version was a simple single instance vanilla Node.js application.
 Basically, it was all about parsing user messages (=raw text) properly, interpret a user's commands and subsequently perform certain actions:
 - handled API calls with various endpoints from [Spotify](https://developer.spotify.com/documentation/web-api), [Genius](https://genius.com/) and more.
-- implemented audio player client with queue, skip, fast forward, loop, shuffle, volume control, custom equalizer and much more.
-All interactions with the [Discord API](https://discord.com/developers/docs/reference) were super easy because of [discord.js](https://github.com/discordjs/discord.js).
+- implemented audio player client with queue, skip, fast forward, loop, shuffle, volume control, custom equalizer and much more with [Erela.js](https://github.com/erelajs), a rich audio processing library based on [Lavalink](https://lavalink.dev/).
+- interacted with the [Discord API](https://discord.com/developers/docs/reference) via [discord.js](https://github.com/discordjs/discord.js).
+- stored required user and guild data in a [MongoDB](https://www.mongodb.com/) database.
+
 After about half a year of development I migrated Britta to [TypeScript](https://www.typescriptlang.org/).
-
-Britta was developed with:
-
-- [TypeScript](https://www.typescriptlang.org/)
-- [discord.js](https://github.com/discordjs/discord.js). An amazing Node.js library that interacts with the [Discord API](https://discord.com/developers/docs/reference).
-- [MongoDB](https://www.mongodb.com/). Used to store required guild and user data.
-- [Erela.js](https://github.com/erelajs). A rich audio processing library based on [Lavalink](https://lavalink.dev/).
