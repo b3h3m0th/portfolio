@@ -34,7 +34,8 @@ export async function parseMDXMetadata<T extends Metadata>(
 
   frontMatterLines?.forEach((line) => {
     const [key, ...valueArr] = line.split(": ");
-    let value = valueArr.join(": ").trim();
+    let value = valueArr.join().trim();
+    console.log(value);
     value = value.replace(/^['"](.*)['"]$/, "$1");
     metadata[key.trim() as keyof T] = value as T[keyof T];
   });
