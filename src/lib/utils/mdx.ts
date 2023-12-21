@@ -32,7 +32,6 @@ export async function parseMDXMetadata<T extends Metadata>(
   const frontMatterLines = metadataString
     ?.split("\n")
     .filter((l) => /\S/.test(l));
-  console.log(frontMatterLines);
   const metadata: Partial<T> = {};
 
   frontMatterLines?.forEach((line) => {
