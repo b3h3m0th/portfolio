@@ -16,7 +16,7 @@ html::-webkit-scrollbar {
   width: 200vw;
   height: 200vh;
   background: transparent
-    url("http://assets.iceable.com/img/noise-transparent.png") repeat 0 0;
+    url("/images/noise.png") repeat 0 0;
   background-repeat: repeat;
   animation: noise-animation 0.3s infinite;
   opacity: 0.9;
