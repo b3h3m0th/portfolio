@@ -32,7 +32,9 @@ Even though Britta is no longer active and parts of the code are probably long d
 ## Technical
 
 Britta's first version was a simple single instance vanilla Node.js application.
-Basically, it was all about parsing user messages (=raw text) properly, interpret a user's commands and subsequently perform certain actions.
+Basically, it was all about parsing user messages (=raw text) properly, interpret a user's commands and subsequently perform certain actions:
+- handled API calls with various endpoints from [Spotify](https://developer.spotify.com/documentation/web-api), [Genius](https://genius.com/) and more.
+- implemented audio player client with queue, skip, fast forward, loop, shuffle, volume control, custom equalizer and much more.
 All interactions with the [Discord API](https://discord.com/developers/docs/reference) were super easy because of [discord.js](https://github.com/discordjs/discord.js).
 After about half a year of development I migrated Britta to [TypeScript](https://www.typescriptlang.org/).
 
