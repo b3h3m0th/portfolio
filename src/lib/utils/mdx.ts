@@ -39,6 +39,7 @@ export async function parseMDXMetadata<T extends Metadata>(
     let value = valueArr.join().trim();
     value = value.replace(/^['"](.*)['"]$/, "$1");
 
+    // check if value is array, not very accurate but gets the job done
     if (value.startsWith("[") && value.endsWith("]")) {
       value = JSON.parse(value);
     }
