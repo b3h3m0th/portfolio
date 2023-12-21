@@ -5,6 +5,8 @@ endDate: "2021-9-31"
 sourceCode: "https://github.com/b3h3m0th/britta_discord-music-bot"
 ---
 
+## The Story
+
 When the coronavirus pandamic first struck Austria in 2020, I used to spend a lot of time with my friends on [Discord](https://discord.com/).
 During that period, there was a huge hype about Discord bots, particularly those capable of joining voice channels and playing music.
 Quickly, people noticed that you could monetize bots by offering "premium" features that users would have to pay for.
@@ -24,11 +26,19 @@ Simultaneously, the GitHub repository gained a significant amount of stars.
 Things drastically changed when YouTube disallowed Discord bots to stream songs from their platform.
 There was no other option but to take the bot offline in September 2021.
 
-Finally, I would like to thank everyone who was involved in this great project. Shout out to Jyotirmoy Bandyopadhayaya also known as [Bravo68Web](https://www.itsmebravo.dev/) who helped me develop Britta's Spotify integration.
+Finally, I would like to thank everyone who was involved in this great project. Special shout out to Jyotirmoy Bandyopadhayaya also known as [Bravo68Web](https://www.itsmebravo.dev/) who helped me develop Britta's Spotify integration.
 Even though Britta is no longer active and parts of the code are probably long deprecated, I hope that the code will at least be an inspiration for other developers.
+
+## Technical
+
+Britta's first version was a simple single instance vanilla Node.js application.
+Basically, it was all about parsing user messages (=raw text) properly, interpret a user's commands and subsequently perform certain actions.
+All interactions with the [Discord API](https://discord.com/developers/docs/reference) were super easy because of [discord.js](https://github.com/discordjs/discord.js).
+After about half a year of development I migrated Britta to [TypeScript](https://www.typescriptlang.org/).
 
 Britta was developed with:
 
+- [TypeScript](https://www.typescriptlang.org/)
 - [discord.js](https://github.com/discordjs/discord.js). An amazing Node.js library that interacts with the [Discord API](https://discord.com/developers/docs/reference).
 - [MongoDB](https://www.mongodb.com/). Used to store required guild and user data.
 - [Erela.js](https://github.com/erelajs). A rich audio processing library based on [Lavalink](https://lavalink.dev/).
