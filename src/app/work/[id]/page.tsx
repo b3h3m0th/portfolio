@@ -27,10 +27,21 @@ export default async function WorkDetail({ params }: WorkDetailPost) {
             "present"
           }`}
         </span>
-        {work.url && (
+        {work.url ? (
           <a href={work.url.href} className="ml-4 underline" target="_blank">
             {work.url.hostname}
           </a>
+        ) : (
+          <span className="ml-4">{work.company}</span>
+        )}
+        {work.tags && (
+          <div className="inline-block ml-8">
+            {work.tags.map((t) => (
+              <span className="mr-2" key={`tag-${t}`}>
+                {`#${t}`}
+              </span>
+            ))}
+          </div>
         )}
       </div>
       <BezierLine />

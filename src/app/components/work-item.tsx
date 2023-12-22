@@ -6,10 +6,7 @@ import Link from "next/link";
 import BezierLine from "./bezier-line";
 
 type WorkItemProps = {
-  work: Pick<
-    WorkPost,
-    "title" | "description" | "startDate" | "endDate" | "company" | "id"
-  >;
+  work: Omit<WorkPost, "url" | "image" | "html" | "markdown">;
   index: number;
   lineTop?: boolean;
   lineBottom?: boolean;
@@ -38,7 +35,7 @@ export default function WorkItem({
       <div className="py-6">
         <h2 className="font-bold mb-1">{work.title}</h2>
         <div className="text-sm text-neutral-600">
-          <span className="mr-4">
+          <span>
             {`${
               work.startDate.getMonth() + 1
             }.${work.startDate.getFullYear()} — ${
@@ -49,7 +46,20 @@ export default function WorkItem({
               "present"
             }`}
           </span>
-          {work.company && <span>{work.company}</span>}
+          {work.company && (
+            <>
+              <span className="mx-2">&bull;</span>
+              <span>{work.company}</span>
+            </>
+          )}
+          {work.tags && (
+            <div className="inline-block">
+              <span className="mx-2">&bull;</span>
+              {work.tags.map((t) => (
+                <span key={`tag-${t}`}>{`#${t}`}</span>
+              ))}
+            </div>
+          )}
         </div>
       </div>
       {lineBottom && <BezierLine />}

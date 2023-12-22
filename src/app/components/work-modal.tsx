@@ -24,7 +24,7 @@ const scaleAnimation = {
 };
 
 type WorkModalProps = {
-  works: Pick<WorkPost, "image">[];
+  works: Pick<WorkPost, "image" | "title">[];
 };
 
 export default function WorkModal({ works }: WorkModalProps) {
@@ -67,13 +67,15 @@ export default function WorkModal({ works }: WorkModalProps) {
                 className="h-full w-full overflow-hidden flex items-center justify-center bg-neutral-200"
                 key={`modal_${index}`}
               >
-                <Image
-                  src={work.image ?? "/images/me_hero.jpg"}
-                  width={200}
-                  height={0}
-                  className="w-auto h-[130px]"
-                  alt="image"
-                />
+                {work.image && (
+                  <Image
+                    src={work.image}
+                    width={200}
+                    height={0}
+                    className="w-auto h-[130px]"
+                    alt={`${work.title}`}
+                  />
+                )}
               </div>
             );
           })}

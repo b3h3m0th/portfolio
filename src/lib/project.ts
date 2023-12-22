@@ -24,7 +24,6 @@ async function parseProjectMDX(filename: string) {
     endDate: (data.endDate && new Date(data.endDate)) || null,
     html: contentHtml.toString(),
     markdown: data.content,
-    tags: data.tags,
   } as ProjectPost;
 }
 

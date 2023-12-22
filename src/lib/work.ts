@@ -26,6 +26,7 @@ async function parseWorkMDX(filename: string) {
     endDate: (data.endDate && new Date(data.endDate)) || null,
     html: contentHtml.toString(),
     markdown: data.content,
+    tags: data.tags,
   } as WorkPost;
 }
 

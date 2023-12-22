@@ -18,6 +18,7 @@ export default async function Work() {
               startDate: w.startDate,
               endDate: w.endDate,
               company: w.company,
+              tags: w.tags,
             }}
             index={i}
             lineTop
@@ -25,7 +26,9 @@ export default async function Work() {
           ></WorkItem>
         </div>
       ))}
-      <WorkModal works={workPosts.map((w) => ({ image: w.image }))} />
+      <WorkModal
+        works={workPosts.map((w) => ({ image: w.image, title: w.title }))}
+      />
     </section>
   );
 }
