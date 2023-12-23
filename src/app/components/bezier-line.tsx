@@ -1,4 +1,5 @@
 "use client";
+
 import { useRef, useEffect } from "react";
 
 interface MouseEvent {
@@ -76,15 +77,9 @@ export default function BezierLine() {
   return (
     <div className="relative w-full h-px">
       <div
-        onMouseEnter={() => {
-          manageMouseEnter();
-        }}
-        onMouseMove={(e) => {
-          manageMouseMove(e);
-        }}
-        onMouseLeave={() => {
-          manageMouseLeave();
-        }}
+        onMouseEnter={() => manageMouseEnter()}
+        onMouseMove={(e) => manageMouseMove(e)}
+        onMouseLeave={() => manageMouseLeave()}
         className="relative z-10 h-10 w-full top-[-40px] translate-y-1/2"
       ></div>
       <svg className="absolute pointer-events-none w-full h-[500px] top-[-250px]">
