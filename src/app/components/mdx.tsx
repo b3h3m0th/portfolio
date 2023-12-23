@@ -13,6 +13,7 @@ const components: MDXComponents = {
       height={0}
     />
   ),
+  Image: Image,
 };
 
 export function MDX(props: MDXRemoteProps) {
