@@ -1,5 +1,7 @@
 import BezierLine from "@/app/components/bezier-line";
+import { MDX } from "@/app/components/mdx";
 import { getWorkPost } from "@/lib";
+import { MDXRemote } from "next-mdx-remote/rsc";
 import Link from "next/link";
 import { redirect } from "next/navigation";
 
@@ -45,10 +47,9 @@ export default async function WorkDetail({ params }: WorkDetailPost) {
         )}
       </div>
       <BezierLine />
-      <div
-        className="prose prose-neutral prose:sm pt-8"
-        dangerouslySetInnerHTML={{ __html: work.html }}
-      ></div>
+      <div className="prose prose-neutral prose:sm pt-8">
+        <MDX source={work.markdown}></MDX>
+      </div>
     </section>
   );
 }

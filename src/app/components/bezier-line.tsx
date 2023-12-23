@@ -16,6 +16,7 @@ export default function BezierLine() {
 
   useEffect(() => {
     setPath(progress);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const setPath = (progress: number) => {

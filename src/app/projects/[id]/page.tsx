@@ -1,7 +1,9 @@
 import BezierLine from "@/app/components/bezier-line";
+import { MDX } from "@/app/components/mdx";
 import { getProjectPost } from "@/lib";
 import Link from "next/link";
 import { redirect } from "next/navigation";
+import { Suspense } from "react";
 
 type ProjectDetailProps = {
   params: { id: string };
@@ -40,10 +42,9 @@ export default async function ProjectDetail({ params }: ProjectDetailProps) {
         )}
       </div>
       <BezierLine />
-      <div
-        className="prose prose-neutral prose:sm pt-8"
-        dangerouslySetInnerHTML={{ __html: project.html }}
-      ></div>
+      <div className="prose prose-neutral prose:sm pt-8">
+        <MDX source={project.markdown}></MDX>
+      </div>
     </section>
   );
 }
