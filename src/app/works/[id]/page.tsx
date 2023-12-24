@@ -1,7 +1,6 @@
 import BezierLine from "@/app/components/bezier-line";
 import { MDX } from "@/app/components/mdx";
-import { getWorkPost } from "@/lib";
-import { MDXRemote } from "next-mdx-remote/rsc";
+import { getWork } from "@/lib";
 import Link from "next/link";
 import { redirect } from "next/navigation";
 
@@ -10,12 +9,12 @@ type WorkDetailPost = {
 };
 
 export default async function WorkDetail({ params }: WorkDetailPost) {
-  const work = await getWorkPost(params.id);
-  if (!work) redirect("/work");
+  const work = await getWork(params.id);
+  if (!work) redirect("/works");
 
   return (
     <section className="work-detail">
-      <Link className="prose inline-block text-sm mb-6" href="/work">
+      <Link className="prose inline-block text-sm mb-6" href="/works">
         ← Back to overview
       </Link>
       <h1 className="font-bold text-4xl mb-2">{work.title}</h1>

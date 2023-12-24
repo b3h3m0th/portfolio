@@ -1,7 +1,6 @@
 "use client";
 
 import { motion } from "framer-motion";
-import Image from "next/image";
 
 export default function Home() {
   const getAge = () => {
@@ -23,9 +22,8 @@ export default function Home() {
           <motion.p
             className="text-8xl font-black"
             initial={{ y: "100%", skewX: 30 }}
-            whileInView={{ y: 0, skewX: 0 }}
+            animate={{ y: 0, skewX: 0 }}
             transition={{ duration: 0.8, ease: [0.2, 1, 0.7, 1] }}
-            viewport={{ once: true }}
           >
             Simon
           </motion.p>
@@ -34,13 +32,12 @@ export default function Home() {
           <motion.p
             className="text-8xl font-black"
             initial={{ y: "100%", skewX: 30 }}
-            whileInView={{ y: 0, skewX: 0 }}
+            animate={{ y: 0, skewX: 0 }}
             transition={{
               duration: 0.8,
               ease: [0.2, 1, 0.7, 1],
               delay: 0.1,
             }}
-            viewport={{ once: true }}
           >
             Ostini
           </motion.p>
@@ -61,17 +58,6 @@ export default function Home() {
           {`Hi, I'm a ${getAge()}-year-old creative developer from Austria, also known as "Behemoth" over the internet. I've been writing code since I was 15 and I'm still hooked on learning new things every day. Oh, and also I play guitar a lot!`}
         </motion.p>
       </div>
-      {/* <a href="https://stackoverflow.com/users/12834972/behemoth">
-        <Image
-          src="https://stackoverflow.com/users/flair/12834972.png"
-          width="208"
-          height="58"
-          alt="profile for Behemoth at Stack Overflow, Q&amp;A for professional and enthusiast programmers"
-          title="profile for Behemoth at Stack Overflow, Q&amp;A for professional and enthusiast programmers"
-          priority={false}
-          placeholder="empty"
-        />
-      </a> */}
       <div className="relative overflow-hidden h-max-content">
         <motion.a
           href="mailto:simonostini@gmail.com"
@@ -104,23 +90,6 @@ export default function Home() {
           {`+43 650 844 1272`}
         </motion.a>
       </div>
-      {/* <p className="mb-8 prose">
-        {`Over the years, I have become an active and highly reputated member of the awesome StackOverflow community, where I both learn and share my knowledge.`}
-      </p> */}
-      {/*       <div className="w-[300px] overflow-hidden">
-        <motion.div
-          className="relative"
-          whileHover={{ scale: 1.02 }}
-          transition={{ ease: "easeInOut" }}
-        >
-          <Image
-            width={300}
-            height={0}
-            src="/images/me_hero.jpg"
-            alt="simon ostini playing guitar"
-          />
-        </motion.div>
-      </div> */}
     </section>
   );
 }

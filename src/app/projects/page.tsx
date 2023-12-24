@@ -1,8 +1,8 @@
-import { getProjectPosts } from "@/lib";
+import { getProjects } from "@/lib";
 import ProjectItem from "../components/project-item";
 
 export default async function Projects() {
-  const projectPosts = (await getProjectPosts()) || [];
+  const projectPosts = (await getProjects()) || [];
 
   return (
     <section>
@@ -16,7 +16,7 @@ export default async function Projects() {
         />
       ))}
       <p className="prose mt-6">
-        More to come, currently filling this page up with content.
+        More to come, currently filling this page up with content...
       </p>
     </section>
   );

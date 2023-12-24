@@ -26,7 +26,7 @@ export default function RootLayout({
       <SpeedInsights />
       <Analytics />
       <body
-        className={`${GeistSans.className} antialiased max-w-2xl mb-20 flex flex-col md:flex-row mx-4 mt-8 lg:mx-auto`}
+        className={`${GeistSans.className} min-h-[100vh] antialiased max-w-2xl mb-20 flex flex-col md:flex-row mx-4 mt-8 lg:mx-auto`}
       >
         <Cursor />
         <div className="noise-background"></div>

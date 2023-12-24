@@ -1,16 +1,15 @@
 import BezierLine from "@/app/components/bezier-line";
 import { MDX } from "@/app/components/mdx";
-import { getProjectPost } from "@/lib";
+import { getProject } from "@/lib";
 import Link from "next/link";
 import { redirect } from "next/navigation";
-import { Suspense } from "react";
 
 type ProjectDetailProps = {
   params: { id: string };
 };
 
 export default async function ProjectDetail({ params }: ProjectDetailProps) {
-  const project = await getProjectPost(params.id);
+  const project = await getProject(params.id);
   if (!project) redirect("/projects");
 
   return (

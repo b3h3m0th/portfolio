@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import gsap from "gsap";
 import { useWorks } from "@/lib/stores";
-import { WorkPost } from "@/types";
+import { Work } from "@/types";
 
 const scaleAnimation = {
   initial: { scale: 0, x: "-50%", y: "-50%" },
@@ -24,7 +24,7 @@ const scaleAnimation = {
 };
 
 type WorkModalProps = {
-  works: Pick<WorkPost, "image" | "title">[];
+  works: Pick<Work, "image" | "title">[];
 };
 
 export default function WorkModal({ works }: WorkModalProps) {

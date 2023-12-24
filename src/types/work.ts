@@ -5,7 +5,7 @@ export enum WorkTag {
   "development" = "development",
 }
 
-export type WorkPostMetadata = {
+export type WorkMetadata = {
   title: string;
   description?: string;
   company?: string;
@@ -13,7 +13,7 @@ export type WorkPostMetadata = {
   startDate: Date;
   endDate?: Date;
   image?: string;
-  tags?: WorkTag[]
+  tags?: WorkTag[];
 } & Metadata;
 
-export type WorkPost = WorkPostMetadata & { html: string; markdown: string };
+export type Work = WorkMetadata & { html: string; markdown: string };

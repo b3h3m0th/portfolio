@@ -1,6 +1,6 @@
 import { Metadata } from "./metadata";
 
-export type ProjectPostMetadata = {
+export type ProjectMetadata = {
   title: string;
   description?: string;
   sourceCode?: URL;
@@ -9,7 +9,7 @@ export type ProjectPostMetadata = {
   image?: string;
 } & Metadata;
 
-export type ProjectPost = ProjectPostMetadata & {
+export type Project = ProjectMetadata & {
   html: string;
   markdown: string;
 };

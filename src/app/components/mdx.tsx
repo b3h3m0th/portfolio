@@ -9,8 +9,8 @@ const components: MDXComponents = {
       style={{ width: "100%", height: "auto" }}
       alt={props?.alt ?? ""}
       {...props}
-      width={500}
-      height={0}
+      width={props?.width ?? 500}
+      height={props?.height ?? 0}
     />
   ),
   Image: Image,

@@ -1,11 +1,11 @@
-import { ProjectPost } from "@/types/project";
+import { Project } from "@/types/project";
 import Image from "next/image";
 import Link from "next/link";
 import BezierLine from "./bezier-line";
 import { motion } from "framer-motion";
 
 type ProjectItemProps = {
-  project: Exclude<ProjectPost, "url">;
+  project: Exclude<Project, "url">;
   lineTop?: boolean;
   lineBottom?: boolean;
 };
