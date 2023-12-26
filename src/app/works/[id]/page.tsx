@@ -19,7 +19,7 @@ export default async function WorkDetail({ params }: WorkDetailPost) {
       </Link>
       <h1 className="font-bold text-4xl mb-2">{work.title}</h1>
       <div className="text-sm text-neutral-600 mb-12">
-        <span className="mr-4">
+        <span>
           {`${
             work.startDate.getMonth() + 1
           }.${work.startDate.getFullYear()} — ${
@@ -29,11 +29,11 @@ export default async function WorkDetail({ params }: WorkDetailPost) {
           }`}
         </span>
         {work.url ? (
-          <a href={work.url.href} className="ml-4 underline" target="_blank">
+          <a href={work.url.href} className="ml-8 underline" target="_blank">
             {work.url.hostname}
           </a>
         ) : (
-          <span className="ml-4">{work.company}</span>
+          work.company && <span className="ml-8">{work.company}</span>
         )}
         {work.tags && (
           <div className="inline-block ml-8">
