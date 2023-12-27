@@ -4,7 +4,7 @@ import { remark } from "remark";
 import html from "remark-html";
 import { parseMDXMetadata, getMDXFiles } from "./utils/mdx";
 
-const postsDirectory = path.join(process.cwd(), "content", "work");
+const postsDirectory = path.join(process.cwd(), "content", "works");
 
 async function parseWorkMDX(filename: string) {
   const data = await parseMDXMetadata<WorkMetadata>(

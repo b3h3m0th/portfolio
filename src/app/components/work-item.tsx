@@ -57,7 +57,7 @@ export default function WorkItem({
             <div className="inline-block">
               <span className="mx-2">&bull;</span>
               {work.tags.map((t) => (
-                <span key={`tag-${t}`}>{`#${t}`}</span>
+                <span className="mr-2" key={`tag-${t}`}>{`#${t}`}</span>
               ))}
             </div>
           )}
