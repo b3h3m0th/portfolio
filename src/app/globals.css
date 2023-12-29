@@ -15,8 +15,7 @@ html::-webkit-scrollbar {
   bottom: -50%;
   width: 200vw;
   height: 200vh;
-  background: transparent
-    url("/images/noise.png") repeat 0 0;
+  background: transparent url("/images/noise.webp") repeat 0 0;
   background-repeat: repeat;
   animation: noise-animation 0.3s infinite;
   opacity: 0.9;
