@@ -1,0 +1,55 @@
+---
+title: "Bregenz bewegt - Mobile Application"
+company: "Landeshauptstadt Bregenz"
+startDate: "2022-6-1"
+endDate: "2023-2-1"
+url: "https://bewegt.bregenz.at"
+image: "/images/bregenz-bewegt_landing-page-ui.gif"
+tags: ["development"]
+---
+
+![Bregenz bewegt landing page UI](/images/bregenz-bewegt_landing-page-ui.gif)
+
+## Overview
+
+*Bregenz bewegt* is an initiative of the city [Bregenz](https://bregenz.gv.at) in Austria to promote sport and exercise, especially among young people.
+Some good friends and I developed a mobile application for Bregenz as our practical school diploma theisis.
+
+The application shows public outdoor locations to exercise and offers instruction videos.
+Furthermore, a playful competitive aspect was added: Users are awarded points called *B-Bucks* for exercising.
+A user can earn B-Bucks by scanning a provided QR-code on a training location in the city and later redeem real world prices such as coupons or special offers at local stores.
+The concept is heavily inspired by [Pokémon Go](https://en.wikipedia.org/wiki/Pok%c3%a9mon_Go).
+
+The project strechted over almost a year. During that time all must-have requirements could be delivered and many more unplanned features were added.
+Here are some cool features worth mentioning:
+- Friend system: users can add friends and directly compare profiles.
+- Chats: users can connect with other people and arrange a meet to exercise together.
+- Notifications: users receive notifications and latest news.
+- Preferences: users can customize their profile, set their preferred exercise difficulty, in-app theme and much more.
+
+![Bregenz bewegt UI](/images/bregenz-bewegt-ui.png)
+
+## Technical
+
+Technologies used:
+
+- Frontend: [Ionic](https://ionicframework.com/), [React](https://react.dev), [TypeScript](https://typescriptlang.org), [Sass](https://sass-lang.com)
+- Backend: [Nest.js](https://nestjs.com), [Prisma](https://prisma.io), [Socket.io](https://socket.io/)
+- Other libraries & services: [Nx](https://nx.dev), [JWT](https://jwt.io/), [Sendgrid](https://sendgrid.com/)
+
+The entire project is public on Github and quite well documented ([source code](https://github.com/bregenz-bewegt/bregenz-bewegt)).
+
+We built Bregenz bewegt as a hybrid application with [Ionic](https://ionicframework.com/) and [React](https://react.dev/) that can be run in any browser and as a native mobile application on Android and IOS devices.
+The backend is based on [Nest.js](https://nestjs.com/) and [Prisma ORM](https://www.prisma.io/). It was my first time using Nest.js and Prisma in a real project and I cannot describe how much I loved it!
+We chose a classic MySql database for persisting data yet it didn't really matter anyway due to our Prisma *code first* approach.
+![Bregenz bewegt database model](/images/bregenz-bewegt_database-model.png)
+
+## Team
+
+Finally, I want to make clear that this project is not the achievement of a single person.
+Bregenz bewegt was built as a team and I want to credit everyone who participated.
+
+- Jonas Mayrhofer (Project Management)
+- Raphael Posch (Design)
+- Timon Stadelmann (Software Development)
+- Valmir Bekiri (Mentoring)
