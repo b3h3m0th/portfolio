@@ -1,7 +1,14 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  images: {
-    remotePatterns: [{ hostname: "stackoverflow.com" }],
+  webpack: (config, options) => {
+    config.module.rules.push({
+      test: /\.glsl|.vert|.frag/,
+      type: "asset/source",
+      exclude: /node_modules/,
+      use: ["glslify-loader"],
+    });
+
+    return config;
   },
 };
 

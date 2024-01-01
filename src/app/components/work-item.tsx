@@ -35,7 +35,7 @@ export default function WorkItem({
       {lineTop && <BezierLine />}
       <div className="py-6 overflow-hidden">
         <h2 className="font-bold mb-1">{work.title}</h2>
-        <div className="text-sm text-neutral-600">
+        <div className="text-sm">
           <span>
             {`${
               work.startDate.getMonth() + 1

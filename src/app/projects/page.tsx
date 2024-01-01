@@ -7,7 +7,7 @@ export default async function Projects() {
   return (
     <section>
       <h1 className="font-bold text-4xl mb-2">Projects</h1>
-      <p className="prose mb-8">{`some of the many personal projects I have worked on just for fun.`}</p>
+      <p className="mb-8">{`some of the many personal projects I have worked on just for fun.`}</p>
       {projectPosts.map(({ sourceCode, ...post }, i) => (
         <ProjectItem
           project={post}
@@ -16,7 +16,7 @@ export default async function Projects() {
           lineBottom={i === projectPosts.length - 1}
         />
       ))}
-      <p className="prose mt-6">
+      <p className="mt-6">
         More to come, currently filling this page up with content...
       </p>
     </section>

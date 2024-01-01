@@ -1,8 +1,6 @@
 import { Project } from "@/types/project";
-import Image from "next/image";
 import Link from "next/link";
 import BezierLine from "./bezier-line";
-import { motion } from "framer-motion";
 
 type ProjectItemProps = {
   project: Exclude<Project, "url">;
@@ -20,7 +18,7 @@ export default function ProjectItem({
       {lineTop && <BezierLine />}
       <div className="py-6">
         <h2 className="font-bold mb-1">{project.title}</h2>
-        <div className="text-sm text-neutral-600">
+        <div className="text-sm">
           <span className="mr-4">
             {`${
               project.startDate.getMonth() + 1
