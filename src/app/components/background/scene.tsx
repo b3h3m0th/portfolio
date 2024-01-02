@@ -23,11 +23,11 @@ export function Scene() {
         value: new Vector2(viewport.width, viewport.height),
       },
       uTime: { value: 0 },
-      uColor1: { value: [0 / 255, 184 / 255, 129 / 255] },
-      uColor2: { value: [0 / 255, 184 / 255, 194 / 255] },
+      uColor1: { value: [180 / 255, 29 / 255, 54 / 255] },
+      uColor2: { value: [80 / 255, 230 / 255, 69 / 255] },
       uColorAccent: { value: [0 / 255, 0 / 255, 0 / 255] },
       uLinesBlur: { value: 0.25 },
-      uNoise: { value: 0.075 },
+      uNoise: { value: 0.1 },
       uOffsetX: { value: 0.34 },
       uOffsetY: { value: 0.0 },
       uLinesAmount: {
@@ -50,8 +50,8 @@ export function Scene() {
     (mesh.current as any).material.uniforms.uTime.value =
       state.clock.getElapsedTime();
     (mesh.current as any).material.uniforms.uMouse2D.value = new Vector2(
-      pointer.x / 3000,
-      pointer.y / 3000
+      pointer.x,
+      pointer.y
     );
   });
 

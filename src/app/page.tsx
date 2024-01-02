@@ -52,7 +52,7 @@ export default function Home() {
 
   return (
     <section className="relative">
-      <div className="absolute w-full h-[50vh]">
+      <div className="absolute w-full h-[50vh] hidden">
         <Canvas>
           <Scene></Scene>
         </Canvas>
