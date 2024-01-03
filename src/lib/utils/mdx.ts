@@ -1,4 +1,4 @@
-import { Metadata } from "@/types";
+import { Metadata } from "@/lib/types";
 import { readFile, readdir } from "fs/promises";
 import path from "path";
 

@@ -1,5 +1,5 @@
 import path from "path";
-import { Work, WorkMetadata } from "@/types";
+import { Work, WorkMetadata } from "@/lib/types";
 import { remark } from "remark";
 import html from "remark-html";
 import { parseMDXMetadata, getMDXFiles } from "./utils/mdx";

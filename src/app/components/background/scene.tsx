@@ -3,8 +3,8 @@ import { useThree, useFrame } from "@react-three/fiber";
 import { useRef, useMemo } from "react";
 import { Vector2 } from "three";
 
-import bgFragmentShader from "../../shaders/background/background.frag";
-import bgVertexShader from "../../shaders/background/background.vert";
+import bgFragmentShader from "./shaders/background.frag";
+import bgVertexShader from "./shaders/background.vert";
 
 export function Scene() {
   const mesh = useRef(null);
@@ -22,8 +22,6 @@ export function Scene() {
       u_resolution: {
         value: new Vector2(viewport.width, viewport.height),
       },
-      // u_color1: { value: [180 / 255, 29 / 255, 54 / 255] },
-      // u_color1: { value: [180 / 255, 29 / 255, 54 / 255] },
       u_color1: { value: [252 / 255, 68 / 255, 15 / 255] },
       u_color2: { value: [30 / 255, 255 / 255, 188 / 255] },
       u_color_accent: { value: [0 / 255, 0 / 255, 0 / 255] },

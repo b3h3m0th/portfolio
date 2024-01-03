@@ -1,7 +1,7 @@
 "use client";
 
 import { useWorks } from "@/lib/stores";
-import { Work } from "@/types";
+import { Work } from "@/lib/types";
 import Link from "next/link";
 import BezierLine from "./bezier-line";
 import { motion } from "framer-motion";

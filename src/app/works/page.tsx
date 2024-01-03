@@ -3,7 +3,7 @@
 import { cx } from "@/lib/utils";
 import WorkItem from "../components/work-item";
 import WorkModal from "../components/work-modal";
-import { Work, WorkTag } from "@/types";
+import { Work, WorkTag } from "@/lib/types";
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 

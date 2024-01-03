@@ -51,7 +51,6 @@ vec3 fadeLine(vec2 uv, vec2 mouse2D,  vec3 col1, vec3 col2, vec3 col3) {
     return secondBaseColor;
 }
 
-
 void main() {
   vec2 mouse = vec2(u_mouse.x / 3000.0, u_mouse.y / 3000.0);
 

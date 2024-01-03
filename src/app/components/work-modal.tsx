@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import gsap from "gsap";
 import { useWorks } from "@/lib/stores";
-import { Work } from "@/types";
+import { Work } from "@/lib/types";
 
 const scaleAnimation = {
   initial: { scale: 0, x: "-50%", y: "-50%" },
