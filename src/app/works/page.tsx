@@ -6,6 +6,7 @@ import WorkModal from "../components/work-modal";
 import { Work, WorkTag } from "@/lib/types";
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
+import { useWorks } from "@/lib/stores";
 
 type FilterTags = ["all", WorkTag.development, WorkTag.design];
 const filterTags: FilterTags = ["all", WorkTag.development, WorkTag.design];
@@ -13,6 +14,7 @@ const filterTags: FilterTags = ["all", WorkTag.development, WorkTag.design];
 export default function Work() {
   const [workPosts, setWorkPosts] = useState<Work[] | null>(null);
   const [filter, setFilter] = useState<FilterTags[number]>("all");
+  const setModal = useWorks((state) => state.setModal);
 
   useEffect(() => {
     setWorkPosts(null);
@@ -69,6 +71,7 @@ export default function Work() {
                 index={i}
                 lineTop
                 lineBottom={i === workPosts.length - 1}
+                onClick={() => setModal({active: false, index: 0})}
               ></WorkItem>
             </motion.div>
           ))

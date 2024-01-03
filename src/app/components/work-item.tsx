@@ -4,13 +4,13 @@ import { useWorks } from "@/lib/stores";
 import { Work } from "@/lib/types";
 import Link from "next/link";
 import BezierLine from "./bezier-line";
-import { motion } from "framer-motion";
 
 type WorkItemProps = {
   work: Omit<Work, "url" | "image" | "html" | "markdown">;
   index: number;
   lineTop?: boolean;
   lineBottom?: boolean;
+  onClick?: () => void;
 };
 
 export default function WorkItem({
@@ -18,19 +18,21 @@ export default function WorkItem({
   index,
   lineTop,
   lineBottom,
+  onClick,
 }: WorkItemProps) {
   const setModal = useWorks((state) => state.setModal);
 
   return (
     <Link
+      href={`/works/${work.id}`}
+      className="work-item py-6"
+      onClick={onClick}
       onMouseEnter={() => {
         setModal({ active: true, index });
       }}
       onMouseLeave={() => {
         setModal({ active: false, index });
       }}
-      href={`/works/${work.id}`}
-      className="work-item py-6"
     >
       {lineTop && <BezierLine />}
       <div className="py-6 overflow-hidden">
