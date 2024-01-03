@@ -1,6 +1,6 @@
 "use client";
 
-import { cx } from "@/lib/utils";
+import { cx } from "@/lib/utils/cx";
 import WorkItem from "../components/work-item";
 import WorkModal from "../components/work-modal";
 import { Work, WorkTag } from "@/lib/types";

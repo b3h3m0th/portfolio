@@ -2,11 +2,28 @@
 
 import { clash } from "@/lib/fonts";
 import { useMousePosition } from "@/lib/hooks";
-import { getAge } from "@/lib/utils";
 import { motion } from "framer-motion";
+import { useEffect, useState } from "react";
+
+function getAge() {
+  const birthdate = new Date(2003, 10, 22);
+  const today = new Date();
+  let age = today.getFullYear() - birthdate.getFullYear();
+  const month = today.getMonth() - birthdate.getMonth();
+  if (month < 0 || (month === 0 && today.getDate() < birthdate.getDate())) {
+    age--;
+  }
+
+  return age;
+}
 
 export default function Home() {
   const { x } = useMousePosition();
+  const [fontWeight, setFontWeight] = useState(0);
+
+  useEffect(() => {
+    setFontWeight((x / window.screen.width) * 900);
+  }, [x]);
 
   return (
     <section className="relative">
@@ -26,7 +43,11 @@ export default function Home() {
           <motion.p
             className="inline-block"
             initial={{ y: "100%", skewX: 30 }}
-            animate={{ y: 0, skewX: 0, fontWeight: (x / screen.width) * 900 }}
+            animate={{
+              y: 0,
+              skewX: 0,
+              fontWeight,
+            }}
             transition={{
               duration: 0.8,
               ease: [0.2, 1, 0.7, 1],

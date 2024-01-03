@@ -1,7 +1,7 @@
 import path from "path";
 import { remark } from "remark";
 import html from "remark-html";
-import { parseMDXMetadata, getMDXFiles } from "@/lib/utils";
+import { parseMDXMetadata, getMDXFiles } from "./utils/mdx";
 import { Project, ProjectMetadata } from "@/lib/types/project";
 
 const postsDirectory = path.join(process.cwd(), "content", "projects");
