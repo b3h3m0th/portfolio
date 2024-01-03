@@ -17,7 +17,6 @@ varying vec2 vUv;
 
 #define PI 3.14159265359
 
-
 float lines(vec2 uv, float offset){
     float a = abs(0.5 * sin(uv.y * uLinesAmount) + offset * uLinesBlur);
     return smoothstep(0.0, uLinesBlur + offset * uLinesBlur, a);
@@ -57,14 +56,14 @@ vec3 fadeLine(vec2 uv, vec2 mouse2D,  vec3 col1, vec3 col2, vec3 col3){
 
     vec3 baseColor = mix(col1, col2, basePattern);
     vec3 secondBaseColor = mix(baseColor, col3, secondPattern);
+
     return secondBaseColor;
 }
 
 
 void main()
 {
-    vec2 mouse2D = uMouse2D;
-    
+    vec2 mouse2D = vec2(uMouse2D.x / 3000.0, uMouse2D.y / 3000.0);
 
     vec2 uv = vUv;
     uv.y += uOffsetY;
@@ -73,7 +72,6 @@ void main()
 
     vec3 col1 = fadeLine(uv, mouse2D, uColor1, uColor2, uColorAccent);
     vec3 finalCol = col1;
-
 
     vec2 uvRandom = vUv;
     uvRandom.y *= random(vec2(uvRandom.y, 0.5));
