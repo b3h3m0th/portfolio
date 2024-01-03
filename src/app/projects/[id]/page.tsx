@@ -14,11 +14,14 @@ export default async function ProjectDetail({ params }: ProjectDetailProps) {
 
   return (
     <section className="work-detail">
-      <Link className="prose text-sm inline-block mb-6" href="/projects">
+      <Link
+        className="prose prose-invert text-sm inline-block mb-6"
+        href="/projects"
+      >
         ← Back to overview
       </Link>
       <h1 className="font-bold text-4xl mb-2">{project.title}</h1>
-      <div className="text-sm text-neutral-600 mb-12">
+      <div className="text-sm prose prose-invert mb-12">
         <span className="mr-4">
           {`${
             project.startDate.getMonth() + 1
@@ -41,7 +44,7 @@ export default async function ProjectDetail({ params }: ProjectDetailProps) {
         )}
       </div>
       <BezierLine />
-      <div className="prose prose-neutral prose:sm pt-8">
+      <div className="prose prose-invert prose:sm pt-8">
         <MDX source={project.markdown}></MDX>
       </div>
     </section>

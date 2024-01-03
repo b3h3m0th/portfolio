@@ -14,11 +14,14 @@ export default async function WorkDetail({ params }: WorkDetailPost) {
 
   return (
     <section className="work-detail">
-      <Link className="prose inline-block text-sm mb-6" href="/works">
+      <Link
+        className="prose prose-invert inline-block text-sm mb-6"
+        href="/works"
+      >
         ← Back to overview
       </Link>
       <h1 className="font-bold text-4xl mb-2">{work.title}</h1>
-      <div className="text-sm text-neutral-600 mb-12">
+      <div className="text-sm prose prose-invert mb-12">
         <span>
           {`${
             work.startDate.getMonth() + 1

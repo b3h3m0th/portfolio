@@ -1,41 +1,6 @@
 "use client";
 
-import { Canvas, useFrame } from "@react-three/fiber";
 import { motion } from "framer-motion";
-
-import fragmentShader from "./shaders/home/home.frag";
-import vertexShader from "./shaders/home/home.vert";
-import { useMemo, useRef } from "react";
-
-function Scene() {
-  const mesh = useRef(null);
-  const uniforms = useMemo(
-    () => ({
-      u_time: {
-        value: 0.0,
-      },
-    }),
-    []
-  );
-
-  useFrame((state) => {
-    (mesh.current as any).material.uniforms.u_time.value =
-      state.clock.getElapsedTime();
-  });
-
-  return (
-    <>
-      <mesh ref={mesh}>
-        <planeGeometry args={[2, 2]}></planeGeometry>
-        <shaderMaterial
-          fragmentShader={fragmentShader}
-          vertexShader={vertexShader}
-          uniforms={uniforms}
-        ></shaderMaterial>
-      </mesh>
-    </>
-  );
-}
 
 export default function Home() {
   const getAge = () => {
@@ -52,11 +17,6 @@ export default function Home() {
 
   return (
     <section className="relative">
-      <div className="absolute w-full h-[50vh]">
-        <Canvas>
-          <Scene></Scene>
-        </Canvas>
-      </div>
       <h1 className="mb-8 h-[50vh] flex flex-col justify-center">
         <div className="relative overflow-hidden h-max-content">
           <motion.p

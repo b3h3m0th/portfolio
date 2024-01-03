@@ -28,14 +28,20 @@ mat2 rotate2d(float angle){
                 sin(angle),cos(angle));
 }
 
-float random(vec2 p) {
-    vec2 k1 = vec2(
-            23.14069263277926, // e^pi (Gelfond's constant)
-            2.665144142690225 // 2^sqrt(2) (Gelfond–Schneider constant)
-    );
-    return fract(
-            cos(dot(p, k1)) * 12345.6789
-    );
+// float random(vec2 p) {
+//     vec2 k1 = vec2(
+//             23.14069263277926, // e^pi (Gelfond's constant)
+//             2.665144142690225 // 2^sqrt(2) (Gelfond–Schneider constant)
+//     );
+//     return fract(
+//             cos(dot(p, k1)) * 12345.6789
+//     );
+// }
+
+float random (in vec2 st) {
+    return fract(sin(dot(st.xy,
+                         vec2(12.9898,78.233)))
+                 * 43758.5453123);
 }
 
 vec3 fadeLine(vec2 uv, vec2 mouse2D,  vec3 col1, vec3 col2, vec3 col3){
