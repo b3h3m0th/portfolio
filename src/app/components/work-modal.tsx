@@ -1,13 +1,14 @@
 "use client";
 
 import { useRef, useEffect } from "react";
-import { motion } from "framer-motion";
+import { Variants, motion } from "framer-motion";
 import Image from "next/image";
 import gsap from "gsap";
 import { useWorks } from "@/lib/stores";
 import { Work } from "@/lib/types";
+import { useMousePosition } from "@/lib/hooks";
 
-const scaleAnimation = {
+const scaleAnimation: Variants = {
   initial: { scale: 0, x: "-50%", y: "-50%" },
   enter: {
     scale: 1,
@@ -30,23 +31,19 @@ type WorkModalProps = {
 export default function WorkModal({ works }: WorkModalProps) {
   const modalContainer = useRef(null);
   const { active, index } = useWorks((state) => state.modal);
+  const { clientX, clientY } = useMousePosition();
 
   useEffect(() => {
-    let xMoveContainer = gsap.quickTo(modalContainer.current, "left", {
+    gsap.quickTo(modalContainer.current, "left", {
       duration: 0.7,
       ease: "power3",
-    });
-    let yMoveContainer = gsap.quickTo(modalContainer.current, "top", {
-      duration: 0.7,
-      ease: "power3",
-    });
+    })(clientX);
 
-    window.addEventListener("mousemove", (e) => {
-      const { pageX, pageY } = e;
-      xMoveContainer(pageX);
-      yMoveContainer(pageY);
-    });
-  }, []);
+    gsap.quickTo(modalContainer.current, "top", {
+      duration: 0.7,
+      ease: "power3",
+    })(clientY);
+  }, [clientX, clientY]);
 
   return (
     <>
@@ -55,7 +52,7 @@ export default function WorkModal({ works }: WorkModalProps) {
         variants={scaleAnimation}
         initial="initial"
         animate={active ? "enter" : "closed"}
-        className="h-[150px] w-[300px] absolute bg-white overflow-hidden pointer-events-none flex items-center justify-center hidden md:block"
+        className="h-[150px] w-[300px] fixed bg-white overflow-hidden pointer-events-none flex items-center justify-center hidden md:block"
       >
         <div
           style={{ top: index * -100 + "%", transition: "top .5s ease" }}

@@ -41,8 +41,8 @@ export function Scene() {
     (mesh.current as any).material.uniforms.u_time.value =
       state.clock.getElapsedTime();
     (mesh.current as any).material.uniforms.u_mouse.value = new Vector2(
-      pointer.x,
-      pointer.y
+      pointer.clientX,
+      pointer.clientY
     );
   });
 

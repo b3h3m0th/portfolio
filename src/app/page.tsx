@@ -18,12 +18,12 @@ function getAge() {
 }
 
 export default function Home() {
-  const { x } = useMousePosition();
+  const { clientX } = useMousePosition();
   const [fontWeight, setFontWeight] = useState(0);
 
   useEffect(() => {
-    setFontWeight((x / window.screen.width) * 900);
-  }, [x]);
+    setFontWeight((clientX / window.screen.width) * 900);
+  }, [clientX]);
 
   return (
     <section className="relative">
@@ -38,36 +38,36 @@ export default function Home() {
           </motion.p>
         </div>
         <div
-          className={`relative h-max-content ${clash.className}  italic font-thin text-right`}
+          className={`relative h-max-content ${clash.className} italic font-thin text-right`}
         >
           <motion.p
             className="inline-block"
-            initial={{ y: "100%", skewX: 30 }}
+            initial={{ y: "100%", skewX: 30, opacity: 0 }}
             animate={{
               y: 0,
               skewX: 0,
+              opacity: 1,
               fontWeight,
             }}
             transition={{
               duration: 0.8,
               ease: [0.2, 1, 0.7, 1],
-              delay: 0.1,
+              fontWeight: { duration: 0, ease: "linear" },
             }}
           >
             Creative
           </motion.p>
         </div>
         <div
-          className={`relative overflow-hidden ${clash.className} h-max-content text-center`}
+          className={`relative ${clash.className} h-max-content text-center`}
         >
           <motion.p
             className="inline-block"
-            initial={{ y: "100%", skewX: 30 }}
-            animate={{ y: 0, skewX: 0 }}
+            initial={{ y: "100%", skewX: 30, opacity: 0 }}
+            animate={{ y: 0, skewX: 0, opacity: 1 }}
             transition={{
               duration: 0.8,
               ease: [0.2, 1, 0.7, 1],
-              delay: 0.1,
             }}
           >
             Developer

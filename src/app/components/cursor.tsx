@@ -4,7 +4,7 @@ import { useMousePosition } from "@/lib/hooks";
 import { motion } from "framer-motion";
 
 export default function Cursor() {
-  const { x, y } = useMousePosition();
+  const { clientX: x, clientY: y } = useMousePosition();
 
   return (
     <motion.div
