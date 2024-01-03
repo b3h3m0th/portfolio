@@ -53,14 +53,14 @@ vec3 fadeLine(vec2 uv, vec2 mouse2D,  vec3 col1, vec3 col2, vec3 col3) {
 
 
 void main() {
-  vec2 mouse2D = vec2(u_mouse.x / 3000.0, u_mouse.y / 3000.0);
+  vec2 mouse = vec2(u_mouse.x / 3000.0, u_mouse.y / 3000.0);
 
   vec2 uv = vUv;
   uv.y += u_offset_y;
   uv.x += u_offset_x;
   uv.x *= u_resolution.x / u_resolution.y; 
 
-  vec3 col1 = fadeLine(uv, mouse2D, u_color1, u_color2, u_color_accent);
+  vec3 col1 = fadeLine(uv, mouse, u_color1, u_color2, u_color_accent);
   vec3 finalCol = col1;
 
   vec2 uvRandom = vUv;

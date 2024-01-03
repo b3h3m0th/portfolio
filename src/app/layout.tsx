@@ -5,7 +5,7 @@ import Cursor from "./components/cursor";
 import { Navbar } from "./components/nav";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Analytics } from "@vercel/analytics/react";
-import { geist } from "@/lib/fonts";
+import { switzer } from "@/lib/fonts";
 import { Background } from "./components/background/background";
 
 export const metadata: Metadata = {
@@ -27,7 +27,7 @@ export default function RootLayout({
       <SpeedInsights />
       <Analytics />
       <body
-        className={`${geist.className} text-white min-h-[100vh] antialiased max-w-2xl mb-20 flex flex-col md:flex-row mx-4 mt-8 lg:mx-auto`}
+        className={`${switzer.className} text-white min-h-[100vh] antialiased max-w-2xl mb-20 flex flex-col md:flex-row mx-4 mt-8 lg:mx-auto`}
       >
         <Cursor />
         <Background />

@@ -1,16 +1,13 @@
-import { GeistSans } from "geist/font/sans";
-import { Cinzel, Playfair_Display, Roboto_Mono } from "next/font/google";
+import localFont from "next/font/local";
 
-export const geist = GeistSans;
-export const playfair = Playfair_Display({
-  subsets: ["latin"],
-  variable: "--font-playfair",
-});
-export const roboto_mono = Roboto_Mono({
-  subsets: ["latin"],
+export const switzer = localFont({
+  src: "./../../../public/fonts/Switzer-Variable.ttf",
   display: "swap",
+  variable: "--font-switzer",
 });
-export const cinzel = Cinzel({
-  subsets: ["latin"],
+
+export const clash = localFont({
+  src: "./../../../public/fonts/ClashDisplay-Variable.ttf",
   display: "swap",
+  variable: "--font-clash",
 });
