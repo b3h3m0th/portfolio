@@ -36,11 +36,11 @@ float random (vec2 st) {
 
 vec3 fadeLine(vec2 uv, vec2 mouse2D,  vec3 col1, vec3 col2, vec3 col3) {
     mouse2D = (mouse2D + 1.0) * 0.5;
-    float n1 = cnoise(uv); //(*|/ ) -> scale (+|-) -> offset
+    float n1 = cnoise(uv);
     float n2 = cnoise(uv + u_offset_x * 20.0);
     float n3 = cnoise(uv * 0.3 + u_offset_y * 10.0);
     float nFinal = mix(mix(n1, n2, mouse2D.x), n3, mouse2D.y);
-    vec2 baseUv = vec2(nFinal + 2.05 ) * u_background_scale; // (+|-) -> frequency (*|/ ) -> lines count
+    vec2 baseUv = vec2(nFinal + 2.05 ) * u_background_scale; 
 
     float basePattern = lines(baseUv, 1.0);
     float secondPattern = lines(baseUv, 0.25);

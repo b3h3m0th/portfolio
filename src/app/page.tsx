@@ -1,10 +1,11 @@
 "use client";
 
 import { clash } from "@/lib/fonts";
-import { useMousePosition, useSiteConfig, useTime } from "@/lib/hooks";
+import { useMousePosition, useSiteConfig } from "@/lib/hooks";
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import Clock from "./components/clock";
+import { cx } from "@/lib/utils/cx";
 
 function getAge() {
   const birthdate = new Date(2003, 10, 22);
@@ -80,17 +81,29 @@ export default function Home() {
           </h1>
         </div>
         <div className="mt-auto flex flex-col md:flex-row justify-between">
-          {config?.availableForWork ? (
-            <div className="md:border border-white md:px-3 md:py-1 rounded-full flex items-center">
-              <div className="bg-green-500 h-2 w-2 rounded-full mr-2"></div>
-              <span>Available for freelance work</span>
+          <div className="md:border border-white md:px-3 md:py-1 rounded-full flex items-center">
+            <div className="relative h-2 w-2 mr-2">
+              <div
+                className={`absolute h-full w-full rounded-full ${cx({
+                  "bg-green-500": !!config?.availableForWork,
+                  "bg-red-500": !!!config?.availableForWork,
+                })}`}
+              ></div>
+              <div
+                className={`absolute animate-ping h-full w-full rounded-full ${cx(
+                  {
+                    "bg-green-500": !!config?.availableForWork,
+                    "bg-red-500": !!!config?.availableForWork,
+                  }
+                )}`}
+              ></div>
             </div>
-          ) : (
-            <div className="md:border border-white md:px-3 md:py-1 rounded-full flex items-center">
-              <div className="bg-red-500 h-2 w-2 rounded-full mr-2"></div>
-              <span>Currently busy</span>
-            </div>
-          )}
+            <span>
+              {config?.availableForWork
+                ? "Available for freelance work"
+                : "Currently busy"}
+            </span>
+          </div>
           <div>
             Local time - <Clock />
           </div>
