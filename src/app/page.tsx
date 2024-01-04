@@ -78,8 +78,8 @@ export default function Home() {
             </div>
           </h1>
         </div>
-        <div className="mt-auto flex justify-between">
-          <div className="border border-white px-3 py-1 rounded-full flex items-center">
+        <div className="mt-auto flex flex-col md:flex-row justify-between">
+          <div className="md:border border-white md:px-3 md:py-1 rounded-full flex items-center">
             <div className="bg-green-500 h-2 w-2 rounded-full mr-2"></div>
             <span>Available for freelance work</span>
           </div>
