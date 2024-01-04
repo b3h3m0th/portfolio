@@ -8,8 +8,8 @@ import bgVertexShader from "./shaders/background.vert";
 
 export function Scene() {
   const mesh = useRef(null);
-  const { viewport } = useThree();
   const pointer = useMousePosition();
+  const { viewport, size } = useThree();
 
   const uniforms = useMemo(
     () => ({
@@ -32,18 +32,21 @@ export function Scene() {
       u_lines_amount: {
         value: 5.0,
       },
-      u_background_scale: { value: 1.0 },
+      u_background_scale: { value: size.width < 768 ? 5.0 : 1.0 },
     }),
-    [viewport.width, viewport.height]
+    [viewport.width, viewport.height, size.width]
   );
 
   useFrame((state) => {
     (mesh.current as any).material.uniforms.u_time.value =
       state.clock.getElapsedTime();
-    (mesh.current as any).material.uniforms.u_mouse.value = new Vector2(
-      pointer.clientX,
-      pointer.clientY
-    );
+
+    if (size.width > 768) {
+      (mesh.current as any).material.uniforms.u_mouse.value = new Vector2(
+        pointer.clientX,
+        pointer.clientY
+      );
+    }
   });
 
   return (

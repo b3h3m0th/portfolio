@@ -1,7 +1,7 @@
 "use client";
 
 import { clash } from "@/lib/fonts";
-import { useMousePosition } from "@/lib/hooks";
+import { useMousePosition, useTime } from "@/lib/hooks";
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 
@@ -20,60 +20,72 @@ function getAge() {
 export default function Home() {
   const { clientX } = useMousePosition();
   const [fontWeight, setFontWeight] = useState(0);
+  const time = useTime();
 
   useEffect(() => {
     setFontWeight((clientX / window.screen.width) * 900);
   }, [clientX]);
 
   return (
-    <section className="relative">
-      <h1 className="mb-8 h-[50vh] flex flex-col justify-center text-5xl md:text-8xl font-bold">
-        <div className={`relative ${clash.className} h-max-content`}>
-          <motion.p
-            initial={{ y: "100%", skewX: 30 }}
-            animate={{ y: 0, skewX: 0 }}
-            transition={{ duration: 0.8, ease: [0.2, 1, 0.7, 1] }}
-          >
-            Simon Ostini
-          </motion.p>
+    <section>
+      <div className="h-[calc(100vh-15rem)] mb-24 flex flex-col justify-stretch">
+        <div className="my-auto">
+          <h1 className="flex flex-col justify-center text-5xl md:text-8xl font-bold">
+            <div className={`relative ${clash.className} h-max-content`}>
+              <motion.p
+                initial={{ y: "100%", skewX: 30 }}
+                animate={{ y: 0, skewX: 0 }}
+                transition={{ duration: 0.8, ease: [0.2, 1, 0.7, 1] }}
+              >
+                Simon Ostini
+              </motion.p>
+            </div>
+            <div
+              className={`relative h-max-content ${clash.className} italic font-thin text-right`}
+            >
+              <motion.p
+                className="inline-block"
+                initial={{ y: "100%", skewX: 30, opacity: 0 }}
+                animate={{
+                  y: 0,
+                  skewX: 0,
+                  opacity: 1,
+                  fontWeight,
+                }}
+                transition={{
+                  duration: 0.8,
+                  ease: [0.2, 1, 0.7, 1],
+                  fontWeight: { duration: 0, ease: "linear" },
+                }}
+              >
+                Creative
+              </motion.p>
+            </div>
+            <div
+              className={`relative ${clash.className} h-max-content text-center`}
+            >
+              <motion.p
+                className="inline-block"
+                initial={{ y: "100%", skewX: 30, opacity: 0 }}
+                animate={{ y: 0, skewX: 0, opacity: 1 }}
+                transition={{
+                  duration: 0.8,
+                  ease: [0.2, 1, 0.7, 1],
+                }}
+              >
+                Developer
+              </motion.p>
+            </div>
+          </h1>
         </div>
-        <div
-          className={`relative h-max-content ${clash.className} italic font-thin text-right`}
-        >
-          <motion.p
-            className="inline-block"
-            initial={{ y: "100%", skewX: 30, opacity: 0 }}
-            animate={{
-              y: 0,
-              skewX: 0,
-              opacity: 1,
-              fontWeight,
-            }}
-            transition={{
-              duration: 0.8,
-              ease: [0.2, 1, 0.7, 1],
-              fontWeight: { duration: 0, ease: "linear" },
-            }}
-          >
-            Creative
-          </motion.p>
+        <div className="mt-auto flex justify-between">
+          <div className="border border-white px-3 py-1 rounded-full flex items-center">
+            <div className="bg-green-500 h-2 w-2 rounded-full mr-2"></div>
+            <span>Available for freelance work</span>
+          </div>
+          <div>Local time - {time}</div>
         </div>
-        <div
-          className={`relative ${clash.className} h-max-content text-center`}
-        >
-          <motion.p
-            className="inline-block"
-            initial={{ y: "100%", skewX: 30, opacity: 0 }}
-            animate={{ y: 0, skewX: 0, opacity: 1 }}
-            transition={{
-              duration: 0.8,
-              ease: [0.2, 1, 0.7, 1],
-            }}
-          >
-            Developer
-          </motion.p>
-        </div>
-      </h1>
+      </div>
       <div className="hidden">
         <div className="relative overflow-hidden h-max-content mb-8 text-neutral-300">
           <motion.p

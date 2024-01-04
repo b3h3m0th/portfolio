@@ -31,7 +31,7 @@ export default function Work() {
     <section>
       <h1 className="font-bold text-4xl mb-4">My Works</h1>
       <div className="flex gap-4 mb-8">
-        {filterTags.map((t, i) => (
+        {filterTags.map((t) => (
           <button
             className={`proserounded border-neutral-600 transition ease-in-out ${cx(
               {
@@ -71,7 +71,7 @@ export default function Work() {
                 index={i}
                 lineTop
                 lineBottom={i === workPosts.length - 1}
-                onClick={() => setModal({active: false, index: 0})}
+                onClick={() => setModal({ active: false, index: 0 })}
               ></WorkItem>
             </motion.div>
           ))
