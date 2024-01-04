@@ -27,8 +27,6 @@ export default function Work() {
       });
   }, [filter]);
 
-  console.log(works);
-
   return (
     <section>
       <h1 className="font-bold text-4xl mb-4">My Works</h1>
