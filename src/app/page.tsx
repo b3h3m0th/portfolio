@@ -1,9 +1,10 @@
 "use client";
 
 import { clash } from "@/lib/fonts";
-import { useMousePosition, useTime } from "@/lib/hooks";
+import { useMousePosition, useSiteConfig, useTime } from "@/lib/hooks";
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
+import Clock from "./components/clock";
 
 function getAge() {
   const birthdate = new Date(2003, 10, 22);
@@ -20,7 +21,7 @@ function getAge() {
 export default function Home() {
   const { clientX } = useMousePosition();
   const [fontWeight, setFontWeight] = useState(0);
-  const time = useTime();
+  const config = useSiteConfig();
 
   useEffect(() => {
     setFontWeight((clientX / window.screen.width) * 900);
@@ -79,11 +80,20 @@ export default function Home() {
           </h1>
         </div>
         <div className="mt-auto flex flex-col md:flex-row justify-between">
-          <div className="md:border border-white md:px-3 md:py-1 rounded-full flex items-center">
-            <div className="bg-green-500 h-2 w-2 rounded-full mr-2"></div>
-            <span>Available for freelance work</span>
+          {config?.availableForWork ? (
+            <div className="md:border border-white md:px-3 md:py-1 rounded-full flex items-center">
+              <div className="bg-green-500 h-2 w-2 rounded-full mr-2"></div>
+              <span>Available for freelance work</span>
+            </div>
+          ) : (
+            <div className="md:border border-white md:px-3 md:py-1 rounded-full flex items-center">
+              <div className="bg-red-500 h-2 w-2 rounded-full mr-2"></div>
+              <span>Currently busy</span>
+            </div>
+          )}
+          <div>
+            Local time - <Clock />
           </div>
-          <div>Local time - {time}</div>
         </div>
       </div>
       <div className="hidden">

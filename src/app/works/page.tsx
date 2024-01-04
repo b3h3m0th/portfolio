@@ -12,20 +12,22 @@ type FilterTags = ["all", WorkTag.development, WorkTag.design];
 const filterTags: FilterTags = ["all", WorkTag.development, WorkTag.design];
 
 export default function Work() {
-  const [workPosts, setWorkPosts] = useState<Work[] | null>(null);
+  const [works, setWorks] = useState<Work[] | null>(null);
   const [filter, setFilter] = useState<FilterTags[number]>("all");
   const setModal = useWorks((state) => state.setModal);
 
   useEffect(() => {
-    setWorkPosts(null);
+    setWorks(null);
     fetch("/api/work")
       .then((work) => work.json())
       .then((work: Work[]) => {
         filter === "all"
-          ? setWorkPosts(work)
-          : setWorkPosts(work.filter((w) => w.tags?.includes(filter)));
+          ? setWorks(work)
+          : setWorks(work.filter((w) => w.tags?.includes(filter)));
       });
   }, [filter]);
+
+  console.log(works);
 
   return (
     <section>
@@ -46,8 +48,8 @@ export default function Work() {
         ))}
       </div>
       <AnimatePresence>
-        {workPosts ? (
-          workPosts.map((w, i) => (
+        {works ? (
+          works.map((w, i) => (
             <motion.div
               key={`work-${w.id}`}
               initial={{ opacity: 0, x: 30 }}
@@ -70,7 +72,7 @@ export default function Work() {
                 }}
                 index={i}
                 lineTop
-                lineBottom={i === workPosts.length - 1}
+                lineBottom={i === works.length - 1}
                 onClick={() => setModal({ active: false, index: 0 })}
               ></WorkItem>
             </motion.div>
@@ -79,9 +81,9 @@ export default function Work() {
           <span>Loading works...</span>
         )}
       </AnimatePresence>
-      {workPosts && (
+      {works && (
         <WorkModal
-          works={workPosts.map((w) => ({ image: w.image, title: w.title }))}
+          works={works.map((w) => ({ image: w.image, title: w.title }))}
         />
       )}
     </section>
