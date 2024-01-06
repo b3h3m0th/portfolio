@@ -7,6 +7,7 @@ import { Work, WorkTag } from "@/lib/types";
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { useWorks } from "@/lib/stores";
+import { clash } from "@/lib/fonts";
 
 type FilterTags = ["all", WorkTag.development, WorkTag.design];
 const filterTags: FilterTags = ["all", WorkTag.development, WorkTag.design];
@@ -29,7 +30,7 @@ export default function Work() {
 
   return (
     <section>
-      <h1 className="font-bold text-4xl mb-4">My Works</h1>
+      <h2 className={`${clash.className} font-bold text-4xl mb-4`}>My Works</h2>
       <div className="flex gap-4 mb-8">
         {filterTags.map((t) => (
           <button

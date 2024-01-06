@@ -8,11 +8,10 @@ export const useTime = (refreshCycle = 100) => {
       () =>
         setNow(
           new Intl.DateTimeFormat("en-US", {
-            timeZone: "Europe/Stockholm",
+            timeZone: "Europe/Vienna",
             hour: "numeric",
             minute: "numeric",
-            second: "numeric",
-            hour12: false,
+            hour12: true,
           }).format(new Date())
         ),
       refreshCycle

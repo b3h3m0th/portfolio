@@ -13,11 +13,11 @@ export function NavItem({ route, name }: { route: string; name: string }) {
       href={route}
       className={"transition-all flex align-middle"}
     >
-      <span className="relative py-1 px-2">
+      <span className="relative py-1 px-2 font-semibold text-sm uppercase">
         {name}
         {route === pathname ? (
           <motion.div
-            className="absolute h-1 w-1 left-1/2 -ml-[2px] rounded-full top-7 bg-white from-transparent to-neutral-200"
+            className="absolute h-1 w-1 left-1/2 -ml-[2px] top-7 bg-white from-transparent to-neutral-200"
             layoutId="sidebar"
             transition={{
               type: "spring",

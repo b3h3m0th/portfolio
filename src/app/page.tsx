@@ -6,6 +6,7 @@ import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import Clock from "./components/clock";
 import { cx } from "@/lib/utils/cx";
+import Image from "next/image";
 
 function getAge() {
   const birthdate = new Date(2003, 10, 22);
@@ -31,127 +32,109 @@ export default function Home() {
   return (
     <section>
       <div className="h-[calc(100vh-15rem)] mb-24 flex flex-col justify-stretch">
-        <div className="my-auto">
-          <h1 className="flex flex-col justify-center text-5xl md:text-8xl font-bold">
-            <div className={`relative ${clash.className} h-max-content`}>
-              <motion.p
-                initial={{ y: "100%", skewX: 30 }}
-                animate={{ y: 0, skewX: 0 }}
-                transition={{ duration: 0.8, ease: [0.2, 1, 0.7, 1] }}
-              >
-                Simon Ostini
-              </motion.p>
-            </div>
-            <div
-              className={`relative h-max-content ${clash.className} italic font-thin text-right`}
+        <div className="my-auto w-full max-w-2xl mx-auto">
+          <h1
+            className={`mb-16 flex flex-col justify-center text-5xl md:text-8xl font-bold ${clash.className}`}
+          >
+            <motion.p
+              initial={{ y: "100%", skewX: 30, opacity: 0 }}
+              animate={{ y: 0, skewX: 0, opacity: 1 }}
+              transition={{
+                duration: 0.8,
+                ease: [0.2, 1, 0.7, 1],
+              }}
             >
-              <motion.p
-                className="inline-block"
-                initial={{ y: "100%", skewX: 30, opacity: 0 }}
-                animate={{
-                  y: 0,
-                  skewX: 0,
-                  opacity: 1,
-                  fontWeight,
-                }}
-                transition={{
-                  duration: 0.8,
-                  ease: [0.2, 1, 0.7, 1],
-                  fontWeight: { duration: 0, ease: "linear" },
-                }}
-              >
-                Creative
-              </motion.p>
-            </div>
-            <div
-              className={`relative ${clash.className} h-max-content text-center`}
+              Simon Ostini
+            </motion.p>
+            <motion.p
+              className="inline-block text-right font-thin"
+              initial={{ y: "100%", skewX: 30, opacity: 0 }}
+              animate={{
+                y: 0,
+                skewX: 0,
+                opacity: 1,
+                fontWeight,
+              }}
+              transition={{
+                duration: 0.8,
+                ease: [0.2, 1, 0.7, 1],
+                fontWeight: { duration: 0, ease: "linear" },
+              }}
             >
-              <motion.p
-                className="inline-block"
-                initial={{ y: "100%", skewX: 30, opacity: 0 }}
-                animate={{ y: 0, skewX: 0, opacity: 1 }}
-                transition={{
-                  duration: 0.8,
-                  ease: [0.2, 1, 0.7, 1],
-                }}
-              >
-                Developer
-              </motion.p>
-            </div>
+              Creative
+            </motion.p>
+            <motion.p
+              className="inline-block text-center"
+              initial={{ y: "100%", skewX: 30, opacity: 0 }}
+              animate={{ y: 0, skewX: 0, opacity: 1 }}
+              transition={{
+                duration: 0.8,
+                ease: [0.2, 1, 0.7, 1],
+              }}
+            >
+              Developer
+            </motion.p>
           </h1>
         </div>
-        <div className="mt-auto flex flex-col md:flex-row justify-between">
-          <div className="md:border border-white md:px-3 md:py-1 rounded-full flex items-center">
-            <div className="relative h-2 w-2 mr-2">
-              <div
-                className={`absolute h-full w-full rounded-full ${cx({
-                  "bg-green-500": !!config?.availableForWork,
-                  "bg-red-500": !!!config?.availableForWork,
-                })}`}
-              ></div>
-              <div
-                className={`absolute animate-ping h-full w-full rounded-full ${cx(
-                  {
+        <div className="mt-auto flex flex-col md:flex-row justify-between font-light">
+          <div className="mb-4 md:mb-0">
+            <p className="font-semibold">Based in Dornbirn, Austria</p>
+            <p className="font-thin">
+              Local time - <Clock />
+            </p>
+          </div>
+          {/* <div className="font-thin text-4xl opacity-50 animate-bounce">
+            &darr;
+          </div> */}
+          <div className="flex flex-col justify-right">
+            <div className="rounded-full flex items-center">
+              <div className="relative h-2 w-2 mr-2">
+                <div
+                  className={`absolute h-full w-full rounded-full ${cx({
                     "bg-green-500": !!config?.availableForWork,
                     "bg-red-500": !!!config?.availableForWork,
-                  }
-                )}`}
-              ></div>
+                  })}`}
+                ></div>
+                <div
+                  className={`absolute animate-ping h-full w-full rounded-full ${cx(
+                    {
+                      "bg-green-500": !!config?.availableForWork,
+                      "bg-red-500": !!!config?.availableForWork,
+                    }
+                  )}`}
+                ></div>
+              </div>
+              <span className="font-semibold">
+                {config?.availableForWork
+                  ? "Available for freelance work"
+                  : "Currently busy"}
+              </span>
             </div>
-            <span>
-              {config?.availableForWork
-                ? "Available for freelance work"
-                : "Currently busy"}
-            </span>
-          </div>
-          <div>
-            Local time - <Clock />
+            <a
+              href="mailto:simonostini@gmail.com"
+              className="md:text-right font-thin underline"
+            >{`simonostini@gmail.com`}</a>
           </div>
         </div>
       </div>
-      <div className="hidden">
-        <div className="relative overflow-hidden h-max-content mb-8 text-neutral-300">
-          <motion.p
-            initial={{ y: "100%", skewX: 30 }}
-            animate={{ y: 0, skewX: 0 }}
-            transition={{
-              duration: 0.8,
-              ease: [0.2, 1, 0.7, 1],
-              delay: 0.2,
-            }}
-          >
-            {`Hey, I'm a ${getAge()}-year-old creative developer from Austria, also known as "Behemoth" over the internet. I've been writing code since I was 14 and I'm still hooked on learning new things every day. Oh, and also I play guitar a lot!`}
-          </motion.p>
-        </div>
-        <div className="relative overflow-hidden h-max-content">
-          <motion.a
-            href="mailto:simonostini@gmail.com"
-            className="inline-block"
-            initial={{ y: "100%", skewX: 30 }}
-            animate={{ y: 0, skewX: 0 }}
-            transition={{
-              duration: 0.8,
-              ease: [0.2, 1, 0.7, 1],
-              delay: 0.3,
-            }}
-          >
-            {`simonostini@gmail.com`}
-          </motion.a>
-        </div>
-        <div className="relative overflow-hidden h-max-content">
-          <motion.a
-            href="tel:+436508441272"
-            className="inline-block"
-            initial={{ y: "100%", skewX: 30 }}
-            animate={{ y: 0, skewX: 0 }}
-            transition={{
-              duration: 0.8,
-              ease: [0.2, 1, 0.7, 1],
-              delay: 0.4,
-            }}
-          >
-            {`+43 650 844 1272`}
-          </motion.a>
+      <div className="hidden mt-32">
+        <div className={`${clash.className} relative min-h-64 h-64`}>
+          <h2 className={`font-thin text-sm uppercase mb-4`}>About me</h2>
+          <div className="font-thin text-4xl leading-tight tracking-wide flex flex-col gap-4">
+            <p>
+              I&apos;m a {getAge()}-year-old creative developer based in Austria
+              also known as{" "}
+              <span className="font-bold text-white">Behemoth</span> over the
+              internet.
+            </p>
+          </div>
+          {/* <Image
+            className="absolute left-1/2 -translate-x-1/2 top-0 -z-[1]"
+            src="/images/me_hero.webp"
+            height={300}
+            width={300}
+            alt="me"
+          /> */}
         </div>
       </div>
     </section>

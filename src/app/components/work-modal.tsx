@@ -7,6 +7,16 @@ import gsap from "gsap";
 import { useWorks } from "@/lib/stores";
 import { Work } from "@/lib/types";
 import { useMousePosition } from "@/lib/hooks";
+import { Canvas } from "@react-three/fiber";
+
+function Scene() {
+  return (
+    <mesh>
+      <planeGeometry args={[2, 2]}></planeGeometry>
+      <meshBasicMaterial></meshBasicMaterial>
+    </mesh>
+  );
+}
 
 const scaleAnimation: Variants = {
   initial: { scale: 0, x: "-50%", y: "-50%" },
@@ -46,38 +56,42 @@ export default function WorkModal({ works }: WorkModalProps) {
   }, [clientX, clientY]);
 
   return (
-    <>
+    <motion.div
+      ref={modalContainer}
+      variants={scaleAnimation}
+      initial="initial"
+      animate={active ? "enter" : "closed"}
+      className="h-[150px] w-[300px] fixed bg-white overflow-hidden pointer-events-none flex items-center justify-center hidden md:block"
+    >
       <motion.div
-        ref={modalContainer}
-        variants={scaleAnimation}
-        initial="initial"
-        animate={active ? "enter" : "closed"}
-        className="h-[150px] w-[300px] fixed bg-white overflow-hidden pointer-events-none flex items-center justify-center hidden md:block"
+        animate={{ top: index * -100 + "%" }}
+        transition={{
+          top: {
+            duration: 0.3,
+            ease: "linear",
+          },
+        }}
+        className="h-full w-full absolute"
       >
-        <div
-          style={{ top: index * -100 + "%", transition: "top .5s ease" }}
-          className="h-full w-full absolute"
-        >
-          {works.map((work, index) => {
-            return (
-              <div
-                className="h-full w-full overflow-hidden flex items-center justify-center bg-neutral-200"
-                key={`modal_${index}`}
-              >
-                {work.image && (
-                  <Image
-                    src={work.image}
-                    width={200}
-                    height={0}
-                    className="w-auto h-[130px]"
-                    alt={`${work.title}`}
-                  />
-                )}
-              </div>
-            );
-          })}
-        </div>
+        {works.map((work, index) => {
+          return (
+            <div
+              className="h-full w-full overflow-hidden flex items-center justify-center bg-neutral-200"
+              key={`modal_${index}`}
+            >
+              {work.image && (
+                <Image
+                  src={work.image}
+                  width={200}
+                  height={0}
+                  className="w-auto h-[130px]"
+                  alt={`${work.title}`}
+                />
+              )}
+            </div>
+          );
+        })}
       </motion.div>
-    </>
+    </motion.div>
   );
 }

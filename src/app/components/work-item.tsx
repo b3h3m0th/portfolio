@@ -25,7 +25,7 @@ export default function WorkItem({
   return (
     <Link
       href={`/works/${work.id}`}
-      className="work-item py-6"
+      className="work-item"
       onClick={onClick}
       onMouseEnter={() => {
         setModal({ active: true, index });
@@ -36,7 +36,7 @@ export default function WorkItem({
     >
       {lineTop && <BezierLine />}
       <div className="py-6 overflow-hidden">
-        <h2 className="font-bold mb-1">{work.title}</h2>
+        <h2 className="font-semibold mb-2">{work.title}</h2>
         <div className="text-sm">
           <span>
             {`${
