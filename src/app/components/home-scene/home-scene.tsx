@@ -35,6 +35,7 @@ export default function HomeScene() {
     <mesh ref={mesh}>
       <planeGeometry args={[7, 6, 50, 50]}></planeGeometry>
       <shaderMaterial
+        wireframe
         vertexShader={vertexShader}
         fragmentShader={fragmentShader}
         uniforms={{ ...uniforms, u_texture: { value: image } }}

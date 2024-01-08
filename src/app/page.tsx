@@ -28,15 +28,20 @@ export default function Home() {
 
   return (
     <section>
-      <div className="h-[calc(100vh-15rem)] mb-24 flex flex-col justify-stretch">
-        <div className="my-auto w-full max-w-2xl mx-auto">
+      <div className="h-[calc(100vh-15rem)] mb-24 flex flex-col justify-stretch items-stretch">
+        <div className="relative w-full m-auto max-w-2xl flex-1 flex flex-col justify-center mb-16">
           <h1
-            className={`mb-16 flex flex-col justify-center text-6xl md:text-8xl font-bold ${clash.className}`}
+            className={`flex flex-col justify-center text-6xl md:text-8xl font-bold ${clash.className}`}
           >
             <p className="inline-block">Simon Ostini</p>
             <p className="inline-block md:text-right">Creative</p>
             <p className="inline-block md:text-center">Developer</p>
           </h1>
+          <div className="absolute left-0 top-0 w-full h-full -z-[1]">
+            <Canvas>
+              <HomeScene />
+            </Canvas>
+          </div>
         </div>
         <div className="mt-auto flex flex-col md:flex-row justify-between font-light">
           <div className="mb-4 md:mb-0">
