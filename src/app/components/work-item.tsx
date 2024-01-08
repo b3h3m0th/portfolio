@@ -51,13 +51,13 @@ export default function WorkItem({
           </span>
           {work.company && (
             <>
-              <span className="mx-2">&bull;</span>
+              <span className="mx-2">&#10022;</span>
               <span>{work.company}</span>
             </>
           )}
           {work.tags && (
             <div className="inline-block">
-              <span className="mx-2">&bull;</span>
+              <span className="mx-2">&#10022;</span>
               {work.tags.map((t) => (
                 <span className="mr-2" key={`tag-${t}`}>{`#${t}`}</span>
               ))}

@@ -101,9 +101,24 @@ export default function Home() {
           </div>
           <div className={`flex flex-col gap-4`}>
             <p className="text-justify">
-              TypeScript, React, .NET, 80s Hard rock, Glam metal J. R. R.
-              Tolkien, StackOverflow, WebGL, Open source, Leather jackets,
-              Next.js, Darts
+              {[
+                "TypeScript",
+                "React",
+                ".NET",
+                "80s Hard rock",
+                "Glam metal",
+                "J. R. R. Tolkien",
+                "StackOverflow",
+                "WebGL",
+                "Open source",
+                "Leather jackets",
+                "Next.js",
+                "Darts",
+              ].map((e, index, array) => (
+                <span key={`like-${e}`}>
+                  {e} {index !== array.length - 1 && <>&#10022; </>}
+                </span>
+              ))}
             </p>
           </div>
         </div>
