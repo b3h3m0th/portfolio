@@ -1,4 +1,4 @@
-import { useMousePosition } from "@/lib/hooks";
+import { useMousePosition } from "@/app/hooks";
 import { useThree, useFrame } from "@react-three/fiber";
 import { useRef, useMemo } from "react";
 import { Vector2 } from "three";

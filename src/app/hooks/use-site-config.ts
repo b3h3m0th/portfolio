@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { SiteConfig } from "../types";
+import { SiteConfig } from "../../lib/types";
 
 export function useSiteConfig() {
   const [siteConfig, setSiteConfig] = useState<SiteConfig>();

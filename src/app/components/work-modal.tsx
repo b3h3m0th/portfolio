@@ -4,9 +4,9 @@ import { useRef, useEffect } from "react";
 import { Variants, motion } from "framer-motion";
 import Image from "next/image";
 import gsap from "gsap";
-import { useWorks } from "@/lib/stores";
+import { useWorks } from "@/app/stores";
 import { Work } from "@/lib/types";
-import { useMousePosition } from "@/lib/hooks";
+import { useMousePosition } from "@/app/hooks";
 import { Canvas } from "@react-three/fiber";
 
 function Scene() {

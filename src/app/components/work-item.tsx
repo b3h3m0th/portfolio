@@ -1,6 +1,6 @@
 "use client";
 
-import { useWorks } from "@/lib/stores";
+import { useWorks } from "@/app/stores";
 import { Work } from "@/lib/types";
 import Link from "next/link";
 import BezierLine from "./bezier-line";

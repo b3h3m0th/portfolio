@@ -13,7 +13,7 @@ export function NavItem({ route, name }: { route: string; name: string }) {
       href={route}
       className={"transition-all flex align-middle"}
     >
-      <span className="relative py-1 px-2 font-semibold text-sm uppercase">
+      <span className="relative py-1 px-2 font-semibold">
         {name}
         {route === pathname ? (
           <motion.div

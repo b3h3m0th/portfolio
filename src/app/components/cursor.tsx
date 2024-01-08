@@ -1,6 +1,6 @@
 "use client";
 
-import { useMousePosition } from "@/lib/hooks";
+import { useMousePosition } from "@/app/hooks";
 import { motion } from "framer-motion";
 
 export default function Cursor() {

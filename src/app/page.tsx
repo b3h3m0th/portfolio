@@ -1,12 +1,13 @@
 "use client";
-
-import { clash } from "@/lib/fonts";
-import { useMousePosition, useSiteConfig } from "@/lib/hooks";
+import { clash } from "@/app/fonts";
+import { useMousePosition, useSiteConfig } from "@/app/hooks";
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import Clock from "./components/clock";
 import { cx } from "@/lib/utils/cx";
-import Image from "next/image";
+import { Canvas } from "@react-three/fiber";
+import { OrbitControls } from "@react-three/drei";
+import HomeScene from "./components/home-scene/home-scene";
 
 function getAge() {
   const birthdate = new Date(2003, 10, 22);
@@ -34,7 +35,7 @@ export default function Home() {
       <div className="h-[calc(100vh-15rem)] mb-24 flex flex-col justify-stretch">
         <div className="my-auto w-full max-w-2xl mx-auto">
           <h1
-            className={`mb-16 flex flex-col justify-center text-5xl md:text-8xl font-bold ${clash.className}`}
+            className={`flex flex-col justify-center text-5xl md:text-8xl font-black ${clash.className}`}
           >
             <motion.p
               initial={{ y: "100%", skewX: 30, opacity: 0 }}
@@ -64,12 +65,18 @@ export default function Home() {
               Creative
             </motion.p>
             <motion.p
-              className="inline-block text-center"
+              className="inline-block text-center font-thin"
               initial={{ y: "100%", skewX: 30, opacity: 0 }}
-              animate={{ y: 0, skewX: 0, opacity: 1 }}
+              animate={{
+                y: 0,
+                skewX: 0,
+                opacity: 1,
+                fontWeight,
+              }}
               transition={{
                 duration: 0.8,
                 ease: [0.2, 1, 0.7, 1],
+                fontWeight: { duration: 0, ease: "linear" },
               }}
             >
               Developer
@@ -79,7 +86,7 @@ export default function Home() {
         <div className="mt-auto flex flex-col md:flex-row justify-between font-light">
           <div className="mb-4 md:mb-0">
             <p className="font-semibold">Based in Dornbirn, Austria</p>
-            <p className="font-thin">
+            <p className="font-light">
               Local time - <Clock />
             </p>
           </div>
@@ -112,15 +119,21 @@ export default function Home() {
             </div>
             <a
               href="mailto:simonostini@gmail.com"
-              className="md:text-right font-thin underline"
+              className="md:text-right font-light underline"
             >{`simonostini@gmail.com`}</a>
           </div>
         </div>
       </div>
-      <div className="hidden mt-32">
+      <div className="h-1/3">
+        <Canvas className="w-full">
+          <OrbitControls />
+          <HomeScene />
+        </Canvas>
+      </div>
+      <div className="mt-32">
         <div className={`${clash.className} relative min-h-64 h-64`}>
-          <h2 className={`font-thin text-sm uppercase mb-4`}>About me</h2>
-          <div className="font-thin text-4xl leading-tight tracking-wide flex flex-col gap-4">
+          <h2 className={` font-thin text-sm uppercase mb-4`}>About me</h2>
+          <div className="font-extralight text-4xl leading-tight flex flex-col gap-4">
             <p>
               I&apos;m a {getAge()}-year-old creative developer based in Austria
               also known as{" "}

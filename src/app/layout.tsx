@@ -5,7 +5,7 @@ import Cursor from "./components/cursor";
 import { Navbar } from "./components/nav";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Analytics } from "@vercel/analytics/react";
-import { switzer } from "@/lib/fonts";
+import { switzer } from "@/app/fonts";
 import { Background } from "./components/background/background";
 
 export const metadata: Metadata = {
