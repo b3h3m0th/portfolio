@@ -119,6 +119,8 @@ export default function Home() {
                 "Leather jackets",
                 "Next.js",
                 "Darts",
+                "Pizza",
+                "Cats",
               ].map((e, index, array) => (
                 <span key={`like-${e}`}>
                   {e} {index !== array.length - 1 && <>&#10022; </>}
