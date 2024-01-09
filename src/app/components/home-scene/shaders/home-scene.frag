@@ -9,7 +9,7 @@ void main() {
   // vec3 color = vec3(1.0);
   vec4 texture = texture2D(u_texture, v_uv);
 
-  if(texture.a < 1.0)
+  if (texture.a < 1.0)
   {
     discard;
   }

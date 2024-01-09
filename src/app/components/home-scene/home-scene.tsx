@@ -1,10 +1,10 @@
 import { useMemo, useRef } from "react";
-import { useFrame, useLoader, useThree } from "@react-three/fiber";
-import { Vector2, TextureLoader, Texture, DoubleSide } from "three";
+import { useFrame, useThree } from "@react-three/fiber";
+import { Vector2, Texture, DoubleSide } from "three";
 
 import vertexShader from "./shaders/home-scene.vert";
 import fragmentShader from "./shaders/home-scene.frag";
-import { Float } from "@react-three/drei";
+import { Float, useTexture } from "@react-three/drei";
 
 export default function HomeScene() {
   const { viewport } = useThree();
@@ -22,10 +22,10 @@ export default function HomeScene() {
         value: new Texture(),
       },
     }),
-    []
+    [viewport.width, viewport.height]
   );
 
-  const [image] = useLoader(TextureLoader, ["/images/king_of_diamonds2.png"]);
+  const [cardES] = useTexture(["/images/cards/ES.svg"]);
 
   useFrame((state) => {
     (mesh.current as any).material.uniforms.u_time.value =
@@ -44,7 +44,7 @@ export default function HomeScene() {
             wireframe
             vertexShader={vertexShader}
             fragmentShader={fragmentShader}
-            uniforms={{ ...uniforms, u_texture: { value: image } }}
+            uniforms={{ ...uniforms, u_texture: { value: cardES } }}
           ></shaderMaterial>
         </mesh>
       </Float>

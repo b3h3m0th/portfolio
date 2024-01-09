@@ -1,14 +1,12 @@
 "use client";
+
 import { clash } from "@/app/fonts";
-import { useMousePosition, useSiteConfig } from "@/app/hooks";
-import { motion } from "framer-motion";
-import { useEffect, useState } from "react";
-import Clock from "./components/clock";
+import { useSiteConfig } from "@/app/hooks";
 import { cx } from "@/lib/utils/cx";
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
+import Clock from "./components/clock";
 import HomeScene from "./components/home-scene/home-scene";
-import Image from "next/image";
 import BezierLine from "./components/bezier-line";
 
 function getAge() {
@@ -41,7 +39,6 @@ export default function Home() {
             <Canvas>
               <HomeScene />
               <OrbitControls
-                // autoRotate
                 enableZoom={false}
                 enableRotate={false}
               ></OrbitControls>
@@ -126,6 +123,7 @@ export default function Home() {
                 "Darts",
                 "Pizza",
                 "Cats",
+                "Magic",
               ].map((e, index, array) => (
                 <span key={`like-${e}`}>
                   {e} {index !== array.length - 1 && <>&#10022; </>}
