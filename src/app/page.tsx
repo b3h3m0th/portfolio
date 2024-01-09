@@ -40,6 +40,11 @@ export default function Home() {
           <div className="absolute left-0 top-0 w-full h-full -z-[1]">
             <Canvas>
               <HomeScene />
+              <OrbitControls
+                // autoRotate
+                enableZoom={false}
+                enableRotate={false}
+              ></OrbitControls>
             </Canvas>
           </div>
         </div>
