@@ -31,7 +31,7 @@ export default function Home() {
       <div className="h-[calc(100vh-15rem)] mb-24 flex flex-col justify-stretch items-stretch">
         <div className="relative w-full m-auto max-w-2xl flex-1 flex flex-col justify-center mb-16">
           <h1
-            className={`flex flex-col justify-center text-6xl md:text-8xl font-bold ${clash.className}`}
+            className={`hidden flex-col justify-center text-6xl md:text-8xl font-bold ${clash.className}`}
           >
             <p className="inline-block">Simon Ostini</p>
             <p className="inline-block md:text-right">Creative</p>

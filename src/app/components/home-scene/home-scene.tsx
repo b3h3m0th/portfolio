@@ -34,7 +34,7 @@ export default function HomeScene() {
 
   return (
     <>
-      <Float speed={3} floatingRange={[-0.5, 0.5]}>
+      <Float speed={3} floatingRange={[0, 0.5]}>
         <mesh ref={mesh}>
           <planeGeometry args={[63 / 18, 88 / 18, 100, 100]}></planeGeometry>
           <shaderMaterial
@@ -48,23 +48,6 @@ export default function HomeScene() {
           ></shaderMaterial>
         </mesh>
       </Float>
-      {/* <RoundedBox
-        ref={mesh}
-        args={[63 / 14, 88 / 14, 1 / 14]}
-        bevelSegments={4}
-      >
-        <boxGeometry args={[63 / 14, 88 / 14, 1 / 14, 50, 50]}></boxGeometry>
-        <meshBasicMaterial map={image}></meshBasicMaterial>
-        <meshBasicMaterial color="red" attach="material-1"></meshBasicMaterial>
-        <shaderMaterial
-          attach="material-0"
-          transparent
-          // wireframe
-          vertexShader={vertexShader}
-          fragmentShader={fragmentShader}
-          uniforms={{ ...uniforms, u_texture: { value: image } }}
-        ></shaderMaterial>
-      </RoundedBox> */}
     </>
   );
 }
