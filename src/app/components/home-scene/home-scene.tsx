@@ -36,7 +36,7 @@ export default function HomeScene() {
     <>
       <Float speed={3} floatingRange={[-0.5, 0.5]}>
         <mesh ref={mesh}>
-          <planeGeometry args={[63 / 20, 88 / 20, 100, 100]}></planeGeometry>
+          <planeGeometry args={[63 / 18, 88 / 18, 100, 100]}></planeGeometry>
           <shaderMaterial
             depthWrite={false}
             side={DoubleSide}
