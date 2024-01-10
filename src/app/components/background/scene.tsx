@@ -22,8 +22,10 @@ export function Scene() {
       u_resolution: {
         value: new Vector2(viewport.width, viewport.height),
       },
-      u_color1: { value: [252 / 255, 68 / 255, 15 / 255] },
-      u_color2: { value: [30 / 255, 255 / 255, 188 / 255] },
+      // u_color1: { value: [252 / 255, 68 / 255, 15 / 255] },
+      // u_color2: { value: [30 / 255, 255 / 255, 188 / 255] },
+      u_color1: { value: [50 / 255, 50 / 255, 50 / 255] },
+      u_color2: { value: [100 / 255, 100 / 255, 100 / 255] },
       u_color_accent: { value: [0 / 255, 0 / 255, 0 / 255] },
       u_lines_blur: { value: size.width < 768 ? 0.3 : 0.25 },
       u_noise: { value: 0.1 },
