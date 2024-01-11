@@ -27,15 +27,16 @@ export default function Home() {
   return (
     <section>
       <div className="h-[calc(100vh-15rem)] mb-24 flex flex-col justify-stretch items-stretch">
-        <div className="relative w-full m-auto max-w-2xl flex-1 flex flex-col justify-center mb-16">
+        <div className="relative w-full mb-16 flex-1 flex flex-col justify-center">
           <h1
-            className={`hidden flex-col justify-center text-6xl md:text-8xl font-bold ${clash.className}`}
+            className={`hidden flex-col text-sm font-thin ${clash.className}`}
           >
             <p className="inline-block">Simon Ostini</p>
-            <p className="inline-block md:text-right">Creative</p>
-            <p className="inline-block md:text-center">Developer</p>
+            <p className="inline-block">Creative</p>
+            <p className="inline-block">Developer</p>
+            <p className="inline-block">Portfolio</p>
           </h1>
-          <div className="absolute left-0 top-0 w-full h-full -z-[1]">
+          <div className="absolute left-0 top-0 w-full h-full">
             <Canvas>
               <HomeScene />
               <OrbitControls
@@ -113,17 +114,19 @@ export default function Home() {
                 "React",
                 ".NET",
                 "80s Hard rock",
-                "Glam metal",
                 "J. R. R. Tolkien",
                 "StackOverflow",
                 "WebGL",
                 "Open source",
-                "Leather jackets",
                 "Next.js",
                 "Darts",
                 "Pizza",
+                "Visual Studio Code",
                 "Cats",
                 "Magic",
+                "Sass",
+                "Git",
+                "Three.js",
               ].map((e, index, array) => (
                 <span key={`like-${e}`}>
                   {e} {index !== array.length - 1 && <>&#10022; </>}
