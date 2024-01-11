@@ -25,7 +25,7 @@ export default function HomeScene() {
     [viewport.width, viewport.height]
   );
 
-  const [cardES] = useTexture(["/images/cards/ES.svg"]);
+  const [cardES] = useTexture(["/images/cards/AS_custom.svg"]);
 
   useFrame((state) => {
     (mesh.current as any).material.uniforms.u_time.value =
