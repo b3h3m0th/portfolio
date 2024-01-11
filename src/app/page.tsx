@@ -53,7 +53,7 @@ export default function Home() {
               Local time - <Clock />
             </p>
           </div>
-          <div className="hidden md:hidden text-center font-thin text-2xl opacity-50 animate-bounce">
+          <div className="hidden text-center font-thin text-2xl opacity-50 animate-bounce">
             &darr;
           </div>
           <div className="flex flex-col justify-right">
