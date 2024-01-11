@@ -62,7 +62,7 @@ export default function WorkModal({ works }: WorkModalProps) {
       variants={scaleAnimation}
       initial="initial"
       animate={active ? "enter" : "closed"}
-      className="-z-[1] h-[150px] w-[300px] fixed bg-white overflow-hidden pointer-events-none md:block"
+      className="-z-[1] h-[150px] w-[300px] fixed overflow-hidden pointer-events-none md:block"
     >
       <motion.div
         animate={{ top: index * -100 + "%" }}
