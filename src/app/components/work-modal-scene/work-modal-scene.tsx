@@ -12,7 +12,7 @@ type WorkModalSceneProps = {
 };
 
 export function WorkModalScene({ image }: WorkModalSceneProps) {
-  const { viewport } = useThree();
+  const { viewport, size } = useThree();
   const mesh = useRef(null);
 
   const uniforms = useMemo(
@@ -39,11 +39,10 @@ export function WorkModalScene({ image }: WorkModalSceneProps) {
   return (
     <>
       <mesh ref={mesh}>
-        <planeGeometry args={[2, 2]}></planeGeometry>
+        <planeGeometry args={[1, 1]}></planeGeometry>
         <shaderMaterial
           depthWrite={false}
           transparent
-          wireframe
           vertexShader={vertexShader}
           fragmentShader={fragmentShader}
           uniforms={{ ...uniforms, u_texture: { value: texture } }}
