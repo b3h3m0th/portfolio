@@ -126,7 +126,6 @@ export default function Home() {
                 "Magic",
                 "Sass",
                 "Git",
-                "Three.js",
               ].map((e, index, array) => (
                 <span key={`like-${e}`}>
                   {e} {index !== array.length - 1 && <>&#10022; </>}
