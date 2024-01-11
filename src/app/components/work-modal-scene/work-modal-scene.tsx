@@ -39,7 +39,7 @@ export function WorkModalScene({ image }: WorkModalSceneProps) {
   return (
     <>
       <mesh ref={mesh}>
-        <planeGeometry args={[1, 1]}></planeGeometry>
+        <planeGeometry args={[10, 5, 100, 100]}></planeGeometry>
         <shaderMaterial
           depthWrite={false}
           transparent

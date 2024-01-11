@@ -8,6 +8,7 @@ import { Work } from "@/lib/types";
 import { useMousePosition } from "@/app/hooks";
 import { Canvas } from "@react-three/fiber";
 import { WorkModalScene } from "./work-modal-scene/work-modal-scene";
+import Image from "next/image";
 
 function Scene() {
   return (
@@ -81,16 +82,16 @@ export default function WorkModal({ works }: WorkModalProps) {
             >
               {work.image && (
                 <>
-                  <Canvas>
+                  {/* <Canvas>
                     <WorkModalScene image={work.image}></WorkModalScene>
-                  </Canvas>
-                  {/*<Image
-                  src={work.image}
-                  width={200}
-                  height={0}
-                  className="w-auto h-[130px]"
-                  alt={`${work.title}`}
-                /> */}
+                  </Canvas> */}
+                  <Image
+                    src={work.image}
+                    width={200}
+                    height={0}
+                    className="w-auto h-[130px]"
+                    alt={`${work.title}`}
+                  />
                 </>
               )}
             </div>

@@ -1,7 +1,7 @@
 "use client";
 
 import { Canvas } from "@react-three/fiber";
-import { Scene } from "./scene";
+import { Scene } from "./background-scene";
 
 export const Background: React.FC = () => {
   return (
