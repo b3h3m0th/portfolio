@@ -77,7 +77,7 @@ export default function WorkModal({ works }: WorkModalProps) {
         {works.map((work, index) => {
           return (
             <div
-              className="h-full w-full overflow-hidden flex items-center justify-center bg-neutral-200"
+              className="h-full w-full overflow-hidden flex items-center justify-center bg-neutral-800"
               key={`modal_${index}`}
             >
               {work.image && (
