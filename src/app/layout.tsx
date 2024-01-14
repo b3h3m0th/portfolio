@@ -29,7 +29,7 @@ export default function RootLayout({
       <body
         className={`${switzer.className} text-white min-h-[100vh] antialiased max-w-4xl mb-20 flex flex-col md:flex-row mx-4 mt-8 lg:mx-auto`}
       >
-        <Cursor />
+        {/* <Cursor /> */}
         <Background />
         <main className="flex-auto min-w-0 mt-6 flex flex-col px-2 md:px-0">
           <Navbar />

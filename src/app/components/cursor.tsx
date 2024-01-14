@@ -10,8 +10,7 @@ export default function Cursor() {
     <motion.div
       className="z-[-1] left-0 top-0 w-0 h-0 md:w-48 md:h-48 invisible md:visible fixed -translate-x-1/2 -translate-y-1/2 rounded-full pointer-events-none"
       style={{
-        // background: "linear-gradient(135deg, #FC440F 50%, #1EFFBC 50%)",
-        background: "#000",
+        background: "#fff",
         filter: "blur(100px)",
       }}
       animate={{ x: clientX - 96, y: clientY - 96 }}
