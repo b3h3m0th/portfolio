@@ -12,7 +12,7 @@ export default async function NotFound() {
           height={64}
           width={64}
         ></Image>
-        <h1 className="font-bold text-4xl">{`404 - I think you got lost`}</h1>
+        <h1 className="font-semibold text-4xl">{`404 - I think you got lost`}</h1>
       </div>
       <Link href="/">← Back to home</Link>
     </section>
