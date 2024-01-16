@@ -53,7 +53,7 @@ export default function Home() {
               Local time - <Clock />
             </p>
           </div>
-          <div className="hidden text-center font-thin text-2xl opacity-50 animate-bounce">
+          <div className="text-center font-thin opacity-50 animate-bounce">
             &darr;
           </div>
           <div className="flex flex-col justify-right">
@@ -114,6 +114,7 @@ export default function Home() {
                 "React",
                 ".NET",
                 "80s Hard rock",
+                "Vim",
                 "J. R. R. Tolkien",
                 "StackOverflow",
                 "WebGL",

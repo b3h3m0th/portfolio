@@ -6,7 +6,7 @@ import { MDXRemoteProps } from "next-mdx-remote/rsc";
 const components: MDXComponents = {
   img: ({ alt, ...props }: any) => (
     <Image
-      style={{ width: "100%", height: "auto" }}
+      className="md:p-8 w-full h-auto"
       alt={props?.alt ?? ""}
       {...props}
       width={props?.width ?? 500}
