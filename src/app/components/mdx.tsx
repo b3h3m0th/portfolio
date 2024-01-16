@@ -1,7 +1,7 @@
 import { MDXRemote } from "next-mdx-remote/rsc";
+import type { MDXRemoteProps } from "next-mdx-remote/rsc";
 import type { MDXComponents } from "mdx/types";
 import Image from "next/image";
-import { MDXRemoteProps } from "next-mdx-remote/rsc";
 
 const components: MDXComponents = {
   img: ({ alt, ...props }: any) => (
