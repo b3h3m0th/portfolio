@@ -1,7 +1,7 @@
-import BezierLine from "@/app/components/bezier-line";
+import Link from "next/link";
+import { BezierLine } from "@/app/components/bezier-line";
 import { MDX } from "@/app/components/mdx";
 import { getProject } from "@/lib";
-import Link from "next/link";
 import { redirect } from "next/navigation";
 
 type ProjectDetailProps = {

@@ -3,11 +3,9 @@
 import { clash } from "@/app/fonts";
 import { useSiteConfig } from "@/app/hooks";
 import { cx } from "@/lib/utils/cx";
-import { Canvas } from "@react-three/fiber";
-import { OrbitControls } from "@react-three/drei";
-import Clock from "./components/clock";
-import HomeScene from "./components/home-scene/home-scene";
-import BezierLine from "./components/bezier-line";
+import { Clock } from "./components/clock";
+import { BezierLine } from "./components/bezier-line";
+import { Card } from "./components/card/card";
 
 function getAge() {
   const birthdate = new Date(2003, 10, 22);
@@ -37,13 +35,7 @@ export default function Home() {
             <p className="inline-block">Portfolio</p>
           </h1>
           <div className="absolute left-0 top-0 w-full h-full">
-            <Canvas>
-              <HomeScene />
-              <OrbitControls
-                enableZoom={false}
-                enableRotate={false}
-              ></OrbitControls>
-            </Canvas>
+            <Card />
           </div>
         </div>
         <div className="mt-auto flex flex-col md:flex-row justify-between font-light">

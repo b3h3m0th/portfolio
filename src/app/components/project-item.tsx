@@ -1,6 +1,6 @@
 import { Project } from "@/lib/types/project";
 import Link from "next/link";
-import BezierLine from "./bezier-line";
+import { BezierLine } from "./bezier-line";
 
 type ProjectItemProps = {
   project: Exclude<Project, "url">;
@@ -8,7 +8,7 @@ type ProjectItemProps = {
   lineBottom?: boolean;
 };
 
-export default function ProjectItem({
+export function ProjectItem({
   project,
   lineTop,
   lineBottom,

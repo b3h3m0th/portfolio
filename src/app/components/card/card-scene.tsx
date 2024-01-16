@@ -6,7 +6,7 @@ import vertexShader from "./shaders/home-scene.vert";
 import fragmentShader from "./shaders/home-scene.frag";
 import { Float, useTexture } from "@react-three/drei";
 
-export default function HomeScene() {
+export default function CardScene() {
   const { viewport } = useThree();
   const mesh = useRef(null);
 

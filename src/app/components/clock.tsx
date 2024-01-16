@@ -1,6 +1,6 @@
 import { useTime } from "@/app/hooks";
 
-export default function Clock() {
+export function Clock() {
   const time = useTime();
 
   return <span>{time}</span>;

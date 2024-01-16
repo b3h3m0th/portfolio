@@ -1,5 +1,5 @@
 import { getProjects } from "@/lib";
-import ProjectItem from "../components/project-item";
+import { ProjectItem } from "../components/project-item";
 import { clash } from "@/app/fonts";
 
 export default async function Projects() {
@@ -10,7 +10,10 @@ export default async function Projects() {
       <h2 className={`${clash.className} font-semibold text-4xl mb-4`}>
         My Projects
       </h2>
-      <p className="mb-8">{`some of the many personal projects I have worked on just for fun.`}</p>
+      <p className="prose prose-invert mb-8">
+        Some of the many personal projects I have worked on just for fun. <br />{" "}
+        More to come, currently filling this page up with content...
+      </p>
       {projectPosts.map(({ sourceCode, ...post }, i) => (
         <ProjectItem
           project={post}
@@ -19,9 +22,6 @@ export default async function Projects() {
           lineBottom={i === projectPosts.length - 1}
         />
       ))}
-      <p className="mt-6">
-        More to come, currently filling this page up with content...
-      </p>
     </section>
   );
 }

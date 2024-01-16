@@ -7,7 +7,7 @@ interface MouseEvent {
   clientX: number;
 }
 
-export default function BezierLine() {
+export function BezierLine() {
   const path = useRef<SVGPathElement>(null);
 
   let progress = 0;

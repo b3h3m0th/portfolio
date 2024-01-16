@@ -6,8 +6,6 @@ import gsap from "gsap";
 import { useWorks } from "@/app/stores";
 import { Work } from "@/lib/types";
 import { useMousePosition } from "@/app/hooks";
-import { Canvas } from "@react-three/fiber";
-import { WorkModalScene } from "./work-modal-scene/work-modal-scene";
 import Image from "next/image";
 
 function Scene() {
@@ -39,7 +37,7 @@ type WorkModalProps = {
   works: Pick<Work, "image" | "title">[];
 };
 
-export default function WorkModal({ works }: WorkModalProps) {
+export function WorkModal({ works }: WorkModalProps) {
   const modalContainer = useRef(null);
   const { active, index } = useWorks((state) => state.modal);
   const { clientX, clientY } = useMousePosition();

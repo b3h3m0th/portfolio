@@ -3,7 +3,7 @@
 import { useWorks } from "@/app/stores";
 import { Work } from "@/lib/types";
 import Link from "next/link";
-import BezierLine from "./bezier-line";
+import { BezierLine } from "./bezier-line";
 
 type WorkItemProps = {
   work: Omit<Work, "url" | "image" | "html" | "markdown">;
@@ -13,7 +13,7 @@ type WorkItemProps = {
   onClick?: () => void;
 };
 
-export default function WorkItem({
+export function WorkItem({
   work,
   index,
   lineTop,
