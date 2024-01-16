@@ -44,7 +44,7 @@ export default async function ProjectDetail({ params }: ProjectDetailProps) {
         )}
       </div>
       <BezierLine />
-      <div className="prose prose-invert prose:sm pt-8">
+      <div className="prose prose-invert prose:sm pt-8 max-w-full">
         <MDX source={project.markdown}></MDX>
       </div>
     </section>

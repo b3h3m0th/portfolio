@@ -27,7 +27,7 @@ export default function RootLayout({
       <SpeedInsights />
       <Analytics />
       <body
-        className={`${switzer.className} text-white min-h-[100vh] antialiased max-w-4xl mb-20 flex flex-col md:flex-row mx-4 mt-8 lg:mx-auto bg-neutral-950`}
+        className={`${switzer.className} text-white min-h-screen antialiased max-w-4xl mb-20 flex mx-4 mt-8 lg:mx-auto bg-neutral-950`}
       >
         {/* <Cursor /> */}
         <Background />
