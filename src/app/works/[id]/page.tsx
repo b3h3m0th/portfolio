@@ -49,7 +49,7 @@ export default async function WorkDetail({ params }: WorkDetailPost) {
         )}
       </div>
       <BezierLine />
-      <div className="prose prose-invert prose:sm pt-8 max-w-full">
+      <div className="prose prose-invert prose:sm pt-8">
         <MDX source={work.markdown}></MDX>
       </div>
     </section>
