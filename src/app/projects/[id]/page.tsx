@@ -1,8 +1,9 @@
 import Link from "next/link";
 import { BezierLine } from "@/app/components/bezier-line";
 import { MDX } from "@/app/components/mdx";
-import { getProject } from "@/lib";
+import { getProject, getProjects } from "@/lib";
 import { redirect } from "next/navigation";
+import { clash } from "@/app/fonts";
 
 type ProjectDetailProps = {
   params: { id: string };
@@ -10,42 +11,57 @@ type ProjectDetailProps = {
 
 export default async function ProjectDetail({ params }: ProjectDetailProps) {
   const project = await getProject(params.id);
+  const projects = await getProjects();
   if (!project) redirect("/projects");
 
   return (
-    <section className="project-detail">
-      <Link
-        className="prose prose-invert text-sm inline-block mb-6"
-        href="/projects"
-      >
-        ← Back to overview
-      </Link>
-      <h1 className="font-bold text-4xl mb-2">{project.title}</h1>
-      <div className="text-sm prose prose-invert mb-12">
-        <span className="mr-4">
-          {`${
-            project.startDate.getMonth() + 1
-          }.${project.startDate.getFullYear()} — ${
-            (project.endDate &&
-              `${
-                project.endDate.getMonth() + 1
-              }.${project.endDate.getFullYear()}`) ||
-            "present"
-          }`}
-        </span>
-        {project.sourceCode && (
-          <a
-            href={project.sourceCode.href}
-            className="ml-4 underline"
-            target="_blank"
-          >
-            Source Code
-          </a>
-        )}
+    <section className="project-detail flex flex-col md:flex-row gap-8">
+      <div className="max-w-prose">
+        <Link
+          className="prose prose-invert text-sm inline-block mb-6"
+          href="/projects"
+        >
+          ← Back to overview
+        </Link>
+        <h1 className={`font-bold text-4xl mb-2`}>{project.title}</h1>
+        <div className="text-sm prose prose-invert mb-12">
+          <span className="mr-4">
+            {`${
+              project.startDate.getMonth() + 1
+            }.${project.startDate.getFullYear()} — ${
+              (project.endDate &&
+                `${
+                  project.endDate.getMonth() + 1
+                }.${project.endDate.getFullYear()}`) ||
+              "present"
+            }`}
+          </span>
+          {project.sourceCode && (
+            <a
+              href={project.sourceCode.href}
+              className="ml-4 underline"
+              target="_blank"
+            >
+              Source Code
+            </a>
+          )}
+        </div>
+        <BezierLine />
+        <div className="prose prose-invert prose:sm pt-8">
+          <MDX source={project.markdown}></MDX>
+        </div>
       </div>
-      <BezierLine />
-      <div className="prose prose-invert prose:sm pt-8">
-        <MDX source={project.markdown}></MDX>
+      <div className="flex-1 prose prose-invert">
+        <h2>More Projects</h2>
+        <ul>
+          {projects
+            .filter((p) => p.id !== project.id)
+            .map((p) => (
+              <li key={p.id}>
+                <Link href={`/projects/${p.id}`}>{p.title}</Link>
+              </li>
+            ))}
+        </ul>
       </div>
     </section>
   );

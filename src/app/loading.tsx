@@ -1,6 +1,6 @@
 import { clash } from "./fonts";
 
-export default function NotFound() {
+export default function Loading() {
   return (
     <section>
       <div className="h-[calc(100vh-12rem)] flex justify-center items-center">
