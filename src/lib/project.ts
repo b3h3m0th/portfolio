@@ -35,7 +35,11 @@ export async function getProjects() {
 
   return allPostsData
     .filter((p): p is Project => p !== null)
-    .sort((a, b) => b.startDate.getTime() - a.startDate?.getTime());
+    .sort(
+      (a, b) =>
+        (b.endDate ?? new Date()).getTime() -
+        (a.endDate ?? new Date()).getTime()
+    );
 }
 
 export async function getProject(id: Project["id"]) {

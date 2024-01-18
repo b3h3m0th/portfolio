@@ -6,7 +6,7 @@ import Image from "next/image";
 const components: MDXComponents = {
   img: ({ alt, ...props }: any) => (
     <Image
-      className="md:p-8 w-full h-auto"
+      className="w-full h-auto"
       alt={props?.alt ?? ""}
       {...props}
       width={props?.width ?? 500}

@@ -20,11 +20,10 @@ export function Card() {
       className="h-full"
       initial="hidden"
       animate={isLoaded ? "visible" : "hidden"}
-      transition={{ duration: 2 }}
+      transition={{ duration: 1 }}
     >
       <Canvas onCreated={() => setIsLoaded(true)}>
         <CardScene />
-        <OrbitControls enableZoom={false} enableRotate={false}></OrbitControls>
       </Canvas>
     </motion.div>
   );

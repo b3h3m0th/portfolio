@@ -38,7 +38,11 @@ export async function getWorks() {
 
   return allPostsData
     .filter((p): p is Work => p !== null)
-    .sort((a, b) => b.startDate.getTime() - a.startDate.getTime());
+    .sort(
+      (a, b) =>
+        (b.endDate ?? new Date()).getTime() -
+        (a.endDate ?? new Date()).getTime()
+    );
 }
 
 export async function getWork(id: Work["id"]) {

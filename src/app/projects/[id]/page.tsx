@@ -16,7 +16,7 @@ export default async function ProjectDetail({ params }: ProjectDetailProps) {
 
   return (
     <section className="project-detail flex flex-col md:flex-row gap-8">
-      <div className="max-w-prose">
+      <div className="max-w-prose w-[65ch]">
         <Link
           className="prose prose-invert text-sm inline-block mb-6"
           href="/projects"
@@ -58,7 +58,9 @@ export default async function ProjectDetail({ params }: ProjectDetailProps) {
             .filter((p) => p.id !== project.id)
             .map((p) => (
               <li key={p.id}>
-                <Link href={`/projects/${p.id}`}>{p.title}</Link>
+                <Link href={`/projects/${p.id}`} className="no-underline">
+                  {p.title}
+                </Link>
               </li>
             ))}
         </ul>
