@@ -46,7 +46,7 @@ export default function Home() {
             </p>
           </div>
           <div className="text-center font-thin opacity-50 animate-bounce">
-            &darr;
+            {/* &darr; */}
           </div>
           <div className="flex flex-col justify-right">
             <div className="rounded-full flex items-center">
