@@ -1,25 +1,38 @@
 ---
-title: "Kahoot Durio Flooder"
+title: "Durio - Kahoot Flooder"
 startDate: "2021-6-1"
 endDate: "2021-10-1"
 sourceCode: "https://github.com/b3h3m0th/kahoot_hack_durio"
 ---
 
-![Kahoot Hack Durio logo](/images/kahoot-hack-durio-logo.webp)
+![Kahoot Hack Durio UI](/images/kahoot-hack-durio_ui.webp)
 
 ## About Kahoot
 
-Kahoot is a game-based online learning platform known for its multiplayer quiz games where users compete against each other by answering questions.
-When I was still in school we used to play [Kahoot](https://kahoot.com/) a lot with our teachers.
+Kahoot! is a game-based online learning platform known for its multiplayer quiz games (called "kahoots") where users compete against each other by answering questions.
+When I was still in school we used to play [kahoot](https://kahoot.com/) a lot with our teachers.
 As teachers began to reward students for winning quizes I started researching whether it was possible to cheat in Kahoot.
 It turned out that it's actually possible (kind of):
 
-A *Kahoot* can either be created as private or can be published to the global community.
+A kahoot can either be created as private or can be published to the global community.
 Public quizes are completely visible to anyone including the correct answers.
 That means you can easily build a bot which looks up the answers and wins the game for you.
 Private quizes however, are only visible to the creator unless it is played and therefore cannot be exploited. 
 Most people keep their Kahoots private.
 
-Something that always works though is *flooding* a Kahoot with countless bots that appear as fake players on the screen;
+## The Durio Bot
+
+Something that always works though is *flooding* a kahoot with countless bots that appear as fake players on the screen.
+It's not really considered a cheat but more of a way to confuse or prank other players.
+
+I first implemented a small command line tool named [*Durio*](https://github.com/b3h3m0th/kahoot_durio) and later created a webapge for usability reasons.
+
+Kahoot Hack Durio was built with
+
+- [React](https://react.dev)
+- [TypeScript](https://typescriptlang.org)
+- [Sass](https://sass-lang.com)
+- [kahoot.js-updated](https://www.npmjs.com/package/kahoot.js-updated): a neat package to interact with the Kahoot API. Unfortunately, it is deprecated and no longer maintained.
+
 
 Live application: [kahoot-hack-durio.netlify.app](https://kahoot-hack-durio.netlify.app/)
