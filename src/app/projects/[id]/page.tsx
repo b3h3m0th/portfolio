@@ -13,7 +13,7 @@ export default async function ProjectDetail({ params }: ProjectDetailProps) {
   if (!project) redirect("/projects");
 
   return (
-    <section className="work-detail">
+    <section className="project-detail">
       <Link
         className="prose prose-invert text-sm inline-block mb-6"
         href="/projects"
