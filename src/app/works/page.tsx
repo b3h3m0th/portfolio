@@ -123,7 +123,8 @@ export default function Work() {
                     duration: 0.8,
                     ease: [0.2, 1, 0.7, 1],
                     delay:
-                      0.1 * (i >= works.length / 2 ? i - works.length / 2 : i),
+                      0.1 *
+                      ((half) => (i >= half ? i - half : i))(works.length / 2),
                   }}
                   className="mb-8"
                 >
