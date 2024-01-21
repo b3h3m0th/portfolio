@@ -24,7 +24,7 @@ export function CardScene() {
     [viewport.width, viewport.height]
   );
 
-  const [cardES] = useTexture(["/images/AS_custom.svg"]);
+  const [card] = useTexture(["/images/AS_custom.svg"]);
 
   useFrame((state) => {
     (mesh.current as any).material.uniforms.u_time.value =
@@ -43,7 +43,7 @@ export function CardScene() {
             wireframe
             vertexShader={vertexShader}
             fragmentShader={fragmentShader}
-            uniforms={{ ...uniforms, u_texture: { value: cardES } }}
+            uniforms={{ ...uniforms, u_texture: { value: card } }}
           ></shaderMaterial>
         </mesh>
       </Float>
