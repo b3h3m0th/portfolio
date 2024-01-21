@@ -117,8 +117,8 @@ export default function Work() {
               {works.map((w, i) => (
                 <motion.div
                   key={`work-block-${w.id}`}
-                  initial={{ opacity: 0, y: 30 }}
-                  animate={{ opacity: 1, y: 0 }}
+                  initial={{ opacity: 0, y: 30, scale: 0.7 }}
+                  animate={{ opacity: 1, y: 0, scale: 1 }}
                   transition={{
                     duration: 0.8,
                     ease: [0.2, 1, 0.7, 1],
