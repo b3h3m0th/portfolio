@@ -62,7 +62,7 @@ export default function Work() {
           <div
             className={`w-[26px] flex flex-col gap-0.5 justify-center cursor-pointer opacity-${
               view === View.List ? "100" : "25"
-            } hover:opacity-100`}
+            } md:hover:opacity-100`}
             onClick={() => setView(View.List)}
           >
             {new Array(3).fill(null).map((_, i) => (
@@ -72,7 +72,7 @@ export default function Work() {
           <div
             className={`cursor-pointer grid grid-cols-2 grid-rows-2 gap-0.5 opacity-${
               view === View.Block ? "100" : "25"
-            } hover:opacity-100`}
+            } md:hover:opacity-100`}
             onClick={() => setView(View.Block)}
           >
             {new Array(4).fill(null).map((_, i) => (
