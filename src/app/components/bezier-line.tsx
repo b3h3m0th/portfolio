@@ -45,7 +45,7 @@ export function BezierLine() {
     const pathBound = path.current?.getBoundingClientRect();
 
     if (pathBound) {
-      x = (clientX - pathBound.left) / pathBound.width;
+      x = (clientX - pathBound.left) / (pathBound.width || 1);
       progress += movementY;
       setPath(progress);
     }
