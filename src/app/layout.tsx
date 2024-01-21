@@ -27,11 +27,11 @@ export default function RootLayout({
       <SpeedInsights />
       <Analytics />
       <body
-        className={`${switzer.className} text-white min-h-screen antialiased max-w-4xl mb-20 flex mx-4 mt-8 lg:mx-auto bg-neutral-950`}
+        className={`${switzer.className} text-white min-h-screen antialiased max-w-4xl mb-20 flex mt-8 mx-auto bg-neutral-950`}
       >
         {/* <Cursor /> */}
         <Background />
-        <main className="flex-auto min-w-0 mt-6 flex flex-col px-2 md:px-0">
+        <main className="flex-auto min-w-0 mt-6 flex flex-col px-2 md:px-0 mx-4">
           <Navbar />
           {children}
           <Footer />
