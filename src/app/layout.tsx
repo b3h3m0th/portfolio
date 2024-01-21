@@ -10,7 +10,7 @@ import { Background } from "./components/background/background";
 
 export const metadata: Metadata = {
   title: "Simon Ostini - Portfolio",
-  description: "Portfolio website of Simon Ostini",
+  description: "Portfolio website of Creative Developer Simon Ostini",
   robots: {
     index: true,
     follow: true,
