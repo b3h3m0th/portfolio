@@ -8,18 +8,18 @@ import { useCallback, useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { useWorks } from "@/app/stores";
 import { clash } from "@/app/fonts";
+import { useSearchParams, useRouter } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
-import { useRouter, useSearchParams } from "next/navigation";
 
 type Tags = ["all", WorkTag.development, WorkTag.design];
 const tags: Tags = ["all", WorkTag.development, WorkTag.design];
 
-const viewSearchParamKey = "view";
 enum View {
   List = "list",
   Block = "block",
 }
+const viewSearchParamKey = "view";
 
 export default function Work() {
   const [works, setWorks] = useState<Work[] | null>(null);
@@ -172,7 +172,7 @@ export default function Work() {
           <span>Loading works...</span>
         )}
       </AnimatePresence>
-      {works && (
+      {works && view === View.List && (
         <WorkModal
           works={works.map((w) => ({ image: w.image, title: w.title }))}
         />
