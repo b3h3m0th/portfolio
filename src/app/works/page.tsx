@@ -4,16 +4,18 @@ import { cx } from "@/lib/utils/cx";
 import { WorkItem } from "../components/work-item";
 import { WorkModal } from "../components/work-modal/work-modal";
 import { Work, WorkTag } from "@/lib/types";
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { useWorks } from "@/app/stores";
 import { clash } from "@/app/fonts";
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter, useSearchParams } from "next/navigation";
 
 type Tags = ["all", WorkTag.development, WorkTag.design];
 const tags: Tags = ["all", WorkTag.development, WorkTag.design];
 
+const viewSearchParamKey = "view";
 enum View {
   List = "list",
   Block = "block",
@@ -22,8 +24,25 @@ enum View {
 export default function Work() {
   const [works, setWorks] = useState<Work[] | null>(null);
   const [tag, setTag] = useState<Tags[number]>("all");
-  const [view, setView] = useState<View>(View.List);
   const setModal = useWorks((state) => state.setModal);
+  const searchParams = useSearchParams();
+  const router = useRouter();
+
+  let view = searchParams.get(viewSearchParamKey);
+
+  if (!view || !Object.values<string>(View).includes(view)) {
+    view = View.List;
+  }
+
+  const createQueryString = useCallback(
+    (name: string, value: string) => {
+      const params = new URLSearchParams(searchParams);
+      params.set(name, value);
+
+      return params.toString();
+    },
+    [searchParams]
+  );
 
   useEffect(() => {
     setWorks(null);
@@ -35,6 +54,12 @@ export default function Work() {
           : setWorks(w.filter((w) => w.tags?.includes(tag)));
       });
   }, [tag]);
+
+  useEffect(() => {
+    if (view) {
+      router.replace(`/works?${createQueryString(viewSearchParamKey, view)}`);
+    }
+  }, [view, router, createQueryString]);
 
   return (
     <section>
@@ -59,26 +84,26 @@ export default function Work() {
           ))}
         </div>
         <div className="flex justify-center gap-4 mr-2">
-          <div
+          <Link
+            href={`/works?${createQueryString(viewSearchParamKey, View.List)}`}
             className={`w-[26px] flex flex-col gap-0.5 justify-center cursor-pointer opacity-${
               view === View.List ? "100" : "25"
-            } hover:opacity-100`}
-            onClick={() => setView(View.List)}
+            } md:hover:opacity-100`}
           >
             {new Array(3).fill(null).map((_, i) => (
               <div key={`list-${i}`} className="w-full flex-1 bg-white"></div>
             ))}
-          </div>
-          <div
+          </Link>
+          <Link
+            href={`/works?${createQueryString(viewSearchParamKey, View.Block)}`}
             className={`cursor-pointer grid grid-cols-2 grid-rows-2 gap-0.5 opacity-${
               view === View.Block ? "100" : "25"
-            } hover:opacity-100`}
-            onClick={() => setView(View.Block)}
+            } md:hover:opacity-100`}
           >
             {new Array(4).fill(null).map((_, i) => (
               <div key={`block-${i}`} className="h-3 w-3 bg-white"></div>
             ))}
-          </div>
+          </Link>
         </div>
       </div>
       <AnimatePresence>

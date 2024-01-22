@@ -15,8 +15,8 @@ export default async function ProjectDetail({ params }: ProjectDetailProps) {
   if (!project) redirect("/projects");
 
   return (
-    <section className="project-detail flex flex-col md:flex-row gap-8">
-      <div className="max-w-prose w-[65ch]">
+    <section className="project-detail flex flex-col lg:flex-row gap-8">
+      <div className="md:max-w-prose md:w-[65ch]">
         <Link
           className="prose prose-invert text-sm inline-block mb-6"
           href="/projects"

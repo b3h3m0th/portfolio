@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useEffect } from "react";
+import { useRef, useEffect, useLayoutEffect } from "react";
 
 interface MouseEvent {
   movementY: number;
@@ -15,11 +15,7 @@ export function BezierLine() {
   let time = Math.PI / 2;
   let requestId: number | null = null;
 
-  useEffect(() => {
-    setPath(progress);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
-
+  const lerp = (x: number, y: number, a: number) => x * (1 - a) + y * a;
   const setPath = (progress: number) => {
     const width = path?.current?.parentElement?.clientWidth ?? 0;
 
@@ -29,8 +25,21 @@ export function BezierLine() {
       `M0 250 Q${width * x} ${250 + progress}, ${width} 250`
     );
   };
+  const handleWindowResize = () => setPath(progress);
 
-  const lerp = (x: number, y: number, a: number) => x * (1 - a) + y * a;
+  useEffect(() => {
+    setPath(progress);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  useLayoutEffect(() => {
+    handleWindowResize();
+
+    window.addEventListener("resize", handleWindowResize);
+
+    return () => window.removeEventListener("resize", handleWindowResize);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   const handleMouseEnter = () => {
     if (requestId) {
