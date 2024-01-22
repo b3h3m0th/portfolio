@@ -15,13 +15,11 @@ import Link from "next/link";
 type Tags = ["all", WorkTag.development, WorkTag.design];
 const tags: Tags = ["all", WorkTag.development, WorkTag.design];
 
-const viewSearchParamKey = "view";
 enum View {
   List = "list",
   Block = "block",
 }
-
-const viewSearchParam = "view";
+const viewSearchParamKey = "view";
 
 export default function Work() {
   const [works, setWorks] = useState<Work[] | null>(null);
@@ -174,7 +172,7 @@ export default function Work() {
           <span>Loading works...</span>
         )}
       </AnimatePresence>
-      {works && (
+      {works && view === View.List && (
         <WorkModal
           works={works.map((w) => ({ image: w.image, title: w.title }))}
         />
