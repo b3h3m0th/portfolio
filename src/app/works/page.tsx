@@ -4,7 +4,7 @@ import { cx } from "@/lib/utils/cx";
 import { WorkItem } from "../components/work-item";
 import { WorkModal } from "../components/work-modal/work-modal";
 import { Work, WorkTag } from "@/lib/types";
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { useWorks } from "@/app/stores";
 import { clash } from "@/app/fonts";
@@ -15,6 +15,7 @@ import Link from "next/link";
 type Tags = ["all", WorkTag.development, WorkTag.design];
 const tags: Tags = ["all", WorkTag.development, WorkTag.design];
 
+const viewSearchParamKey = "view";
 enum View {
   List = "list",
   Block = "block",
@@ -26,17 +27,24 @@ export default function Work() {
   const [works, setWorks] = useState<Work[] | null>(null);
   const [tag, setTag] = useState<Tags[number]>("all");
   const setModal = useWorks((state) => state.setModal);
-
-  const router = useRouter();
   const searchParams = useSearchParams();
+  const router = useRouter();
 
-  const setViewSearchParam = (view: View) =>
-    router.replace(`/works?${viewSearchParam}=${view}`);
+  let view = searchParams.get(viewSearchParamKey);
 
-  let view = searchParams.get(viewSearchParam) as View;
-  if (!Object.values(View).includes(view)) {
+  if (!view || !Object.values<string>(View).includes(view)) {
     view = View.List;
   }
+
+  const createQueryString = useCallback(
+    (name: string, value: string) => {
+      const params = new URLSearchParams(searchParams);
+      params.set(name, value);
+
+      return params.toString();
+    },
+    [searchParams]
+  );
 
   useEffect(() => {
     setWorks(null);
@@ -48,6 +56,12 @@ export default function Work() {
           : setWorks(w.filter((w) => w.tags?.includes(tag)));
       });
   }, [tag]);
+
+  useEffect(() => {
+    if (view) {
+      router.replace(`/works?${createQueryString(viewSearchParamKey, view)}`);
+    }
+  }, [view, router, createQueryString]);
 
   return (
     <section>
@@ -73,7 +87,7 @@ export default function Work() {
         </div>
         <div className="flex justify-center gap-4 mr-2">
           <Link
-            href={`?${viewSearchParam}=${View.List}`}
+            href={`/works?${createQueryString(viewSearchParamKey, View.List)}`}
             className={`w-[26px] flex flex-col gap-0.5 justify-center cursor-pointer opacity-${
               view === View.List ? "100" : "25"
             } md:hover:opacity-100`}
@@ -83,7 +97,7 @@ export default function Work() {
             ))}
           </Link>
           <Link
-            href={`?${viewSearchParam}=${View.Block}`}
+            href={`/works?${createQueryString(viewSearchParamKey, View.Block)}`}
             className={`cursor-pointer grid grid-cols-2 grid-rows-2 gap-0.5 opacity-${
               view === View.Block ? "100" : "25"
             } md:hover:opacity-100`}
