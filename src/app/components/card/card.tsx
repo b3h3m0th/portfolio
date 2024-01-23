@@ -1,6 +1,5 @@
 "use client";
 
-import { OrbitControls } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
 import { CardScene } from "./card-scene";
 import { useState } from "react";
