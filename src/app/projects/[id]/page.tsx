@@ -23,7 +23,7 @@ export default async function ProjectDetail({ params }: ProjectDetailProps) {
         >
           ← Back to overview
         </Link>
-        <h1 className={`${clash.className} font-bold text-4xl mb-2`}>
+        <h1 className={`${clash.className} font-semibold text-4xl mb-2`}>
           {project.title}
         </h1>
         <div className="text-sm prose prose-invert mb-12">
