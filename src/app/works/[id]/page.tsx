@@ -3,6 +3,7 @@ import { BezierLine } from "@/app/components/bezier-line";
 import { MDX } from "@/app/components/mdx";
 import { getWork } from "@/lib";
 import { redirect } from "next/navigation";
+import { clash } from "@/app/fonts";
 
 type WorkDetailPost = {
   params: { id: string };
@@ -20,7 +21,9 @@ export default async function WorkDetail({ params }: WorkDetailPost) {
       >
         ← Back to overview
       </Link>
-      <h1 className="font-bold text-4xl mb-2">{work.title}</h1>
+      <h1 className={`${clash.className} font-semibold text-4xl mb-2`}>
+        {work.title}
+      </h1>
       <div className="text-sm prose prose-invert mb-12">
         <span>
           {`${
