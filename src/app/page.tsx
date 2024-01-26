@@ -26,14 +26,6 @@ export default function Home() {
     <section>
       <div className="h-[calc(100vh-15rem)] mb-24 flex flex-col justify-stretch items-stretch">
         <div className="relative w-full mb-16 flex-1 flex flex-col justify-center">
-          <h1
-            className={`hidden flex-col text-sm font-thin ${clash.className}`}
-          >
-            <p className="inline-block">Simon Ostini</p>
-            <p className="inline-block">Creative</p>
-            <p className="inline-block">Developer</p>
-            <p className="inline-block">Portfolio</p>
-          </h1>
           <div className="absolute left-0 top-0 w-full h-full">
             <Card />
           </div>

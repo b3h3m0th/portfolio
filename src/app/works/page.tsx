@@ -2,15 +2,19 @@
 
 import { cx } from "@/lib/utils/cx";
 import { WorkItem } from "../components/work-item";
-import { WorkModal } from "../components/work-modal/work-modal";
 import { Work, WorkTag } from "@/lib/types";
 import { useCallback, useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { useWorks } from "@/app/stores";
 import { clash } from "@/app/fonts";
 import { useSearchParams, useRouter } from "next/navigation";
+import dynamic from "next/dynamic";
 import Image from "next/image";
 import Link from "next/link";
+
+const WorkModal = dynamic(() =>
+  import("../components/work-modal/work-modal").then((m) => m.WorkModal)
+);
 
 type Tags = ["all", WorkTag.development, WorkTag.design];
 const tags: Tags = ["all", WorkTag.development, WorkTag.design];
