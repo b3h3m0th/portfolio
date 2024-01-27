@@ -2,7 +2,7 @@ import path from "path";
 import { Work, WorkMetadata } from "@/lib/types";
 import { remark } from "remark";
 import html from "remark-html";
-import { parseMDXMetadata, getMDXFiles } from "./utils/mdx";
+import { parseMDXMetadata, getMDXFiles } from "./mdx";
 
 const postsDirectory = path.join(process.cwd(), "content", "works");
 

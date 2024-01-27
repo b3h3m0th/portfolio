@@ -1,6 +1,6 @@
 "use client";
 
-import { cx } from "@/lib/utils/cx";
+import { cx } from "@/app/utils/cx";
 import { WorkItem } from "../components/work-item";
 import { Work, WorkTag } from "@/lib/types";
 import { useCallback, useEffect, useState } from "react";

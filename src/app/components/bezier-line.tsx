@@ -86,9 +86,9 @@ export function BezierLine() {
   return (
     <div className="relative w-full h-px">
       <div
-        onMouseEnter={() => handleMouseEnter()}
+        onMouseEnter={handleMouseEnter}
         onMouseMove={(e) => handleMouseMove(e)}
-        onMouseLeave={() => handleMouseLeave()}
+        onMouseLeave={handleMouseLeave}
         className="relative z-10 h-10 w-full top-[-40px] translate-y-1/2"
       ></div>
       <svg className="absolute pointer-events-none w-full h-[500px] top-[-250px]">

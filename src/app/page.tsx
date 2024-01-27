@@ -2,7 +2,7 @@
 
 import { clash } from "@/app/fonts";
 import { useSiteConfig } from "@/app/hooks";
-import { cx } from "@/lib/utils/cx";
+import { cx } from "@/app/utils/cx";
 import { Clock } from "./components/clock";
 import { BezierLine } from "./components/bezier-line";
 import { Card } from "./components/card/card";
