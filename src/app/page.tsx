@@ -79,10 +79,10 @@ export default function Home() {
           </div>
           <div className={`flex flex-col gap-4`}>
             <p className="text-justify">
-              a {getAge()}-year-old creative developer based in Austria also
-              known as Behemoth over the internet. I design and develop cool
-              stuff for amazing people. Sometimes as a freelancer. Sometimes
-              not.
+              Simon Ostini, a {getAge()}-year-old creative developer based in
+              Austria also known as Behemoth over the internet. I design and
+              develop cool stuff for amazing people. Sometimes as a freelancer.
+              Sometimes not.
             </p>
           </div>
         </div>
