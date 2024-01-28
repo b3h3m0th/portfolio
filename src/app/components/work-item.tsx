@@ -1,6 +1,6 @@
 "use client";
 
-import { useWorks } from "@/app/stores";
+import { useWorksModal } from "@/app/stores";
 import { Work } from "@/lib/types";
 import Link from "next/link";
 import { BezierLine } from "./bezier-line";
@@ -20,7 +20,7 @@ export function WorkItem({
   lineBottom,
   onClick,
 }: WorkItemProps) {
-  const setModal = useWorks((state) => state.setModal);
+  const setModal = useWorksModal((state) => state.setModal);
 
   return (
     <Link

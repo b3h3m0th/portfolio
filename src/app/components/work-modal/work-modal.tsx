@@ -3,7 +3,7 @@
 import { useRef, useEffect } from "react";
 import { Variants, motion } from "framer-motion";
 import gsap from "gsap";
-import { useWorks } from "@/app/stores";
+import { useWorksModal } from "@/app/stores";
 import { Work } from "@/lib/types";
 import { useMousePosition } from "@/app/hooks";
 import Image from "next/image";
@@ -30,7 +30,10 @@ type WorkModalProps = {
 
 export function WorkModal({ works }: WorkModalProps) {
   const modalContainer = useRef(null);
-  const { active, index } = useWorks((state) => state.modal);
+  const { active, index } = useWorksModal(({ active, index }) => ({
+    active,
+    index,
+  }));
   const { clientX, clientY } = useMousePosition();
 
   useEffect(() => {

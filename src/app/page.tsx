@@ -120,6 +120,47 @@ export default function Home() {
           </div>
         </div>
       </div>
+      <div className={`mt-32 flex flex-col md:flex-row gap-8`}>
+        <div className={`flex-1`}>
+          <div className="flex items-center mb-4">
+            <h2 className={`md:font-thin shrink-0 mr-4`}>Curriculum Vitae</h2>
+          </div>
+          <div className={`flex flex-col gap-4`}>
+            <BezierLine />
+            <div className="flex gap-24">
+              <div className="">September 2022 - Present</div>
+              <div className="flex flex-col">
+                <div>Software Developer</div>
+                <div className="font-semibold text-2xl">GMG</div>
+              </div>
+            </div>
+            <BezierLine />
+            <div className="flex gap-24">
+              <div className="">September 2022 - Present</div>
+              <div className="flex flex-col">
+                <div>Software Developer</div>
+                <div className="font-semibold text-2xl">GMG</div>
+              </div>
+            </div>
+            <BezierLine />
+            <div className="flex gap-24">
+              <div className="">September 2022 - Present</div>
+              <div className="flex flex-col">
+                <div>Software Developer</div>
+                <div className="font-semibold text-2xl">GMG</div>
+              </div>
+            </div>
+            <BezierLine />
+            <div className="flex gap-24">
+              <div className="">September 2022 - Present</div>
+              <div className="flex flex-col">
+                <div>Software Developer</div>
+                <div className="font-semibold text-2xl">GMG</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
   );
 }
