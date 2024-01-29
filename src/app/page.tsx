@@ -127,26 +127,22 @@ export default function Home() {
             <h2 className={`md:font-thin shrink-0 mr-4`}>Curriculum Vitae</h2>
           </div>
           <div className={`flex flex-col gap-4`}>
-            <BezierLine />
             <CVItem
               startDate={new Date(2023, 7, 0)}
               position="Software Developer"
               company="GMG"
               workId="gmg"
             />
-            <BezierLine />
             <CVItem
               startDate={new Date(2023, 7, 0)}
               position="Creative Developer"
               company="Freelance"
             />
-            <BezierLine />
             <CVItem
               startDate={new Date(2023, 10, 0)}
               position="Civil Servant"
               company="OJAD"
             />
-            <BezierLine />
             <CVItem
               startDate={new Date(2022, 8, 0)}
               endDate={new Date(2022, 9, 0)}
@@ -154,7 +150,6 @@ export default function Home() {
               company="Sulu CMS"
               workId="sulu"
             />
-            <BezierLine />
             <CVItem
               startDate={new Date(2022, 7, 0)}
               endDate={new Date(2022, 8, 0)}
@@ -162,7 +157,6 @@ export default function Home() {
               company="MASSIVE ART"
               workId="massive-art"
             />
-            <BezierLine />
             <CVItem
               startDate={new Date(2021, 7, 0)}
               endDate={new Date(2021, 8, 0)}
@@ -170,7 +164,6 @@ export default function Home() {
               company="Fusonic"
               workId="fusonic"
             />
-            <BezierLine />
             <CVItem
               startDate={new Date(2020, 7, 0)}
               endDate={new Date(2020, 8, 0)}
