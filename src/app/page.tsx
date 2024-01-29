@@ -6,6 +6,7 @@ import { cx } from "@/app/utils/cx";
 import { Clock } from "./components/clock";
 import { BezierLine } from "./components/bezier-line";
 import { Card } from "./components/card/card";
+import { CVItem } from "./components/cv-item";
 
 function getAge() {
   const birthdate = new Date(2003, 10, 22);
@@ -127,37 +128,56 @@ export default function Home() {
           </div>
           <div className={`flex flex-col gap-4`}>
             <BezierLine />
-            <div className="flex gap-24">
-              <div className="">September 2022 - Present</div>
-              <div className="flex flex-col">
-                <div>Software Developer</div>
-                <div className="font-semibold text-2xl">GMG</div>
-              </div>
-            </div>
+            <CVItem
+              startDate={new Date(2023, 7, 0)}
+              position="Software Developer"
+              company="GMG"
+              workId="gmg"
+            />
             <BezierLine />
-            <div className="flex gap-24">
-              <div className="">September 2022 - Present</div>
-              <div className="flex flex-col">
-                <div>Software Developer</div>
-                <div className="font-semibold text-2xl">GMG</div>
-              </div>
-            </div>
+            <CVItem
+              startDate={new Date(2023, 7, 0)}
+              position="Creative Developer"
+              company="Freelance"
+            />
             <BezierLine />
-            <div className="flex gap-24">
-              <div className="">September 2022 - Present</div>
-              <div className="flex flex-col">
-                <div>Software Developer</div>
-                <div className="font-semibold text-2xl">GMG</div>
-              </div>
-            </div>
+            <CVItem
+              startDate={new Date(2023, 10, 0)}
+              position="Civil Servant"
+              company="OJAD"
+            />
             <BezierLine />
-            <div className="flex gap-24">
-              <div className="">September 2022 - Present</div>
-              <div className="flex flex-col">
-                <div>Software Developer</div>
-                <div className="font-semibold text-2xl">GMG</div>
-              </div>
-            </div>
+            <CVItem
+              startDate={new Date(2022, 8, 0)}
+              endDate={new Date(2022, 9, 0)}
+              position="Software Developer Intern"
+              company="Sulu CMS"
+              workId="sulu"
+            />
+            <BezierLine />
+            <CVItem
+              startDate={new Date(2022, 7, 0)}
+              endDate={new Date(2022, 8, 0)}
+              position="Software Developer Intern"
+              company="MASSIVE ART"
+              workId="massive-art"
+            />
+            <BezierLine />
+            <CVItem
+              startDate={new Date(2021, 7, 0)}
+              endDate={new Date(2021, 8, 0)}
+              position="Software Developer Intern"
+              company="Fusonic"
+              workId="fusonic"
+            />
+            <BezierLine />
+            <CVItem
+              startDate={new Date(2020, 7, 0)}
+              endDate={new Date(2020, 8, 0)}
+              position="Software Developer Intern"
+              company="Böhler Brothers"
+              workId="boehler-brothers"
+            />
           </div>
         </div>
       </div>
