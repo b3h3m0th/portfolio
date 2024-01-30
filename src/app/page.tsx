@@ -124,7 +124,7 @@ export default function Home() {
       <div className={`mt-32 flex flex-col md:flex-row gap-8`}>
         <div className={`flex-1`}>
           <div className="flex items-center mb-4">
-            <h2 className={`md:font-thin shrink-0 mr-4`}>Curriculum Vitae</h2>
+            <h2 className={`md:font-thin shrink-0 mr-4`}>I did</h2>
           </div>
           <div className={`flex flex-col gap-4`}>
             <CVItem
