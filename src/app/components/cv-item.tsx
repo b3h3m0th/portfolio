@@ -17,7 +17,7 @@ export function CVItem({
   workId,
 }: CVItemProps) {
   const Content = () => (
-    <div className="flex mt-4">
+    <div className="flex mt-4 gap-4">
       <div className="flex-1">{`${startDate.toLocaleString("en", {
         month: "long",
         year: "numeric",
