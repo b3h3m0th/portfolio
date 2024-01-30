@@ -1,9 +1,10 @@
 import { useMemo, useRef } from "react";
 import { useFrame, useThree } from "@react-three/fiber";
 import { Vector2, Texture, DoubleSide } from "three";
+import { Float, useTexture } from "@react-three/drei";
+
 import vertexShader from "./shaders/home-scene.vert";
 import fragmentShader from "./shaders/home-scene.frag";
-import { Float, useTexture } from "@react-three/drei";
 
 export function CardScene() {
   const { viewport } = useThree();

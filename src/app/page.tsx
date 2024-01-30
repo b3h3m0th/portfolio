@@ -2,10 +2,11 @@
 
 import { clash } from "@/app/fonts";
 import { useSiteConfig } from "@/app/hooks";
-import { cx } from "@/lib/utils/cx";
+import { cx } from "@/app/utils/cx";
 import { Clock } from "./components/clock";
 import { BezierLine } from "./components/bezier-line";
 import { Card } from "./components/card/card";
+import { CVItem } from "./components/cv-item";
 
 function getAge() {
   const birthdate = new Date(2003, 10, 22);
@@ -79,10 +80,10 @@ export default function Home() {
           </div>
           <div className={`flex flex-col gap-4`}>
             <p className="text-justify">
-              a {getAge()}-year-old creative developer based in Austria also
-              known as Behemoth over the internet. I design and develop cool
-              stuff for amazing people. Sometimes as a freelancer. Sometimes
-              not.
+              Simon Ostini, a {getAge()}-year-old creative developer based in
+              Austria also known as Behemoth over the internet. I design and
+              develop cool stuff for amazing people. Sometimes as a freelancer.
+              Sometimes not.
             </p>
           </div>
         </div>
@@ -117,6 +118,59 @@ export default function Home() {
                 </span>
               ))}
             </p>
+          </div>
+        </div>
+      </div>
+      <div className={`mt-32 flex flex-col md:flex-row gap-8`}>
+        <div className={`flex-1`}>
+          <div className="flex items-center mb-4">
+            <h2 className={`md:font-thin shrink-0 mr-4`}>I did</h2>
+          </div>
+          <div className={`flex flex-col gap-4`}>
+            <CVItem
+              startDate={new Date(2023, 7, 0)}
+              position="Software Developer"
+              company="GMG"
+              workId="gmg"
+            />
+            <CVItem
+              startDate={new Date(2023, 7, 0)}
+              position="Creative Developer"
+              company="Freelance"
+            />
+            <CVItem
+              startDate={new Date(2023, 10, 0)}
+              position="Civil Servant"
+              company="OJAD"
+            />
+            <CVItem
+              startDate={new Date(2022, 8, 0)}
+              endDate={new Date(2022, 9, 0)}
+              position="Software Developer Intern"
+              company="Sulu CMS"
+              workId="sulu"
+            />
+            <CVItem
+              startDate={new Date(2022, 7, 0)}
+              endDate={new Date(2022, 8, 0)}
+              position="Software Developer Intern"
+              company="MASSIVE ART"
+              workId="massive-art"
+            />
+            <CVItem
+              startDate={new Date(2021, 7, 0)}
+              endDate={new Date(2021, 8, 0)}
+              position="Software Developer Intern"
+              company="Fusonic"
+              workId="fusonic"
+            />
+            <CVItem
+              startDate={new Date(2020, 7, 0)}
+              endDate={new Date(2020, 8, 0)}
+              position="Software Developer Intern"
+              company="Böhler Brothers"
+              workId="boehler-brothers"
+            />
           </div>
         </div>
       </div>

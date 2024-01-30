@@ -1,11 +1,11 @@
 "use client";
 
-import { cx } from "@/lib/utils/cx";
+import { cx } from "@/app/utils/cx";
 import { WorkItem } from "../components/work-item";
 import { Work, WorkTag } from "@/lib/types";
 import { useCallback, useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import { useWorks } from "@/app/stores";
+import { useWorksModal } from "@/app/stores";
 import { clash } from "@/app/fonts";
 import { useSearchParams, useRouter } from "next/navigation";
 import dynamic from "next/dynamic";
@@ -28,7 +28,7 @@ const viewSearchParamKey = "view";
 export default function Work() {
   const [works, setWorks] = useState<Work[] | null>(null);
   const [tag, setTag] = useState<Tags[number]>("all");
-  const setModal = useWorks((state) => state.setModal);
+  const setModal = useWorksModal((state) => state.setModal);
   const searchParams = useSearchParams();
   const router = useRouter();
 

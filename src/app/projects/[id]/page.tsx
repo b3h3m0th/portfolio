@@ -4,6 +4,7 @@ import { MDX } from "@/app/components/mdx";
 import { getProject, getProjects } from "@/lib";
 import { redirect } from "next/navigation";
 import { clash } from "@/app/fonts";
+import { cx } from "@/app/utils";
 
 type ProjectDetailProps = {
   params: { id: string };
@@ -55,15 +56,23 @@ export default async function ProjectDetail({ params }: ProjectDetailProps) {
       </div>
       <div className="flex-1 prose prose-invert">
         <h2>More Projects</h2>
-        <ul>
+        <ul className="p-0">
           {projects
             .filter((p) => p.id !== project.id)
-            .map((p) => (
-              <li key={p.id}>
-                <Link href={`/projects/${p.id}`} className="no-underline">
-                  {p.title}
+            .map((p, i, a) => (
+              <>
+                <Link
+                  key={p.id}
+                  href={`/projects/${p.id}`}
+                  className="no-underline block"
+                >
+                  <li
+                    className={`p-1 list-none m-0 hover:bg-white hover:text-black hover:font-semibold`}
+                  >
+                    {p.title}
+                  </li>
                 </Link>
-              </li>
+              </>
             ))}
         </ul>
       </div>
