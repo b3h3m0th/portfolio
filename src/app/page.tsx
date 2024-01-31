@@ -121,59 +121,6 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <div className={`mt-32 flex flex-col md:flex-row gap-8`}>
-        <div className={`flex-1`}>
-          <div className="flex items-center mb-4">
-            <h2 className={`md:font-thin shrink-0 mr-4`}>I did</h2>
-          </div>
-          <div className={`flex flex-col gap-4`}>
-            <CVItem
-              startDate={new Date(2023, 7, 0)}
-              position="Software Developer"
-              company="GMG"
-              workId="gmg"
-            />
-            <CVItem
-              startDate={new Date(2023, 7, 0)}
-              position="Creative Developer"
-              company="Freelance"
-            />
-            <CVItem
-              startDate={new Date(2023, 10, 0)}
-              position="Civil Servant"
-              company="OJAD"
-            />
-            <CVItem
-              startDate={new Date(2022, 8, 0)}
-              endDate={new Date(2022, 9, 0)}
-              position="Software Developer Intern"
-              company="Sulu CMS"
-              workId="sulu"
-            />
-            <CVItem
-              startDate={new Date(2022, 7, 0)}
-              endDate={new Date(2022, 8, 0)}
-              position="Software Developer Intern"
-              company="MASSIVE ART"
-              workId="massive-art"
-            />
-            <CVItem
-              startDate={new Date(2021, 7, 0)}
-              endDate={new Date(2021, 8, 0)}
-              position="Software Developer Intern"
-              company="Fusonic"
-              workId="fusonic"
-            />
-            <CVItem
-              startDate={new Date(2020, 7, 0)}
-              endDate={new Date(2020, 8, 0)}
-              position="Software Developer Intern"
-              company="Böhler Brothers"
-              workId="boehler-brothers"
-            />
-          </div>
-        </div>
-      </div>
     </section>
   );
 }

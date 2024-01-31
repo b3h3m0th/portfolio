@@ -31,7 +31,7 @@ export function CVItem({
       }`}</div>
       <div className="flex flex-col flex-[2]">
         <div>{position}</div>
-        <div className="font-semibold ">{company}</div>
+        <div className="font-semibold">{company}</div>
       </div>
     </div>
   );
