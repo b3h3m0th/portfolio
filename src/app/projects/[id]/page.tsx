@@ -50,25 +50,23 @@ export default async function ProjectDetail({ params }: ProjectDetailProps) {
           )}
         </div>
         <BezierLine />
-        <div className="prose prose-invert prose:sm pt-8">
+        <div className="prose prose-invert pt-8">
           <MDX source={project.markdown}></MDX>
         </div>
       </div>
       <div className="flex-1 prose prose-invert">
-        <h2>More Projects</h2>
+        <h2 className="mb-2">More Projects</h2>
         <ul className="p-0">
           {projects
             .filter((p) => p.id !== project.id)
-            .map((p, i, a) => (
-              <>
-                <Link
-                  key={p.id}
-                  href={`/projects/${p.id}`}
-                  className="no-underline block"
-                >
-                  <li className={`p-1 list-none m-0`}>{p.title}</li>
-                </Link>
-              </>
+            .map((p) => (
+              <Link
+                key={p.id}
+                href={`/projects/${p.id}`}
+                className="no-underline block"
+              >
+                <li className={`p-1 list-none m-0`}>{p.title}</li>
+              </Link>
             ))}
         </ul>
       </div>

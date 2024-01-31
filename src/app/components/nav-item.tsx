@@ -19,11 +19,8 @@ export function NavItem({ route, name }: { route: string; name: string }) {
           <motion.div
             className="absolute left-1/2 top-6 text-center"
             layoutId="sidebar"
-            transition={{
-              type: "spring",
-            }}
           >
-            <span className="relative -left-1/2 text-sm">&#10022;</span>
+            <span className="relative -left-1/2 text-xs">&#10022;</span>
           </motion.div>
         ) : null}
       </span>
