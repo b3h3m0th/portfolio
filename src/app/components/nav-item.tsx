@@ -17,14 +17,14 @@ export function NavItem({ route, name }: { route: string; name: string }) {
         {name}
         {route === pathname ? (
           <motion.div
-            className="absolute h-1 w-1 left-1/2 -ml-[2px] top-7 bg-white from-transparent to-neutral-200"
+            className="absolute left-1/2 top-6 text-center"
             layoutId="sidebar"
             transition={{
               type: "spring",
-              stiffness: 350,
-              damping: 30,
             }}
-          />
+          >
+            <span className="relative -left-1/2 text-sm">&#10022;</span>
+          </motion.div>
         ) : null}
       </span>
     </Link>

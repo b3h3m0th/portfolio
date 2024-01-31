@@ -66,11 +66,7 @@ export default async function ProjectDetail({ params }: ProjectDetailProps) {
                   href={`/projects/${p.id}`}
                   className="no-underline block"
                 >
-                  <li
-                    className={`p-1 list-none m-0 hover:bg-white hover:text-black hover:font-semibold`}
-                  >
-                    {p.title}
-                  </li>
+                  <li className={`p-1 list-none m-0`}>{p.title}</li>
                 </Link>
               </>
             ))}
