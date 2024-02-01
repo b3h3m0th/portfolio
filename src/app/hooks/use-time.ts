@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 
 export const useTime = (refreshCycle = 100) => {
-  const [now, setNow] = useState("");
+  const [now, setNow] = useState<null | string>(null);
 
   useEffect(() => {
     const intervalId = setInterval(

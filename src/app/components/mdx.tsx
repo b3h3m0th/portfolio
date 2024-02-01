@@ -2,6 +2,7 @@ import { MDXRemote } from "next-mdx-remote/rsc";
 import type { MDXRemoteProps } from "next-mdx-remote/rsc";
 import type { MDXComponents } from "mdx/types";
 import Image from "next/image";
+import { Suspense } from "react";
 
 const components: MDXComponents = {
   img: ({ alt, ...props }: any) => (
@@ -18,9 +19,11 @@ const components: MDXComponents = {
 
 export function MDX(props: MDXRemoteProps) {
   return (
-    <MDXRemote
-      {...props}
-      components={{ ...components, ...(components || {}) }}
-    />
+    <Suspense fallback={<div>Loading...</div>}>
+      <MDXRemote
+        {...props}
+        components={{ ...components, ...(components || {}) }}
+      />
+    </Suspense>
   );
 }
