@@ -142,7 +142,7 @@ export default function Work() {
               </motion.div>
             ))
           ) : (
-            <div className="columns-1 md:columns-2 gap-8 cursor-pointer">
+            <div className="columns-1 md:columns-2  gap-8 cursor-pointer">
               {works.map((w, i) => (
                 <motion.div
                   key={`work-block-${w.id}`}

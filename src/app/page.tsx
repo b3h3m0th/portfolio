@@ -67,7 +67,7 @@ export default function Home() {
             </div>
             <a
               href="mailto:simonostini@gmail.com"
-              className="md:text-right md:font-thin underline"
+              className="md:text-right md:font-thin hover:underline"
             >{`simonostini@gmail.com`}</a>
           </div>
         </div>
