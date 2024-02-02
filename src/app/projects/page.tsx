@@ -11,7 +11,7 @@ export default async function Projects() {
         My Projects
       </h2>
       <p className="prose prose-invert mb-8">
-        Some of the many personal projects I have worked on just for fun. <br />{" "}
+        Some of the many personal projects I have worked on just for fun. <br />
         More to come, currently filling this page up with content...
       </p>
       {projectPosts.map(({ sourceCode, ...post }, i) => (

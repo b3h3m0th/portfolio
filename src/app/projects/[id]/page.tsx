@@ -4,7 +4,6 @@ import { MDX } from "@/app/components/mdx";
 import { getProject, getProjects } from "@/lib";
 import { redirect } from "next/navigation";
 import { clash } from "@/app/fonts";
-import { cx } from "@/app/utils";
 
 type ProjectDetailProps = {
   params: { id: string };
