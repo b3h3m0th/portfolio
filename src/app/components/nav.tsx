@@ -1,7 +1,6 @@
 "use client";
 
 import { LayoutGroup } from "framer-motion";
-import { Github, Stackoverflow } from "iconoir-react";
 import { NavItem } from "./nav-item";
 import Image from "next/image";
 
