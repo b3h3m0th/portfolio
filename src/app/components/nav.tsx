@@ -3,6 +3,7 @@
 import { LayoutGroup } from "framer-motion";
 import { Github, Stackoverflow } from "iconoir-react";
 import { NavItem } from "./nav-item";
+import Image from "next/image";
 
 const navItems = {
   "/": {
@@ -36,7 +37,12 @@ export function Navbar() {
                 target="_blank"
                 aria-label="GitHub"
               >
-                <Github />
+                <Image
+                  width={24}
+                  height={24}
+                  src="/images/github.svg"
+                  alt="GitHub icon"
+                />
               </a>
             </div>
             <div className="py-1 px-2">
@@ -45,7 +51,12 @@ export function Navbar() {
                 target="_blank"
                 aria-label="StackOverflow"
               >
-                <Stackoverflow />
+                <Image
+                  width={24}
+                  height={24}
+                  src="/images/stackoverflow.svg"
+                  alt="Stack Overflow icon"
+                />
               </a>
             </div>
           </nav>
