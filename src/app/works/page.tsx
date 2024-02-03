@@ -142,7 +142,7 @@ export default function Work() {
               </motion.div>
             ))
           ) : (
-            <div className="columns-1 md:columns-2  gap-8 cursor-pointer">
+            <div className="columns-1 md:columns-2 gap-8">
               {works.map((w, i) => (
                 <motion.div
                   key={`work-block-${w.id}`}
@@ -155,7 +155,7 @@ export default function Work() {
                       0.1 *
                       ((half) => (i >= half ? i - half : i))(works.length / 2),
                   }}
-                  className="mb-8"
+                  className="mb-8 cursor-pointer"
                 >
                   <Link href={`/works/${w.id}`}>
                     {w.image && (
