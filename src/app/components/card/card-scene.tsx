@@ -28,8 +28,8 @@ export function CardScene() {
     [viewport.width, viewport.height]
   );
 
-  const [cardFront] = useTexture(["/images/as_custom.svg"]);
-  const [cardBack] = useTexture(["/images/as_custom_back.svg"]);
+  const [cardFront] = useTexture(["/images/card-front.png"]);
+  const [cardBack] = useTexture(["/images/card-back.png"]);
   const [springs] = useSpring(
     () => ({
       rotationY: flipped ? -3.2 : 0,
@@ -48,7 +48,7 @@ export function CardScene() {
 
   return (
     <>
-      <pointLight intensity={50} position={[0, 1, 5]}></pointLight>
+      <pointLight intensity={75} position={[0, 1, 5]}></pointLight>
       <Float speed={3} floatingRange={[0.25, -0.25]}>
         <animated.mesh
           castShadow
