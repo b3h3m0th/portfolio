@@ -41,6 +41,7 @@ export function CardScene() {
 
   useFrame((state) => {
     if (!(mesh.current as any)?.material?.uniforms) return;
+
     (mesh.current as any).material.uniforms.u_time.value =
       state.clock.getElapsedTime();
   });
