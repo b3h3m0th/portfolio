@@ -1,32 +1,11 @@
-import { useMemo, useRef, useState } from "react";
-import { useFrame, useThree } from "@react-three/fiber";
+import { useState } from "react";
 import * as THREE from "three";
 import { Float, useTexture } from "@react-three/drei";
 import { animated, useSpring } from "@react-spring/three";
 
-import vertexShader from "./shaders/card.vert";
-import fragmentShader from "./shaders/card.frag";
-
 export function CardScene() {
-  const { viewport } = useThree();
-  const mesh = useRef(null);
   const [flipped, setFlipped] = useState(false);
   const [isFlipping, setIsFlipping] = useState(false);
-
-  const uniforms = useMemo(
-    () => ({
-      u_time: {
-        value: 0.0,
-      },
-      u_resolution: {
-        value: new THREE.Vector2(viewport.width, viewport.height),
-      },
-      u_texture: {
-        value: new THREE.Texture(),
-      },
-    }),
-    [viewport.width, viewport.height]
-  );
 
   const [cardFront] = useTexture(["/images/card-front.png"]);
   const [cardBack] = useTexture(["/images/tarot-back.png"]);
@@ -39,13 +18,6 @@ export function CardScene() {
     [flipped, setIsFlipping]
   );
 
-  useFrame((state) => {
-    if (!(mesh.current as any)?.material?.uniforms) return;
-
-    (mesh.current as any).material.uniforms.u_time.value =
-      state.clock.getElapsedTime();
-  });
-
   return (
     <>
       <pointLight intensity={75} position={[0, 1, 5]}></pointLight>
@@ -53,7 +25,6 @@ export function CardScene() {
         <animated.mesh
           castShadow
           rotation-y={springs.rotationY}
-          ref={mesh}
           onClick={!isFlipping ? () => setFlipped((prev) => !prev) : undefined}
         >
           <planeGeometry args={[70 / 22, 120 / 22, 10, 10]}></planeGeometry>
@@ -72,7 +43,6 @@ export function CardScene() {
         </animated.mesh>
         <animated.mesh
           rotation-y={springs.rotationY}
-          ref={mesh}
           onClick={!isFlipping ? () => setFlipped((prev) => !prev) : undefined}
         >
           <planeGeometry args={[70 / 22, 120 / 22, 10, 10]}></planeGeometry>

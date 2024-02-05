@@ -26,8 +26,8 @@ export default async function ProjectDetail({ params }: ProjectDetailProps) {
         <h1 className={`${clash.className} font-semibold text-4xl mb-2`}>
           {project.title}
         </h1>
-        <div className="text-sm prose prose-invert mb-12">
-          <span className="mr-4">
+        <div className="flex flex-wrap gap-x-8 text-sm prose prose-invert mb-12">
+          <span>
             {`${
               project.startDate.getMonth() + 1
             }.${project.startDate.getFullYear()} — ${
@@ -41,7 +41,7 @@ export default async function ProjectDetail({ params }: ProjectDetailProps) {
           {project.sourceCode && (
             <a
               href={project.sourceCode.href}
-              className="ml-4 underline"
+              className="underline"
               target="_blank"
             >
               Source Code
