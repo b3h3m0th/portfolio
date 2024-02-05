@@ -29,7 +29,7 @@ export function CardScene() {
   );
 
   const [cardFront] = useTexture(["/images/card-front.png"]);
-  const [cardBack] = useTexture(["/images/card-back.png"]);
+  const [cardBack] = useTexture(["/images/tarot-back.png"]);
   const [springs] = useSpring(
     () => ({
       rotationY: flipped ? -3.2 : 0,
@@ -56,7 +56,7 @@ export function CardScene() {
           ref={mesh}
           onClick={!isFlipping ? () => setFlipped((prev) => !prev) : undefined}
         >
-          <planeGeometry args={[63 / 18, 88 / 18, 500, 500]}></planeGeometry>
+          <planeGeometry args={[70 / 22, 120 / 22, 10, 10]}></planeGeometry>
           <meshLambertMaterial
             transparent
             side={THREE.FrontSide}
@@ -75,7 +75,7 @@ export function CardScene() {
           ref={mesh}
           onClick={!isFlipping ? () => setFlipped((prev) => !prev) : undefined}
         >
-          <planeGeometry args={[63 / 18, 88 / 18, 500, 500]}></planeGeometry>
+          <planeGeometry args={[70 / 22, 120 / 22, 10, 10]}></planeGeometry>
           <meshLambertMaterial
             transparent
             side={THREE.BackSide}
