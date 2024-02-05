@@ -24,7 +24,7 @@ export default async function WorkDetail({ params }: WorkDetailPost) {
       <h1 className={`${clash.className} font-semibold text-4xl mb-2`}>
         {work.title}
       </h1>
-      <div className="text-sm prose prose-invert mb-12">
+      <div className="flex flex-wrap gap-x-8 text-sm prose prose-invert mb-12">
         <span>
           {`${
             work.startDate.getMonth() + 1
@@ -35,14 +35,14 @@ export default async function WorkDetail({ params }: WorkDetailPost) {
           }`}
         </span>
         {work.url ? (
-          <a href={work.url.href} className="ml-8 underline" target="_blank">
+          <a href={work.url.href} className="underline" target="_blank">
             {work.url.hostname}
           </a>
         ) : (
-          work.company && <span className="ml-8">{work.company}</span>
+          work.company && <span>{work.company}</span>
         )}
         {work.tags && (
-          <div className="inline-block ml-8">
+          <div className="inline-block">
             {work.tags.map((t) => (
               <span className="mr-2" key={`tag-${t}`}>
                 {`#${t}`}
