@@ -4,28 +4,40 @@ import { Float, useTexture } from "@react-three/drei";
 import { animated, useSpring } from "@react-spring/three";
 
 export function CardScene() {
-  const [flipped, setFlipped] = useState(false);
-  const [isFlipping, setIsFlipping] = useState(false);
+  const [isFlipped, setIsFlipped] = useState(true);
+  const [isAnimating, setIsAnimating] = useState(false);
 
-  const [cardFront] = useTexture(["/images/card-front.png"]);
+  const [cardFront] = useTexture(["/images/tarot-front.png"]);
   const [cardBack] = useTexture(["/images/tarot-back.png"]);
   const [springs] = useSpring(
     () => ({
-      rotationY: flipped ? -3.2 : 0,
-      onStart: () => setIsFlipping(true),
-      onResolve: () => setIsFlipping(false),
+      rotationY: isFlipped ? -3.2 : 0,
+      onStart: () => setIsAnimating(true),
+      onResolve: () => setIsAnimating(false),
     }),
-    [flipped, setIsFlipping]
+    [isFlipped, setIsAnimating]
   );
+
+  const handleMouseEnter = () => {
+    document.body.classList.add("cursor-pointer");
+  };
+
+  const handleMouseLeave = () => {
+    document.body.classList.remove("cursor-pointer");
+  };
 
   return (
     <>
-      <pointLight intensity={75} position={[0, 1, 5]}></pointLight>
-      <Float speed={3} floatingRange={[0.25, -0.25]}>
+      <pointLight intensity={60} position={[0, 1, 5]}></pointLight>
+      <Float speed={3} floatingRange={[0.1, -0.1]}>
         <animated.mesh
           castShadow
           rotation-y={springs.rotationY}
-          onClick={!isFlipping ? () => setFlipped((prev) => !prev) : undefined}
+          onClick={
+            !isAnimating ? () => setIsFlipped((prev) => !prev) : undefined
+          }
+          onPointerEnter={handleMouseEnter}
+          onPointerLeave={handleMouseLeave}
         >
           <planeGeometry args={[70 / 22, 120 / 22, 10, 10]}></planeGeometry>
           <meshLambertMaterial
@@ -43,7 +55,11 @@ export function CardScene() {
         </animated.mesh>
         <animated.mesh
           rotation-y={springs.rotationY}
-          onClick={!isFlipping ? () => setFlipped((prev) => !prev) : undefined}
+          onClick={
+            !isAnimating ? () => setIsFlipped((prev) => !prev) : undefined
+          }
+          onPointerEnter={handleMouseEnter}
+          onPointerLeave={handleMouseLeave}
         >
           <planeGeometry args={[70 / 22, 120 / 22, 10, 10]}></planeGeometry>
           <meshLambertMaterial
