@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import * as THREE from "three";
 import { Float, useTexture } from "@react-three/drei";
 import { animated, useSpring } from "@react-spring/three";
@@ -28,7 +28,7 @@ export function CardScene() {
 
   return (
     <>
-      <pointLight intensity={60} position={[0, 1, 5]}></pointLight>
+      <directionalLight intensity={2} position={[0, 1, 10]}></directionalLight>
       <Float speed={3} floatingRange={[0.1, -0.1]}>
         <animated.mesh
           castShadow
