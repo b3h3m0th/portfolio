@@ -40,11 +40,12 @@ export function CardScene() {
           onPointerLeave={handleMouseLeave}
         >
           <planeGeometry args={[70 / 22, 120 / 22, 10, 10]}></planeGeometry>
-          <meshLambertMaterial
+          <meshPhongMaterial
             transparent
+            shininess={100}
             side={THREE.FrontSide}
             map={cardFront}
-          ></meshLambertMaterial>
+          ></meshPhongMaterial>
           {/* <shaderMaterial
             side={THREE.FrontSide}
             transparent
@@ -62,11 +63,12 @@ export function CardScene() {
           onPointerLeave={handleMouseLeave}
         >
           <planeGeometry args={[70 / 22, 120 / 22, 10, 10]}></planeGeometry>
-          <meshLambertMaterial
+          <meshPhongMaterial
             transparent
+            shininess={100}
             side={THREE.BackSide}
             map={cardBack}
-          ></meshLambertMaterial>
+          ></meshPhongMaterial>
           {/* <shaderMaterial
             depthWrite={false}
             side={THREE.BackSide}
