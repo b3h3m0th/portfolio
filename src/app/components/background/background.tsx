@@ -2,6 +2,7 @@
 
 import { Canvas } from "@react-three/fiber";
 import { Scene } from "./background-scene";
+import Image from "next/image";
 
 export const Background: React.FC = () => {
   return (
@@ -16,7 +17,22 @@ export const Background: React.FC = () => {
           );
         })}
       </div>
-      <div className={"absolute left-0 top-0 h-screen w-screen bg-neutral-950"}>
+      <div className="absolute z-[1] w-full h-full left-0 top-0">
+        <div className="relative w-full h-full justify-center items-center">
+          <Image
+            src="/images/baroque-wallpaper.svg"
+            width={1000}
+            height={0}
+            alt="baroque wallpaper"
+            className="w-full h-full object-cover opacity-5"
+          />
+        </div>
+      </div>
+      <div
+        className={
+          "absolute left-0 top-0 h-screen w-screen bg-neutral-950 opacity-20"
+        }
+      >
         <Canvas>
           <Scene />
         </Canvas>

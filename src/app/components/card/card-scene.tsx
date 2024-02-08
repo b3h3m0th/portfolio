@@ -1,6 +1,6 @@
 import { useRef, useState } from "react";
 import * as THREE from "three";
-import { Float, useTexture } from "@react-three/drei";
+import { Float, SpotLight, useTexture } from "@react-three/drei";
 import { animated, useSpring } from "@react-spring/three";
 
 export function CardScene() {
@@ -39,7 +39,7 @@ export function CardScene() {
           onPointerEnter={handleMouseEnter}
           onPointerLeave={handleMouseLeave}
         >
-          <planeGeometry args={[70 / 22, 120 / 22, 10, 10]}></planeGeometry>
+          <planeGeometry args={[70 / 22, 120 / 22, 100, 100]}></planeGeometry>
           <meshPhongMaterial
             transparent
             shininess={100}
@@ -62,7 +62,7 @@ export function CardScene() {
           onPointerEnter={handleMouseEnter}
           onPointerLeave={handleMouseLeave}
         >
-          <planeGeometry args={[70 / 22, 120 / 22, 10, 10]}></planeGeometry>
+          <planeGeometry args={[70 / 22, 120 / 22, 100, 100]}></planeGeometry>
           <meshPhongMaterial
             transparent
             shininess={100}
