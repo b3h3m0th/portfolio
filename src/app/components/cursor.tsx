@@ -14,7 +14,7 @@ export function Cursor() {
         filter: "blur(100px)",
       }}
       animate={{ x: clientX - 96, y: clientY - 96 }}
-      transition={{ ease: "linear", duration: 2 }}
+      transition={{ ease: "linear", duration: 1 }}
     ></motion.div>
   );
 }

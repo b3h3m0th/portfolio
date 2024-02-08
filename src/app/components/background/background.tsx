@@ -17,7 +17,7 @@ export const Background: React.FC = () => {
           );
         })}
       </div>
-      <div className="absolute z-[1] w-full h-full left-0 top-0">
+      <div className="absolute z-[1] w-full h-full left-0 top-0 opacity-50">
         <div className="relative w-full h-full justify-center items-center">
           <Image
             src="/images/baroque-wallpaper.svg"
