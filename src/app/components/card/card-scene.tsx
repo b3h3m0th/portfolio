@@ -33,9 +33,9 @@ export function CardScene() {
         <animated.mesh
           castShadow
           rotation-y={springs.rotationY}
-          onClick={
-            !isAnimating ? () => setIsFlipped((prev) => !prev) : undefined
-          }
+          {...(!isAnimating && {
+            onClick: () => setIsFlipped((prev) => !prev),
+          })}
           onPointerEnter={handleMouseEnter}
           onPointerLeave={handleMouseLeave}
         >
@@ -56,9 +56,9 @@ export function CardScene() {
         </animated.mesh>
         <animated.mesh
           rotation-y={springs.rotationY}
-          onClick={
-            !isAnimating ? () => setIsFlipped((prev) => !prev) : undefined
-          }
+          {...(!isAnimating && {
+            onClick: () => setIsFlipped((prev) => !prev),
+          })}
           onPointerEnter={handleMouseEnter}
           onPointerLeave={handleMouseLeave}
         >
