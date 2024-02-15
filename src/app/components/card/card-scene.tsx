@@ -1,29 +1,30 @@
 import { useRef, useState } from "react";
 import * as THREE from "three";
-import { Float, SpotLight, useTexture } from "@react-three/drei";
+import { Float, useTexture } from "@react-three/drei";
 import { animated, useSpring } from "@react-spring/three";
 
 export function CardScene() {
-  const [isFlipped, setIsFlipped] = useState(true);
-  const [isAnimating, setIsAnimating] = useState(false);
+  const [isFlipped, setIsFlipped] = useState(false);
+  const [isHovered, setIsHovered] = useState(false);
 
   const [cardFront] = useTexture(["/images/tarot-front.png"]);
   const [cardBack] = useTexture(["/images/tarot-back.png"]);
   const [springs] = useSpring(
     () => ({
-      rotationY: isFlipped ? -3.2 : 0,
-      onStart: () => setIsAnimating(true),
-      onResolve: () => setIsAnimating(false),
+      "rotation-y": isFlipped ? -3.2 : 0,
+      scale: isHovered ? 0.95 : 1,
     }),
-    [isFlipped, setIsAnimating]
+    [isFlipped, isHovered]
   );
 
   const handleMouseEnter = () => {
     document.body.classList.add("cursor-pointer");
+    setIsHovered(true);
   };
 
   const handleMouseLeave = () => {
     document.body.classList.remove("cursor-pointer");
+    setIsHovered(false);
   };
 
   return (
@@ -31,11 +32,8 @@ export function CardScene() {
       <directionalLight intensity={2} position={[0, 1, 10]}></directionalLight>
       <Float speed={3} floatingRange={[0.1, -0.1]}>
         <animated.mesh
-          castShadow
-          rotation-y={springs.rotationY}
-          {...(!isAnimating && {
-            onClick: () => setIsFlipped((prev) => !prev),
-          })}
+          {...springs}
+          onClick={() => setIsFlipped((prev) => !prev)}
           onPointerEnter={handleMouseEnter}
           onPointerLeave={handleMouseLeave}
         >
@@ -55,10 +53,8 @@ export function CardScene() {
           ></shaderMaterial> */}
         </animated.mesh>
         <animated.mesh
-          rotation-y={springs.rotationY}
-          {...(!isAnimating && {
-            onClick: () => setIsFlipped((prev) => !prev),
-          })}
+          {...springs}
+          onClick={() => setIsFlipped((prev) => !prev)}
           onPointerEnter={handleMouseEnter}
           onPointerLeave={handleMouseLeave}
         >
