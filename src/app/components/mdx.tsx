@@ -15,6 +15,7 @@ const components: MDXComponents = {
     />
   ),
   Image: Image,
+  a: (props: any) => <a {...props} target="_blank"></a>,
 };
 
 export function MDX(props: MDXRemoteProps) {
