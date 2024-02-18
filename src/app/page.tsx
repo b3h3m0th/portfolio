@@ -99,7 +99,7 @@ export default function Home() {
                 "80s Hard rock",
                 "Vim",
                 "J. R. R. Tolkien",
-                "StackOverflow",
+                "Stack Overflow",
                 "WebGL",
                 "Open source",
                 "Next.js",
@@ -110,7 +110,7 @@ export default function Home() {
                 "Magic",
                 "Sass",
                 "Git",
-                "Playing Guitar",
+                "Playing guitar",
               ].map((e, index, array) => (
                 <span key={`like-${e}`}>
                   {e} {index !== array.length - 1 && <>&#10022; </>}
