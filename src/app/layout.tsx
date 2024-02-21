@@ -9,7 +9,7 @@ import { switzer } from "@/app/fonts";
 import { Background } from "./components/background/background";
 
 export const metadata: Metadata = {
-  title: "Simon Ostini - Portfolio",
+  title: "Simon Ostini - Creative Developer Portfolio",
   description: "Portfolio website of Creative Developer Simon Ostini",
   robots: {
     index: true,
