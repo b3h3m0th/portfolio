@@ -1,70 +1,83 @@
+// Author @patriciogv - 2015
+// http://patriciogonzalezvivo.com
+
+#ifdef GL_ES
 precision mediump float;
+#endif
 
-#pragma glslify: cnoise = require(glsl-noise/classic/2d);
+#pragma glslify: cnoise2 = require(glsl-noise/classic/2d);
 
-uniform float u_time;
 uniform vec2 u_resolution;
 uniform vec2 u_mouse;
-uniform vec3 u_color1;
-uniform vec3 u_color2;
-uniform vec3 u_color_accent;
-uniform float u_lines_blur;
-uniform float u_noise;
-uniform float u_offset_x;
-uniform float u_offset_y;
-uniform float u_lines_amount;
-uniform float u_background_scale;
-varying vec2 vUv;
+uniform float u_time;
 
-#define PI 3.14159265359
-
-float lines(vec2 uv, float offset) {
-    float a = abs(0.5 * sin(uv.y * u_lines_amount) + offset * u_lines_blur);
-    return smoothstep(0.0, u_lines_blur + offset * u_lines_blur, a);
+float random (in vec2 _st) {
+    return fract(sin(dot(_st.xy,
+                         vec2(12.9898,78.233)))*
+        43758.5453123);
 }
 
-mat2 rotate2d(float angle) {
-    return mat2(cos(angle),-sin(angle),
-                sin(angle),cos(angle));
+// Based on Morgan McGuire @morgan3d
+// https://www.shadertoy.com/view/4dS3Wd
+float noise (in vec2 _st) {
+    vec2 i = floor(_st);
+    vec2 f = fract(_st);
+
+    // Four corners in 2D of a tile
+    float a = random(i);
+    float b = random(i + vec2(1.0, 0.0));
+    float c = random(i + vec2(0.0, 1.0));
+    float d = random(i + vec2(1.0, 1.0));
+
+    vec2 u = f * f * (3.0 - 2.0 * f);
+
+    return mix(a, b, u.x) +
+            (c - a)* u.y * (1.0 - u.x) +
+            (d - b) * u.x * u.y;
 }
 
-float random (vec2 st) {
-    return fract(sin(dot(st.xy,
-                         vec2(12.9898,78.233)))
-                 * 43758.5453123);
-}
+#define NUM_OCTAVES 5
 
-vec3 fadeLine(vec2 uv, vec2 mouse2D,  vec3 col1, vec3 col2, vec3 col3) {
-    mouse2D = (mouse2D + 1.0) * 0.5;
-    float n1 = cnoise(uv);
-    float n2 = cnoise(uv + u_offset_x * 20.0);
-    float n3 = cnoise(uv * 0.3 + u_offset_y * 10.0);
-    float nFinal = mix(mix(n1, n2, mouse2D.x), n3, mouse2D.y);
-    vec2 baseUv = vec2(nFinal + 2.05 ) * u_background_scale; 
-
-    float basePattern = lines(baseUv, 1.0);
-    float secondPattern = lines(baseUv, 0.25);
-
-    vec3 baseColor = mix(col1, col2, basePattern);
-    vec3 secondBaseColor = mix(baseColor, col3, secondPattern);
-
-    return secondBaseColor;
+float fbm ( in vec2 _st) {
+    float v = 0.0;
+    float a = 0.5;
+    vec2 shift = vec2(100.0);
+    // Rotate to reduce axial bias
+    mat2 rot = mat2(cos(0.5), sin(0.5),
+                    -sin(0.5), cos(0.50));
+    for (int i = 0; i < NUM_OCTAVES; ++i) {
+        v += a * noise(_st);
+        _st = rot * _st * 2.0 + shift;
+        a *= 0.5;
+    }
+    return v;
 }
 
 void main() {
-  vec2 mouse = vec2(u_mouse.x / 3000.0, u_mouse.y / 3000.0);
+    vec2 st = gl_FragCoord.xy/(u_resolution.xy*50.0);
+    vec3 color = vec3(0.0);
 
-  vec2 uv = vUv;
-  uv.y += u_offset_y;
-  uv.x += u_offset_x;
-  uv.x *= u_resolution.x / u_resolution.y; 
+    vec2 q = vec2(0.);
+    q.x = fbm( st + 0.00*u_time);
+    q.y = fbm( st + vec2(1.0));
 
-  vec3 col1 = fadeLine(uv, mouse, u_color1, u_color2, u_color_accent);
-  vec3 finalCol = col1;
+    vec2 r = vec2(0.);
+    r.x = fbm( st + 1.0*q + vec2(1.7,9.2)+ 0.15*u_time );
+    r.y = fbm( st + 1.0*q + vec2(8.3,2.8)+ 0.126*u_time);
 
-  vec2 uvRandom = vUv;
-  uvRandom.y *= random(vec2(uvRandom.y, 0.5));
-  finalCol.rgb += random(uvRandom) * u_noise;
+    float f = fbm(st+r);
 
-  gl_FragColor = vec4(finalCol, 1.0);
+    color = mix(vec3(0.101961,0.619608,0.666667),
+                vec3(0.666667,0.666667,0.498039),
+                clamp((f*f)*4.0,0.0,1.0));
+
+    color = mix(color,
+                vec3(0,0,0.164706),
+                clamp(length(q),0.0,1.0));
+
+    color = mix(color,
+                vec3(0.666667,1,1),
+                clamp(length(r.x),0.0,1.0));
+
+    gl_FragColor = vec4((f*f*f+.6*f*f+.5*f)*color,1.);
 }

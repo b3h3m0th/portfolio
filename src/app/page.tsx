@@ -25,7 +25,7 @@ export default function Home() {
     <section>
       <div className="h-[calc(100vh-15rem)] mb-24 flex flex-col justify-stretch items-stretch">
         <div className="relative w-full -mt-16 flex-1 flex flex-col justify-center">
-          <div className="absolute left-0 top-0 w-full h-full">
+          <div className="card absolute left-0 top-0 w-full h-full">
             <Card />
           </div>
         </div>
