@@ -11,6 +11,7 @@ import { useSearchParams, useRouter } from "next/navigation";
 import dynamic from "next/dynamic";
 import Image from "next/image";
 import Link from "next/link";
+import Loading from "../loading";
 
 const WorkModal = dynamic(() =>
   import("../components/work-modal/work-modal").then((m) => m.WorkModal)
@@ -173,7 +174,7 @@ export default function Work() {
             </div>
           )
         ) : (
-          <span>Loading works...</span>
+          <Loading />
         )}
       </AnimatePresence>
       {works && view === View.List && (
