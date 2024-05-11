@@ -6,9 +6,9 @@ export async function getSiteConfig() {
   try {
     const filePath = path.join(process.cwd(), "content", "site-config.json");
     const fileContent = await readFile(filePath, "utf8");
-    const siteConfig = await JSON.parse(fileContent);
+    const siteConfig: SiteConfig = await JSON.parse(fileContent);
 
-    return siteConfig as SiteConfig;
+    return siteConfig;
   } catch {
     return null;
   }
