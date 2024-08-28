@@ -31,7 +31,7 @@ export default function Home() {
         </div>
         <div className="mt-auto flex flex-col md:flex-row justify-between font-light">
           <div className="mb-4 md:mb-0">
-            <p className="font-semibold">Based in Dornbirn, Austria</p>
+            <p className="font-semibold">Based in {config?.location}</p>
             <p className="md:font-thin">
               Local time - <Clock />
             </p>
