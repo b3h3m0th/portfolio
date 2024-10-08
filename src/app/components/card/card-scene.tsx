@@ -1,11 +1,12 @@
 import { useRef, useState } from "react";
 import * as THREE from "three";
-import { Float, useTexture } from "@react-three/drei";
+import { Float, OrbitControls, useTexture } from "@react-three/drei";
 import { animated, useSpring } from "@react-spring/three";
 
 export function CardScene() {
   const [isFlipped, setIsFlipped] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
+  const [entryAnimationFinished, setEntryAnimationFinished] = useState(false);
 
   const [cardFront] = useTexture(["/images/tarot-front.png"]);
   const [cardBack] = useTexture(["/images/tarot-back.png"]);
@@ -13,6 +14,34 @@ export function CardScene() {
     () => ({
       "rotation-y": isFlipped ? -3.2 : 0,
       scale: isHovered ? 0.95 : 1,
+      onResolve() {
+        setEntryAnimationFinished(true);
+      },
+      ...(!entryAnimationFinished
+        ? {
+            config: {
+              mass: 8,
+              friction: 50,
+              tension: 100,
+            },
+            from: {
+              scale: 0.3,
+              "rotation-y": -10,
+              "rotation-z": 0.2,
+            },
+            to: {
+              scale: 1,
+              "rotation-y": 0,
+              "rotation-z": 0,
+            },
+          }
+        : {
+            config: {
+              mass: 1,
+              friction: 25,
+              tension: 100,
+            },
+          }),
     }),
     [isFlipped, isHovered]
   );
