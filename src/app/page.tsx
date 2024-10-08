@@ -43,25 +43,13 @@ export default function Home() {
             <div className="rounded-full flex items-center">
               <div className="relative h-2 w-2 mr-2">
                 <div
-                  className={`absolute h-full w-full rounded-full ${cx({
-                    "bg-green-500": !!config?.availableForWork,
-                    "bg-red-500": !!!config?.availableForWork,
-                  })}`}
+                  className={`absolute h-full w-full rounded-full ${config?.availabilityColor}`}
                 ></div>
                 <div
-                  className={`absolute animate-ping h-full w-full rounded-full ${cx(
-                    {
-                      "bg-green-500": !!config?.availableForWork,
-                      "bg-red-500": !!!config?.availableForWork,
-                    }
-                  )}`}
+                  className={`absolute animate-ping h-full w-full rounded-full ${config?.availabilityColor}`}
                 ></div>
               </div>
-              <span className="font-semibold">
-                {config?.availableForWork
-                  ? "Available for freelance work"
-                  : "Currently busy"}
-              </span>
+              <span className="font-semibold">{config?.availability}</span>
             </div>
             <a
               href="mailto:simonostini@gmail.com"

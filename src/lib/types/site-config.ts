@@ -1,4 +1,5 @@
 export type SiteConfig = {
-  availableForWork?: boolean;
+  availability?: string;
+  availabilityColor?: string;
   location?: string;
 };
