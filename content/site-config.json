@@ -1,5 +1,5 @@
 {
   "availability": "Limited work availability",
-  "availabilityColor": "#eab308",
+  "availabilityColorClassname": "bg-yellow-500",
   "location": "Kristianstad, Sweden"
 }

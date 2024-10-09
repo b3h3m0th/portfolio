@@ -19,6 +19,7 @@ const config: Config = {
       },
     },
   },
+  safelist: ["bg-green-500", "bg-yellow-500", "bg-red-500"],
   plugins: [require("@tailwindcss/typography")],
 };
 
