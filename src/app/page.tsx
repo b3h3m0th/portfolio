@@ -1,7 +1,6 @@
 "use client";
 
 import { useSiteConfig } from "@/app/hooks";
-import { cx } from "@/app/utils/cx";
 import { Clock } from "./components/clock";
 import { BezierLine } from "./components/bezier-line";
 import { Card } from "./components/card/card";
@@ -43,10 +42,12 @@ export default function Home() {
             <div className="rounded-full flex items-center">
               <div className="relative h-2 w-2 mr-2">
                 <div
-                  className={`absolute h-full w-full rounded-full ${config?.availabilityColor}`}
+                  className={`absolute h-full w-full rounded-full`}
+                  style={{ backgroundColor: config?.availabilityColor }}
                 ></div>
                 <div
-                  className={`absolute animate-ping h-full w-full rounded-full ${config?.availabilityColor}`}
+                  className={`absolute animate-ping h-full w-full rounded-full`}
+                  style={{ backgroundColor: config?.availabilityColor }}
                 ></div>
               </div>
               <span className="font-semibold">{config?.availability}</span>
