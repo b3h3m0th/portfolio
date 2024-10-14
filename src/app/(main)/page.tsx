@@ -1,9 +1,9 @@
 "use client";
 
 import { useSiteConfig } from "@/app/hooks";
-import { Clock } from "./components/clock";
-import { BezierLine } from "./components/bezier-line";
-import { Card } from "./components/card/card";
+import { Clock } from "../components/clock";
+import { BezierLine } from "../components/bezier-line";
+import { Card } from "../components/card/card";
 
 function getAge() {
   const birthdate = new Date(2003, 10, 22);

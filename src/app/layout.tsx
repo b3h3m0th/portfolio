@@ -26,17 +26,7 @@ export default function RootLayout({
     <html lang="en">
       <SpeedInsights />
       <Analytics />
-      <body
-        className={`${switzer.className} text-white min-h-screen antialiased max-w-4xl mb-20 flex mt-8 mx-auto bg-neutral-950`}
-      >
-        {/* <Cursor /> */}
-        <Background />
-        <main className="flex-auto min-w-0 mt-6 flex flex-col px-2 md:px-0 mx-4">
-          <Navbar />
-          {children}
-          <Footer />
-        </main>
-      </body>
+      {children}
     </html>
   );
 }
