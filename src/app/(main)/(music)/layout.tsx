@@ -1,5 +1,5 @@
+import { Background } from "@/app/components/background/background";
 import type { Metadata } from "next";
-import { Background } from "./components/background/background";
 
 export const metadata: Metadata = {
   title: 'Simon Ostini - "WITCHES OUT NOW!"',
@@ -18,7 +18,13 @@ export default function MusicLayout({
   return (
     <>
       {/* <Cursor /> */}
-      <Background />
+      <Background
+        image={{
+          src: "/images/ostini_witches_cover_plain.png",
+          alt: "baroque wallpaper",
+          classname: "opacity-25",
+        }}
+      />
       <main className="flex-auto min-w-0 mt-6 flex flex-col px-2 md:px-0 mx-4">
         {children}
       </main>

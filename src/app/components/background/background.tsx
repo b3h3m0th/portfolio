@@ -4,7 +4,15 @@ import { Canvas } from "@react-three/fiber";
 import { Scene } from "./background-scene";
 import Image from "next/image";
 
-export const Background: React.FC = () => {
+type BackgroundProps = {
+  image: {
+    src: string;
+    alt: string;
+    classname?: string;
+  };
+};
+
+export const Background: React.FC<BackgroundProps> = ({ image }) => {
   return (
     <div className={`fixed -z-[2] left-0 top-0 w-screen h-screen`}>
       <div className="absolute md:flex left-0 top-0 z-[1] w-full h-full">
@@ -20,11 +28,11 @@ export const Background: React.FC = () => {
       <div className="absolute z-[1] w-full h-full left-0 top-0 opacity-50">
         <div className="relative w-full h-full justify-center items-center">
           <Image
-            src="/images/baroque-wallpaper.svg"
+            src={image.src}
             width={1000}
             height={0}
-            alt="baroque wallpaper"
-            className="w-full h-full object-cover opacity-5"
+            alt={image.alt}
+            className={`w-full h-full object-cover ${image.classname ?? ""}`}
           />
         </div>
       </div>

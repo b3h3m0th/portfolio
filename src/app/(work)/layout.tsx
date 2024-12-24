@@ -23,7 +23,13 @@ export default function WorkLayout({
   return (
     <>
       {/* <Cursor /> */}
-      <Background />
+      <Background
+        image={{
+          src: "/images/baroque-wallpaper.svg",
+          alt: "baroque wallpaper",
+          classname: "opacity-5",
+        }}
+      />
       <main className="flex-auto min-w-0 mt-6 flex flex-col px-2 md:px-0 mx-4">
         <Navbar />
         {children}

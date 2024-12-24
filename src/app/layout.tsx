@@ -1,9 +1,8 @@
 import type { Metadata } from "next";
-import "./globals.scss";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Analytics } from "@vercel/analytics/react";
 import { switzer } from "@/app/fonts";
-import { Background } from "./components/background/background";
+import "./globals.scss";
 
 export const metadata: Metadata = {
   title: "Simon Ostini",
