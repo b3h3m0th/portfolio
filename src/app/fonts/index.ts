@@ -11,3 +11,9 @@ export const clash = localFont({
   display: "swap",
   variable: "--font-clash",
 });
+
+export const aktura = localFont({
+  src: "./../../../public/fonts/Aktura-Regular.ttf",
+  display: "swap",
+  variable: "--font-aktura",
+});

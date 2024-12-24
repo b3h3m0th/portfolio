@@ -5,7 +5,10 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 export function NavItem({ route, name }: { route: string; name: string }) {
-  const pathname = usePathname() || "/";
+  const emptyPathame = "/";
+  const pathname = usePathname() || emptyPathame;
+
+  console.log(route, pathname);
 
   return (
     <Link
@@ -15,7 +18,7 @@ export function NavItem({ route, name }: { route: string; name: string }) {
     >
       <span className="relative py-1 px-2 font-semibold">
         {name}
-        {route === pathname ? (
+        {pathname.startsWith(route) && route !== emptyPathame ? (
           <motion.div
             className="absolute left-1/2 top-6 text-center"
             layoutId="sidebar"

@@ -39,7 +39,7 @@ export function CVItem({
   return workId ? (
     <div>
       <BezierLine />
-      <Link href={`/works/${workId}`} className="block">
+      <Link href={`/work/works/${workId}`} className="block">
         <Content />
       </Link>
     </div>

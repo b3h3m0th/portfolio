@@ -4,15 +4,12 @@ import { LayoutGroup } from "framer-motion";
 import { NavItem } from "./nav-item";
 import Image from "next/image";
 
-const navItems = {
+export const navItems = {
   "/": {
-    name: "Home",
+    name: "Music",
   },
-  "/works": {
-    name: "Works",
-  },
-  "/projects": {
-    name: "Projects",
+  "/work": {
+    name: "Work",
   },
 } as const;
 

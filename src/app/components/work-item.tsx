@@ -24,7 +24,7 @@ export function WorkItem({
 
   return (
     <Link
-      href={`/works/${work.id}`}
+      href={`/work/works/${work.id}`}
       className="work-item"
       onClick={onClick}
       onMouseEnter={() => {
