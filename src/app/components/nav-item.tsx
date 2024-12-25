@@ -8,8 +8,6 @@ export function NavItem({ route, name }: { route: string; name: string }) {
   const emptyPathame = "/";
   const pathname = usePathname() || emptyPathame;
 
-  console.log(route, pathname);
-
   return (
     <Link
       key={route}
