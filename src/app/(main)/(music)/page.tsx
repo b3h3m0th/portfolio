@@ -12,12 +12,14 @@ export default async function Music() {
         alt="Ostini logo"
         className="w-full h-auto object-contain mb-20"
       />
-      <h1
-        className={`${aktura.className} font-semibold text-7xl text-center`}
-        // style={{ color: "#ff8416" }}
-      >
-        Pre-save &quot;Witches&quot; now!
-      </h1>
+      <Link href="https://emubands.ffm.to/witchessimonostini">
+        <h1
+          className={`${aktura.className} font-semibold text-7xl text-center`}
+          // style={{ color: "#ff8416" }}
+        >
+          Pre-save &quot;Witches&quot; now!
+        </h1>
+      </Link>
       <div className="flex justify-center h-16 mb-8">
         <Link href="https://simonostini.bandcamp.com/">
           <Image
@@ -37,7 +39,7 @@ export default async function Music() {
             className="h-full w-auto"
           />
         </Link>
-        <Link href="" className="m-4">
+        <Link href="https://emubands.ffm.to/witchessimonostini" className="m-4">
           <Image
             src="/images/icons/Spotify_Primary_Logo_RGB_White.png"
             width={300}
@@ -46,7 +48,7 @@ export default async function Music() {
             className="h-full w-auto"
           />
         </Link>
-        <Link href="" className="m-3">
+        <Link href="https://simonostini.bandcamp.com/" className="m-3">
           <Image
             src="/images/icons/shopping_cart.svg"
             width={300}
