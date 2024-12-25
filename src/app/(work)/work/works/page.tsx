@@ -100,7 +100,10 @@ export default function Work() {
         </div>
         <div className="flex justify-center gap-4 mr-2">
           <Link
-            href={`/works?${createQueryString(viewSearchParamKey, View.List)}`}
+            href={`/work/works?${createQueryString(
+              viewSearchParamKey,
+              View.List
+            )}`}
             className={`w-[26px] flex flex-col gap-0.5 justify-center cursor-pointer opacity-${
               view === View.List ? "100" : "25"
             } md:hover:opacity-100`}
@@ -110,7 +113,10 @@ export default function Work() {
             ))}
           </Link>
           <Link
-            href={`/works?${createQueryString(viewSearchParamKey, View.Block)}`}
+            href={`/work/works?${createQueryString(
+              viewSearchParamKey,
+              View.Block
+            )}`}
             className={`cursor-pointer grid grid-cols-2 grid-rows-2 gap-0.5 opacity-${
               view === View.Block ? "100" : "25"
             } md:hover:opacity-100`}

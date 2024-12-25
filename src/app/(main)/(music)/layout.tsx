@@ -4,7 +4,7 @@ import "./globals.music.scss";
 
 export const metadata: Metadata = {
   title: 'Simon Ostini - "WITCHES OUT NOW!"',
-  description: 'Simon Ostini - "WITCHES OUT NOW!"',
+  description: 'Simon Ostini - Guitarist - "WITCHES OUT NOW!"',
   robots: {
     index: true,
     follow: true,
