@@ -21,12 +21,12 @@ export default async function Music() {
         </h1>
       </Link>
       <div className="flex justify-center h-16 mb-8">
-        <Link href="https://simonostini.bandcamp.com/">
+        <Link href="https://emubands.ffm.to/witchessimonostini" className="m-4">
           <Image
-            src="/images/icons/bc-logotype-light-512.png"
+            src="/images/icons/Spotify_Primary_Logo_RGB_White.png"
             width={300}
             height={500}
-            alt="bandcamp logo"
+            alt="spotify logo"
             className="h-full w-auto"
           />
         </Link>
@@ -39,12 +39,12 @@ export default async function Music() {
             className="h-full w-auto"
           />
         </Link>
-        <Link href="https://emubands.ffm.to/witchessimonostini" className="m-4">
+        <Link href="https://simonostini.bandcamp.com/">
           <Image
-            src="/images/icons/Spotify_Primary_Logo_RGB_White.png"
+            src="/images/icons/bc-logotype-light-512.png"
             width={300}
             height={500}
-            alt="spotify logo"
+            alt="bandcamp logo"
             className="h-full w-auto"
           />
         </Link>
@@ -70,7 +70,7 @@ export default async function Music() {
       <h2 className={`${aktura.className} font-semibold text-4xl mb-4`}>
         Biography
       </h2>
-      <p className="prose-invert mb-8">
+      <p className="prose prose-invert mb-8">
         Simon Ostini is a virtuosic rock guitarist from Austria with a fable for
         classical music and organ sounds. He started playing guitar at age 7. In
         his teenage years, he joined the local hard rock band StageFright,
@@ -82,6 +82,13 @@ export default async function Music() {
         guitarists Doug Aldrich, Marc Diglio, Satchel, Buckethead and Vinnie
         Vincent.
       </p>
+      <h2 className={`${aktura.className} font-semibold text-4xl mb-4`}>
+        Contact
+      </h2>
+      <a
+        href="mailto:simonostini@gmail.com"
+        className="prose prose-invert hover:underline"
+      >{`simonostini@gmail.com`}</a>
     </section>
   );
 }
