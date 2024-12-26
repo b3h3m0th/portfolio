@@ -58,7 +58,7 @@ export default async function Music() {
           />
         </Link>
       </div>
-      <div className="flex justify-center">
+      <div className="flex justify-center flex-col">
         <Image
           src="/images/ostini_witches_mockup.png"
           width={1000}
