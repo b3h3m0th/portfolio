@@ -1,4 +1,4 @@
-import { aktura, clash } from "@/app/fonts";
+import { aktura } from "@/app/fonts";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -12,16 +12,18 @@ export default async function Music() {
         alt="Ostini logo"
         className="w-full h-auto object-contain mb-20"
       />
-      <Link href="https://emubands.ffm.to/witchessimonostini">
+      <Link href="https://open.spotify.com/artist/5Yf41IPX8ATChIp7e3bSVE">
         <h1
-          className={`${aktura.className} font-semibold text-7xl text-center`}
-          // style={{ color: "#ff8416" }}
+          className={`${aktura.className} font-semibold text-7xl text-center capitalize`}
         >
-          Pre-save &quot;Witches&quot; now!
+          &quot;Witches&quot; out now!
         </h1>
       </Link>
       <div className="flex justify-center h-16 mb-8">
-        <Link href="https://emubands.ffm.to/witchessimonostini" className="m-4">
+        <Link
+          href="https://open.spotify.com/artist/5Yf41IPX8ATChIp7e3bSVE"
+          className="m-4"
+        >
           <Image
             src="/images/icons/Spotify_Primary_Logo_RGB_White.png"
             width={300}
