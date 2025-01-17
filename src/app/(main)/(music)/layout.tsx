@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 import "./globals.music.scss";
 
 export const metadata: Metadata = {
-  title: 'Simon Ostini - "WITCHES" OUT NOW!',
+  title: "Simon Ostini | Official Website",
   description: 'Simon Ostini - Guitarist - "WITCHES" OUT NOW!',
   robots: {
     index: true,
