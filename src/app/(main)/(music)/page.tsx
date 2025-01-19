@@ -1,3 +1,4 @@
+import { InstagramFeed } from "@/app/components/instagram-feed";
 import { aktura } from "@/app/fonts";
 import Image from "next/image";
 import Link from "next/link";
@@ -84,13 +85,22 @@ export default async function Music() {
         guitarists Doug Aldrich, Marc Diglio, Satchel, Buckethead and Vinnie
         Vincent.
       </p>
+      <div className="mt-20 mb-20">
+        <InstagramFeed />
+      </div>
       <h2 className={`${aktura.className} font-semibold text-4xl mb-4`}>
-        Contact
+        Impressum
       </h2>
-      <a
-        href="mailto:simonostini@gmail.com"
-        className="prose prose-invert hover:underline"
-      >{`simonostini@gmail.com`}</a>
+      <div className="flex flex-col">
+        <span>&copy; Simon Ostini</span>
+        <span>Fästningsgatan 2B</span>
+        <span>291 34 Kristianstad</span>
+        <span>Sweden</span>
+        <a
+          href="mailto:simonostini@gmail.com"
+          className="prose prose-invert hover:underline"
+        >{`simonostini@gmail.com`}</a>
+      </div>
     </section>
   );
 }
