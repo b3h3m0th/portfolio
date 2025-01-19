@@ -67,7 +67,7 @@ export default async function Music() {
           width={1000}
           height={1000}
           alt="Ostini Witches album vinyl mockup"
-          className="w-full max-w-full"
+          className="w-full max-w-prose"
         />
       </div>
       <h2 className={`${aktura.className} font-semibold text-4xl mb-4`}>
