@@ -4,14 +4,14 @@ import { Analytics } from "@vercel/analytics/react";
 import { switzer } from "@/app/fonts";
 import "./globals.scss";
 
-export const metadata: Metadata = {
-  title: "Simon Ostini",
-  description: "Simon Ostini",
-  robots: {
-    index: true,
-    follow: true,
-  },
-};
+// export const metadata: Metadata = {
+//   title: "Simon Ostini",
+//   description: "Simon Ostini",
+//   robots: {
+//     index: true,
+//     follow: true,
+//   },
+// };
 
 export default function RootLayout({
   children,

@@ -7,7 +7,7 @@ import { switzer } from "../fonts";
 import { Cursor } from "../components/cursor";
 
 export const metadata: Metadata = {
-  title: "Simon Ostini - Creative Developer Portfolio",
+  title: "Simon Ostini | Creative Developer Portfolio",
   description: "Portfolio website of Creative Developer Simon Ostini",
   robots: {
     index: true,
