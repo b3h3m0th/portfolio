@@ -173,7 +173,7 @@ export default function Home() {
               },
               {
                 name: "Build The Earth",
-                image: "/images/build_the_earth.gif",
+                image: "/images/build_the_earth_logo.gif",
                 url: "https://buildtheearth.net",
               },
               {
