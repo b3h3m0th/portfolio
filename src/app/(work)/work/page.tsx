@@ -7,6 +7,7 @@ import { Card } from "../../components/card/card";
 import Link from "next/link";
 import { navItems } from "@/app/components/nav";
 import Image from "next/image";
+import { Marquee } from "@/app/components/marquee/marquee";
 
 function getAge() {
   const birthdate = new Date(2003, 10, 22);
@@ -132,6 +133,75 @@ export default function Home() {
           </span>
         </div>
       </Link>
+      <div className="flex items-center mb-4 mt-8">
+        <h2 className={`md:font-thin shrink-0 mr-4`}>I thank</h2>
+        <BezierLine />
+      </div>
+      <div className="my-8">
+        <Marquee pauseOnClick>
+          <div className="flex gap-12 mr-12">
+            {[
+              {
+                name: "Franz Morak",
+                image: "/images/franz_morak_logo.png",
+                url: "https://www.franzmorak.at",
+              },
+              {
+                name: "Werner Grabher",
+                image: "/images/werner_grabher_logo.png",
+                url: "",
+              },
+              {
+                name: "Schülerunion Vorarlberg",
+                image: "/images/schuelerunion_vorarlberg_logo.png",
+                url: "https://vbg.schuelerunion.at",
+              },
+              {
+                name: "OJAD",
+                image: "/images/ojad_logo.png",
+                url: "https://www.ojad.at",
+              },
+              {
+                name: "Eurest",
+                image: "/images/eurest_logo.png",
+                url: "https://www.eurest.at",
+              },
+              {
+                name: "Alps BTE",
+                image: "/images/alpsbte_logo.webp",
+                url: "https://alps-bte.com",
+              },
+              {
+                name: "Build The Earth",
+                image: "/images/build_the_earth.gif",
+                url: "https://buildtheearth.net",
+              },
+              {
+                name: "Landeshauptstadt Bregenz",
+                image: "/images/landeshauptstadt_bregenz_logo.png",
+                url: "https://www.bregenz.gv.at",
+              },
+            ].map((item) => (
+              <a
+                key={item.name}
+                href={item.url}
+                className="flex item-center"
+                title={item.name}
+                target="_blank"
+              >
+                <Image
+                  src={item.image}
+                  width={0}
+                  height={0}
+                  alt={item.name}
+                  sizes="100vw"
+                  className="h-12 w-auto contrast-50 grayscale brightness-150"
+                />
+              </a>
+            ))}
+          </div>
+        </Marquee>
+      </div>
     </section>
   );
 }
