@@ -12,7 +12,7 @@ import React, {
   MutableRefObject,
   RefAttributes,
 } from "react";
-import "./Marquee.scss";
+import "./marquee.scss";
 
 type MarqueeProps = {
   pauseOnHover?: boolean;
