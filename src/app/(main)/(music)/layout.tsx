@@ -13,6 +13,9 @@ export const metadata: Metadata = {
   icons: {
     icon: "/images/ostini_witches_cover.png",
   },
+  alternates: {
+    canonical: "https://simonostini.com",
+  },
 };
 
 export default function MusicLayout({
