@@ -61,14 +61,44 @@ export default async function Music() {
           />
         </Link>
       </div>
-      <div className="flex justify-center flex-col">
-        <Image
-          src="/images/ostini_witches_mockup.png"
-          width={1000}
-          height={1000}
-          alt="Ostini Witches album vinyl mockup"
-          className="w-full max-w-prose"
-        />
+      <h2 className={`${aktura.className} font-semibold text-4xl mb-4`}>
+        Music
+      </h2>
+      <div className="grid grid-cols-1 gap-2 md:grid-cols-2 mb-8">
+        {[
+          "https://www.youtube.com/embed/HwUZK7yUZqc",
+          "https://www.youtube.com/embed/HhXK9fxENE4",
+        ].map((url) => (
+          <div
+            key={url}
+            className="relative w-full pb-[56.25%] h-0 overflow-hidden"
+          >
+            <iframe
+              className="absolute top-0 left-0 w-full h-full"
+              src={url}
+              title="YouTube video player"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+              loading="lazy"
+            ></iframe>
+          </div>
+        ))}
+      </div>
+      <h2 className={`${aktura.className} font-semibold text-4xl mb-4`}>
+        Gallery
+      </h2>
+      <div className="grid grid-cols-2 md:grid-cols-3 mb-8">
+        {new Array(9).fill(null).map((_, i) => (
+          <div key={i} className="flex items-start">
+            <Image
+              src={`/images/music_gallery/simon_ostini_${i + 1}.png`}
+              width={1000}
+              height={1000}
+              alt="Ostini Witches album vinyl mockup"
+              className="object-cover w-full h-full max-w-prose"
+            />
+          </div>
+        ))}
       </div>
       <h2 className={`${aktura.className} font-semibold text-4xl mb-4`}>
         Biography
