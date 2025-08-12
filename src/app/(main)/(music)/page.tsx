@@ -108,12 +108,13 @@ export default async function Music() {
         classical music and organ sounds. He started playing guitar at age 7. In
         his teenage years, he joined the local hard rock band StageFright,
         contributing to an album and an EP while also touring internationally.
-        These early years shaped his musical foundation and ignited his drive to
-        take playing guitar more seriously. After high school he moved to Sweden
-        and recorded his solo album &quot;Witches&quot;. His main influences
-        include glam metal bands such as Dokken and Slaughter, as well as
-        guitarists Doug Aldrich, Marc Diglio, Satchel, Buckethead and Vinnie
-        Vincent.
+        He quickly gained a strong reputation and began giving lessons to other
+        players. These early years shaped his musical foundation and ignited his
+        drive to take playing guitar more seriously. After high school he moved
+        to Sweden and recorded his solo album &quot;Witches&quot;. His main
+        influences include glam metal bands such as Dokken and Slaughter, as
+        well as guitarists Doug Aldrich, Marc Diglio, Satchel, Buckethead and
+        Vinnie Vincent.
       </p>
       <div className="mt-20 mb-20">
         <InstagramFeed />
