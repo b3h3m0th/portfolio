@@ -114,11 +114,11 @@ export default async function Music() {
         Marshall Amps in 2023. These early years shaped his musical foundation
         and ignited his drive to take playing guitar more seriously. After high
         school he moved to Sweden and recorded his solo album
-        &quot;Witches&quot; and on various project as a session guitarist. In
-        August 2025 Simon Ostini joined the German Metal Band ELA. His main
-        influences include glam metal bands such as Dokken and Slaughter, as
-        well as guitarists John Sykes, Doug Aldrich, Satchel, Buckethead and
-        Vinnie Vincent.
+        &quot;Witches&quot; and worked on various projects as a session
+        guitarist. In August 2025 Simon Ostini joined the German Metal Band ELA.
+        His main influences include glam metal bands such as Dokken and
+        Slaughter, as well as guitarists John Sykes, Doug Aldrich, Satchel,
+        Buckethead and Vinnie Vincent.
       </p>
       <div className="mt-20 mb-20">
         <InstagramFeed />
