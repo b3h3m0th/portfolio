@@ -88,13 +88,13 @@ export default async function Music() {
         Gallery
       </h2>
       <div className="grid grid-cols-2 md:grid-cols-3 mb-8">
-        {new Array(9).fill(null).map((_, i) => (
+        {new Array(10).fill(null).map((_, i) => (
           <div key={i} className="flex items-start">
             <Image
-              src={`/images/music_gallery/simon_ostini_${i + 1}.png`}
+              src={`/images/music_gallery/simon_ostini_${i}.png`}
               width={1000}
               height={1000}
-              alt="Ostini Witches album vinyl mockup"
+              alt="Simon Ostini"
               className="object-cover w-full h-full max-w-prose"
             />
           </div>
