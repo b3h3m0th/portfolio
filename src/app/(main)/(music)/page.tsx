@@ -94,7 +94,7 @@ export default async function Music() {
               src={`/images/music_gallery/simon_ostini_${i}.png`}
               width={1000}
               height={1000}
-              alt="Simon Ostini"
+              alt="Simon Ostini photo"
               className="object-cover w-full h-full max-w-prose"
             />
           </div>
