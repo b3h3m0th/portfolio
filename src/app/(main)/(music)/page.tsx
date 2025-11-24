@@ -103,22 +103,37 @@ export default async function Music() {
       <h2 className={`${aktura.className} font-semibold text-4xl mb-4`}>
         Biography
       </h2>
-      <p className="prose prose-invert mb-8">
-        Simon Ostini is a virtuosic rock guitarist from Austria with a fable for
-        classical music and organ sounds. He started playing guitar at age 7. In
-        his teenage years, he joined the local hard rock band StageFright,
-        contributing to an album and an EP while also touring internationally.
-        He quickly gained a strong reputation and began giving lessons to other
-        players. By gaining attention online through occasional publication of
-        guitar videos, he was invited to several collaborations, including
-        Marshall Amps and Polychrome DSP. These early years shaped his musical
-        foundation and ignited his drive to take playing guitar more seriously.
-        After high school he moved to Sweden and recorded his solo album
-        &quot;Witches&quot; and worked on various projects as a session
-        guitarist. In August 2025 Simon Ostini joined the German Metal Band ELA.
-        His main influences include guitarists John Sykes, Doug Aldrich,
-        Satchel, Buckethead and Vinnie Vincent.
-      </p>
+      <div className="prose prose-invert mb-8">
+        <p>
+          Simon Ostini is a rock guitarist from Austria known for his virtuosic
+          and flashy playing. He started playing guitar at age 7. In his teenage
+          years, he joined the local hard rock band StageFright, contributing to
+          an album and an EP while also touring internationally. He quickly
+          gained a strong reputation for his technical skills and began giving
+          lessons to other players and reached a growing online audience. His
+          technical skills quickly drew attention, leading to teaching
+          opportunities and a growing online audience.
+        </p>
+        <p>
+          By gaining attention online through occasional publication of guitar
+          videos, he was invited to several collaborations from brands,
+          including Marshall Amps and Polychrome DSP. These early years shaped
+          his musical foundation and ignited his drive to take playing guitar
+          more seriously.
+        </p>
+        <p>
+          After graduating high school he moved to Sweden where he recorded and
+          released his solo album &quot;Witches&quot;. He began working as a
+          session guitarist, taking part in various projects and appearing as a
+          featured artist on the debut album of the Swiss metal band{" "}
+          <a href="https://www.youtube.com/@IWontSkye">I Won&apos;t Skye</a>. In
+          August 2025, Simon Ostini joined the German metal band{" "}
+          <a href="https://de.wikipedia.org/wiki/Ela_(Band)">ELA</a> and
+          contributed guitar work to their upcoming sixth studio album. His main
+          influences include guitarists John Sykes, Doug Aldrich, Satchel,
+          Buckethead and Vinnie Vincent.
+        </p>
+      </div>
       <div className="mt-20 mb-20">
         <InstagramFeed />
       </div>
