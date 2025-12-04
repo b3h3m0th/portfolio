@@ -68,6 +68,7 @@ export default async function Music() {
         {[
           "https://www.youtube.com/embed/HwUZK7yUZqc",
           "https://www.youtube.com/embed/HhXK9fxENE4",
+          "https://www.youtube.com/embed/BZ34YpSBSoU"
         ].map((url) => (
           <div
             key={url}
