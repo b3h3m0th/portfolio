@@ -68,7 +68,7 @@ export default async function Music() {
         {[
           "https://www.youtube.com/embed/HwUZK7yUZqc",
           "https://www.youtube.com/embed/HhXK9fxENE4",
-          "https://www.youtube.com/embed/BZ34YpSBSoU"
+          "https://www.youtube.com/embed/BZ34YpSBSoU",
         ].map((url) => (
           <div
             key={url}
@@ -118,9 +118,11 @@ export default async function Music() {
         <p>
           By gaining attention online through occasional publication of guitar
           videos, he was invited to several collaborations from brands,
-          including Marshall Amps and Polychrome DSP. These early years shaped
-          his musical foundation and ignited his drive to take playing guitar
-          more seriously.
+          including <a href="https://www.marshall.com/">Marshall Amps</a>,{" "}
+          <a href="https://global.beyerdynamic.com/">Beyer Dynamic</a> and{" "}
+          <a href="https://www.polychromedsp.com/">Polychrome DSP</a>. These
+          early years shaped his musical foundation and ignited his drive to
+          take playing guitar more seriously.
         </p>
         <p>
           After graduating high school he moved to Sweden where he recorded and
@@ -130,7 +132,7 @@ export default async function Music() {
           <a href="https://www.youtube.com/@IWontSkye">I Won&apos;t Skye</a>. In
           August 2025, Simon Ostini joined the German metal band{" "}
           <a href="https://de.wikipedia.org/wiki/Ela_(Band)">ELA</a> and
-          contributed guitar work to their upcoming sixth studio album. His main
+          contributed guitar work to their upcoming studio album. His main
           influences include guitarists John Sykes, Doug Aldrich, Satchel,
           Buckethead and Vinnie Vincent.
         </p>
