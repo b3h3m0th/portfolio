@@ -111,18 +111,16 @@ export default async function Music() {
           years, he joined the local hard rock band StageFright, contributing to
           an album and an EP while also touring internationally. He quickly
           gained a strong reputation for his technical skills and began giving
-          lessons to other players and reached a growing online audience. His
-          technical skills quickly drew attention, leading to teaching
-          opportunities and a growing online audience.
+          lessons to other players. These early years shaped his musical
+          foundation and ignited his drive to take playing guitar more
+          seriously.
         </p>
         <p>
           By gaining attention online through occasional publication of guitar
           videos, he was invited to several collaborations from brands,
           including <a href="https://www.marshall.com/">Marshall Amps</a>,{" "}
           <a href="https://global.beyerdynamic.com/">Beyer Dynamic</a> and{" "}
-          <a href="https://www.polychromedsp.com/">Polychrome DSP</a>. These
-          early years shaped his musical foundation and ignited his drive to
-          take playing guitar more seriously.
+          <a href="https://www.polychromedsp.com/">Polychrome DSP</a>.
         </p>
         <p>
           After graduating high school he moved to Sweden where he recorded and
