@@ -130,10 +130,13 @@ export default async function Music() {
           <a href="https://www.youtube.com/@IWontSkye">I Won&apos;t Skye</a>. In
           August 2025, Simon Ostini joined the German metal band{" "}
           <a href="https://de.wikipedia.org/wiki/Ela_(Band)">ELA</a> and
-          contributed guitar work to their upcoming studio album. His main
-          influences include guitarists John Sykes, Doug Aldrich, Satchel,
-          Buckethead and Vinnie Vincent.
+          contributed guitar work to several singles and their upcoming studio
+          album.
         </p>
+      </div>
+      <div>
+        His main influences include guitarists John Sykes, Doug Aldrich,
+        Satchel, Buckethead and Vinnie Vincent.
       </div>
       <div className="mt-20 mb-20">
         <InstagramFeed />
