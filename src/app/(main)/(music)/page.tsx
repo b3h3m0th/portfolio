@@ -69,6 +69,7 @@ export default async function Music() {
           "https://www.youtube.com/embed/HwUZK7yUZqc",
           "https://www.youtube.com/embed/HhXK9fxENE4",
           "https://www.youtube.com/embed/BZ34YpSBSoU",
+          "https://www.youtube.com/embed/DltYKfRSoBU",
         ].map((url) => (
           <div
             key={url}
@@ -133,10 +134,10 @@ export default async function Music() {
           contributed guitar work to several singles and their upcoming studio
           album.
         </p>
-      </div>
-      <div>
-        His main influences include guitarists John Sykes, Doug Aldrich,
-        Satchel, Buckethead and Vinnie Vincent.
+        <p>
+          His main influences include guitarists John Sykes, Doug Aldrich,
+          Satchel, Buckethead and Vinnie Vincent.
+        </p>
       </div>
       <div className="mt-20 mb-20">
         <InstagramFeed />
