@@ -17,3 +17,9 @@ export const aktura = localFont({
   display: "swap",
   variable: "--font-aktura",
 });
+
+export const tracker = localFont({
+  src: "./../../../public/fonts/TrackerItalicGrunge-Regular.ttf",
+  display: "swap",
+  variable: "--font-aktura",
+});

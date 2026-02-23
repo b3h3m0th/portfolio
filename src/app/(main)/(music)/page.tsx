@@ -21,6 +21,19 @@ export default async function Music() {
         </h1>
       </Link>
       <div className="flex justify-center h-16 mb-8">
+        
+        <Link
+          href="https://www.youtube.com/@simonostini"
+          className="m-4"
+        >
+          <Image
+            src="/images/icons/youtube.webp"
+            width={300}
+            height={500}
+            alt="youtube logo"
+            className="h-full w-auto"
+          />
+        </Link>
         <Link
           href="https://open.spotify.com/artist/5Yf41IPX8ATChIp7e3bSVE"
           className="m-4"
